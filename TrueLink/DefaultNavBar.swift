@@ -24,13 +24,16 @@ class DefaultNavBar: UIView {
         super.init(frame: CGRect(x: 0.0, y: 0.0, width: Double(width), height: navBarHeight+topPadding))
         
         self.backgroundColor = UIColor.TLOffWhite()
+        self.addBorder(toSide: ViewSide.Bottom, withColor: UIColor.TLBlack().cgColor, andThickness: 1.0)
+        
+        // initialize logo
         let logoImageViewFrame = CGRect(x: 20, y: topPadding, width: 28, height: 25)
         
         let logoImageView = UIImageView.init(frame: logoImageViewFrame)
         logoImageView.image = UIImage(named: "TrueLinkIcon")
         
         
-        
+        // initialize title
         let titleLabelFrame = CGRect(x: logoImageViewFrame.origin.x + logoImageView.frame.size.width + 10,
                                       y: CGFloat(topPadding),
                                       width: 100,
@@ -40,14 +43,19 @@ class DefaultNavBar: UIView {
         navbarTitleLabel.font = UIFont.systemFont(ofSize: 30)
         navbarTitleLabel.textColor = UIColor.TLBlack()
         
+        // initialize settings button
         let settingsButton = UIButton.init(frame: CGRect(x:width - 30, y:CGFloat(topPadding), width: 25, height: 25))
         settingsButton.setImage(UIImage.init(named: "SettingsIcon"), for: UIControlState.normal)
+        settingsButton.addTarget(self, action: #selector(didPressSettingsButton(sender:)), for: UIControlEvents.touchUpInside)
+
        
         self.addSubview(logoImageView)
         self.addSubview(navbarTitleLabel)
         self.addSubview(settingsButton)
-
-        
+    }
+    
+    func didPressSettingsButton(sender:UIButton) {
+        //TODO: Navigate to Settings Page
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -26,6 +26,7 @@
 		4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC93B200CE30E0004675F /* DefaultNavBar.swift */; };
 		4D1DC93E200CE9790004675F /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC93D200CE9790004675F /* Abel-Regular.ttf */; };
 		4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */; };
+		4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC942200CFFC40004675F /* UIView+Borders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4D1DC93B200CE30E0004675F /* DefaultNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavBar.swift; sourceTree = "<group>"; };
 		4D1DC93D200CE9790004675F /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
 		4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+TLFonts.swift"; sourceTree = "<group>"; };
+		4D1DC942200CFFC40004675F /* UIView+Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1DC921200CB2890004675F /* UIColor+TLColors.swift */,
+				4D1DC942200CFFC40004675F /* UIView+Borders.swift */,
 				4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */,
 			);
 			name = Extensions;
@@ -345,6 +348,7 @@
 				4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */,
 				4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */,
 				4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */,
+				4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */,
 				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
