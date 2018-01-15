@@ -10,6 +10,7 @@ import Foundation
 
 import UIKit
 
+// PageViewController used for swipeable onboarding
 class PageViewController: UIViewController, UIPageViewControllerDataSource {
     var viewControllers : [UIViewController] = []
     var pageViewController: UIPageViewController!
@@ -44,10 +45,6 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     // MARK: data source
-    
-    
-    
-    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         

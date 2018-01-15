@@ -18,6 +18,11 @@
 		4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC921200CB2890004675F /* UIColor+TLColors.swift */; };
 		4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC923200CD50E0004675F /* PageViewController.swift */; };
 		4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC927200CD54E0004675F /* PageViewController.xib */; };
+		4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC92D200CDA510004675F /* TabBarController.swift */; };
+		4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC930200CDD4E0004675F /* ConnectionsViewController.swift */; };
+		4D1DC933200CDD4E0004675F /* ConnectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC931200CDD4E0004675F /* ConnectionsViewController.xib */; };
+		4D1DC936200CDD790004675F /* ITAYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC934200CDD790004675F /* ITAYViewController.swift */; };
+		4D1DC937200CDD790004675F /* ITAYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC935200CDD790004675F /* ITAYViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		4D1DC921200CB2890004675F /* UIColor+TLColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TLColors.swift"; sourceTree = "<group>"; };
 		4D1DC923200CD50E0004675F /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4D1DC927200CD54E0004675F /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		4D1DC92D200CDA510004675F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4D1DC930200CDD4E0004675F /* ConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsViewController.swift; sourceTree = "<group>"; };
+		4D1DC931200CDD4E0004675F /* ConnectionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionsViewController.xib; sourceTree = "<group>"; };
+		4D1DC934200CDD790004675F /* ITAYViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAYViewController.swift; sourceTree = "<group>"; };
+		4D1DC935200CDD790004675F /* ITAYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITAYViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,16 +115,18 @@
 		4D1DC8EA200CB0AE0004675F /* TrueLink */ = {
 			isa = PBXGroup;
 			children = (
-				4D1DC91E200CB2280004675F /* Extensions */,
+				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
-				4D1DC923200CD50E0004675F /* PageViewController.swift */,
-				4D1DC927200CD54E0004675F /* PageViewController.xib */,
+				4D1DC92D200CDA510004675F /* TabBarController.swift */,
+				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
+				4D1DC92A200CD8880004675F /* PageViewController */,
 				4D1DC8ED200CB0AE0004675F /* ViewController.swift */,
 				4D1DC8EF200CB0AE0004675F /* Main.storyboard */,
 				4D1DC8F5200CB0AE0004675F /* Assets.xcassets */,
 				4D1DC8F7200CB0AE0004675F /* LaunchScreen.storyboard */,
 				4D1DC8FA200CB0AE0004675F /* Info.plist */,
 				4D1DC8F2200CB0AE0004675F /* TrueLink.xcdatamodeld */,
+				4D1DC91E200CB2280004675F /* Extensions */,
 			);
 			path = TrueLink;
 			sourceTree = "<group>";
@@ -143,6 +155,33 @@
 				4D1DC921200CB2890004675F /* UIColor+TLColors.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4D1DC92A200CD8880004675F /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DC923200CD50E0004675F /* PageViewController.swift */,
+				4D1DC927200CD54E0004675F /* PageViewController.xib */,
+			);
+			name = PageViewController;
+			sourceTree = "<group>";
+		};
+		4D1DC92F200CDD1F0004675F /* ConnectionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DC930200CDD4E0004675F /* ConnectionsViewController.swift */,
+				4D1DC931200CDD4E0004675F /* ConnectionsViewController.xib */,
+			);
+			name = ConnectionsViewController;
+			sourceTree = "<group>";
+		};
+		4D1DC938200CDD920004675F /* ITAYViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DC934200CDD790004675F /* ITAYViewController.swift */,
+				4D1DC935200CDD790004675F /* ITAYViewController.xib */,
+			);
+			name = ITAYViewControler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +294,9 @@
 				4D1DC8F9200CB0AE0004675F /* LaunchScreen.storyboard in Resources */,
 				4D1DC8F6200CB0AE0004675F /* Assets.xcassets in Resources */,
 				4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */,
+				4D1DC937200CDD790004675F /* ITAYViewController.xib in Resources */,
 				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
+				4D1DC933200CDD4E0004675F /* ConnectionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */,
+				4D1DC936200CDD790004675F /* ITAYViewController.swift in Sources */,
 				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
 				4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */,
+				4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */,
+				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 			);

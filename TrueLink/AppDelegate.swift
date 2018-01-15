@@ -20,7 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let initialViewController = PageViewController(nibName:"PageViewController", bundle: nil);
+        //TODO: CHANGE
+        var didCompleteOnBoarding = true;
+        
+        let initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
+
         
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;
