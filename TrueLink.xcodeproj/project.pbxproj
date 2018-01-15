@@ -15,6 +15,9 @@
 		4D1DC8F9200CB0AE0004675F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F7200CB0AE0004675F /* LaunchScreen.storyboard */; };
 		4D1DC904200CB0AE0004675F /* TrueLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC903200CB0AE0004675F /* TrueLinkTests.swift */; };
 		4D1DC90F200CB0AE0004675F /* TrueLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC90E200CB0AE0004675F /* TrueLinkUITests.swift */; };
+		4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC921200CB2890004675F /* UIColor+TLColors.swift */; };
+		4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC923200CD50E0004675F /* PageViewController.swift */; };
+		4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC927200CD54E0004675F /* PageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		4D1DC90A200CB0AE0004675F /* TrueLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1DC90E200CB0AE0004675F /* TrueLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueLinkUITests.swift; sourceTree = "<group>"; };
 		4D1DC910200CB0AE0004675F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D1DC921200CB2890004675F /* UIColor+TLColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TLColors.swift"; sourceTree = "<group>"; };
+		4D1DC923200CD50E0004675F /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4D1DC927200CD54E0004675F /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,10 @@
 		4D1DC8EA200CB0AE0004675F /* TrueLink */ = {
 			isa = PBXGroup;
 			children = (
+				4D1DC91E200CB2280004675F /* Extensions */,
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
+				4D1DC923200CD50E0004675F /* PageViewController.swift */,
+				4D1DC927200CD54E0004675F /* PageViewController.xib */,
 				4D1DC8ED200CB0AE0004675F /* ViewController.swift */,
 				4D1DC8EF200CB0AE0004675F /* Main.storyboard */,
 				4D1DC8F5200CB0AE0004675F /* Assets.xcassets */,
@@ -126,6 +135,14 @@
 				4D1DC910200CB0AE0004675F /* Info.plist */,
 			);
 			path = TrueLinkUITests;
+			sourceTree = "<group>";
+		};
+		4D1DC91E200CB2280004675F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DC921200CB2890004675F /* UIColor+TLColors.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +255,7 @@
 				4D1DC8F9200CB0AE0004675F /* LaunchScreen.storyboard in Resources */,
 				4D1DC8F6200CB0AE0004675F /* Assets.xcassets in Resources */,
 				4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */,
+				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */,
+				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
 				4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
+				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
