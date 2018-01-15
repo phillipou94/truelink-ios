@@ -14,6 +14,9 @@ class TabBarController: UITabBarController {
         super.viewDidLoad();
         self.initTabBarAttributes()
         
+        let navBar = DefaultNavBar.init(width: self.view.frame.size.width)
+        self.view.addSubview(navBar)
+        
         
         let itayViewController = ITAYViewController();
         itayViewController.tabBarItem.image = UIImage(named: "HeartIcon")
