@@ -15,6 +15,13 @@ class ConnectionsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let emptyView = EmptyView(view: self.view, viewType: .NoConnections)
+        self.view.addSubview(emptyView)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

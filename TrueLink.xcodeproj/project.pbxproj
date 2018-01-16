@@ -27,6 +27,7 @@
 		4D1DC93E200CE9790004675F /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC93D200CE9790004675F /* Abel-Regular.ttf */; };
 		4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */; };
 		4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC942200CFFC40004675F /* UIView+Borders.swift */; };
+		4D1DC945200D02780004675F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC944200D02780004675F /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		4D1DC93D200CE9790004675F /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
 		4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+TLFonts.swift"; sourceTree = "<group>"; };
 		4D1DC942200CFFC40004675F /* UIView+Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
+		4D1DC944200D02780004675F /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
 				4D1DC93B200CE30E0004675F /* DefaultNavBar.swift */,
+				4D1DC944200D02780004675F /* EmptyView.swift */,
 				4D1DC92D200CDA510004675F /* TabBarController.swift */,
 				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
 				4D1DC92A200CD8880004675F /* PageViewController */,
@@ -346,6 +349,7 @@
 				4D1DC936200CDD790004675F /* ITAYViewController.swift in Sources */,
 				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
 				4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */,
+				4D1DC945200D02780004675F /* EmptyView.swift in Sources */,
 				4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */,
 				4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */,
 				4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */,
@@ -597,6 +601,7 @@
 				4D1DC915200CB0AE0004675F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D1DC916200CB0AE0004675F /* Build configuration list for PBXNativeTarget "TrueLinkTests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +610,7 @@
 				4D1DC918200CB0AE0004675F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D1DC919200CB0AE0004675F /* Build configuration list for PBXNativeTarget "TrueLinkUITests" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +619,7 @@
 				4D1DC91B200CB0AE0004675F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

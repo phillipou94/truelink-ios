@@ -18,9 +18,13 @@ class DefaultNavBar: UIView {
     }
     */
     
+    static func height() -> CGFloat {
+        return 44.0;
+    }
+    
     init(width: CGFloat) {
         let topPadding = 30.0
-        let navBarHeight = 44.0
+        let navBarHeight = Double(DefaultNavBar.height())
         super.init(frame: CGRect(x: 0.0, y: 0.0, width: Double(width), height: navBarHeight+topPadding))
         
         self.backgroundColor = UIColor.TLOffWhite()
@@ -40,7 +44,7 @@ class DefaultNavBar: UIView {
                                       height: logoImageViewFrame.size.height)
         let navbarTitleLabel = UILabel.init(frame: titleLabelFrame)
         navbarTitleLabel.text = "truelink"
-        navbarTitleLabel.font = UIFont.systemFont(ofSize: 30)
+        navbarTitleLabel.font = UIFont.TLFontOfSize(size: 30)
         navbarTitleLabel.textColor = UIColor.TLBlack()
         
         // initialize settings button

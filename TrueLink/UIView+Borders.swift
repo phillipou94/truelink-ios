@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 extension UIView {
     
-    // Example use: myView.addBorder(toSide: .Left, withColor: UIColor.redColor().CGColor, andThickness: 1.0)
-    
     enum ViewSide {
         case Left, Right, Top, Bottom
     }

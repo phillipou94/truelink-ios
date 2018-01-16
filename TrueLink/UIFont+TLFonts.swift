@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    class func systemFontOfSize(size: CGFloat) -> UIFont {
+    class func TLFontOfSize(size: CGFloat) -> UIFont {
         return UIFont(name: "Abel-Regular", size: size)!
     }
 
