@@ -18,6 +18,11 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserRequest.shared.loginWithEmail(email: "email@gmail.com", password: "abcd1234", success: { (response) in
+            
+        }) { (failure) in
+            
+        }
         self.view.backgroundColor = UIColor.TLOffWhite()
 
         let topMargin = CGFloat(DefaultNavBar.height()+UIApplication.shared.statusBarFrame.height)

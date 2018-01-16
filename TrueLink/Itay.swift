@@ -11,10 +11,10 @@ import SwiftyJSON
 
 class Itay: NSObject {
     var id : String!
-    var incoming: Bool
-    var acked: Bool
-    var sentTime:Date
-    var ackedTime:Date
+    var incoming: Bool = false
+    var acked: Bool = false
+    var sentTime:Date?
+    var ackedTime:Date?
     
     
     
@@ -32,14 +32,14 @@ class Itay: NSObject {
         }
         
         if let sentTimeString = json["sent_time"].string {
-            if let date = sentTimeString.convertToDate() as! Date {
+            if let date : Date = sentTimeString.convertToDate() as Date {
                 self.sentTime = date
             }
             
         }
         
         if let ackedTime = json["acked_time"].string {
-            if let date = sentTimeString.convertToDate() as! Date {
+            if let date : Date = ackedTime.convertToDate() as Date {
                 self.ackedTime = date
             }
         }

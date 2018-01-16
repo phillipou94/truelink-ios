@@ -28,7 +28,8 @@ class TabBarController: UITabBarController {
         connectionsViewController.extendedLayoutIncludesOpaqueBars = true
         connectionsViewController.tabBarItem.title = "Connections"
         
-        self.viewControllers = [itayViewController, connectionsViewController];
+        self.viewControllers = [itayViewController, connectionsViewController]
+        
     }
     
     func initTabBarAttributes() {

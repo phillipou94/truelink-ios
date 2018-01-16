@@ -8,7 +8,7 @@
 
 import Foundation
 extension String {
-    func convertToDate() -> NSDate? {
+    func convertToDate() -> NSDate {
         let apiDateFormat = "yyyy-MM-dd'T'HH:mm:ss:SSS"
         let dateFor: DateFormatter = DateFormatter()
         dateFor.dateFormat = apiDateFormat
