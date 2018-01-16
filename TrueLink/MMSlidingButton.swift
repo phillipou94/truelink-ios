@@ -118,6 +118,8 @@ protocol SlideButtonDelegate{
         
         self.dragPoint.layer.cornerRadius   = buttonCornerRadius
         self.layer.cornerRadius             = buttonCornerRadius
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.TLLightGrey().cgColor
     }
     
     func setUpButton(){
@@ -141,7 +143,7 @@ protocol SlideButtonDelegate{
             
             self.dragPointButtonLabel               = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
             self.dragPointButtonLabel.textAlignment = .center
-            self.dragPointButtonLabel.text          = buttonText
+//            self.dragPointButtonLabel.text          = buttonText
             self.dragPointButtonLabel.textColor     = UIColor.white
             self.dragPointButtonLabel.font          = self.buttonFont
             self.dragPointButtonLabel.textColor     = self.dragPointTextColor
@@ -176,7 +178,7 @@ protocol SlideButtonDelegate{
                 finalX = 0
             }else if finalX + self.dragPointWidth  >  (self.frame.size.width - 60){
                 unlocked = true
-                self.unlock()
+                self.unlock(sender:sender)
             }
             
             let animationDuration:Double = abs(Double(velocityX) * 0.0002) + 0.2
@@ -196,12 +198,13 @@ protocol SlideButtonDelegate{
     }
     
     //lock button animation (SUCCESS)
-    func unlock(){
+    func unlock(sender: UIPanGestureRecognizer){
         UIView.transition(with: self, duration: 0.2, options: .curveEaseOut, animations: {
             self.dragPoint.frame = CGRect(x: self.frame.size.width - self.dragPoint.frame.size.width, y: 0, width: self.dragPoint.frame.size.width, height: self.dragPoint.frame.size.height)
         }) { (Status) in
             if Status{
                 self.dragPointButtonLabel.text      = self.buttonUnlockedText
+                self.dragPoint.removeGestureRecognizer(sender)
 //                self.imageView.isHidden               = true
                 self.dragPoint.backgroundColor      = self.buttonUnlockedColor
                 self.dragPointButtonLabel.textColor = self.buttonUnlockedTextColor
@@ -221,7 +224,10 @@ protocol SlideButtonDelegate{
                 self.dragPoint.backgroundColor      = self.dragPointColor
                 self.dragPointButtonLabel.textColor = self.dragPointTextColor
                 self.unlocked                       = false
-                //self.delegate?.buttonStatus("Locked")
+                self.delegate?.buttonStatus(status: "Locked", sender: self)
+                let panGestureRecognizer                    = UIPanGestureRecognizer(target: self, action: #selector(self.panDetected(sender:)))
+                panGestureRecognizer.minimumNumberOfTouches = 1
+                self.dragPoint.addGestureRecognizer(panGestureRecognizer)
             }
         }
     }
