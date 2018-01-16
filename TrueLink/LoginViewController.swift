@@ -80,6 +80,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //IB actions
     
     @IBAction func signInPressed(_ sender: Any) {
+        if let email = emailTextField.text {
+            if let password = passwordTextField.text {
+                
+                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
+                    
+                }) { (failure) in
+                    
+                }
+            }
+        }
     }
 
     @IBAction func signUpPressed(_ sender: Any) {

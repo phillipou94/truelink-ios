@@ -35,6 +35,8 @@
 		4DA3205C200E053800950DC1 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3205B200E053800950DC1 /* DesignableTextField.swift */; };
 		4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA32061200E102800950DC1 /* SignupViewController.swift */; };
 		4DA32064200E102800950DC1 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA32062200E102800950DC1 /* SignupViewController.xib */; };
+		4DA3206D200E246700950DC1 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3206C200E246700950DC1 /* LocalStorageManager.swift */; };
+		4DA3206F200E2D5300950DC1 /* ItayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3206E200E2D5300950DC1 /* ItayRequest.swift */; };
 		4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */; };
 		4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC2200DDFD6003EEFEB /* User.swift */; };
 		4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC5200DE28D003EEFEB /* Connection.swift */; };
@@ -96,6 +98,8 @@
 		4DA3205B200E053800950DC1 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		4DA32061200E102800950DC1 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		4DA32062200E102800950DC1 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		4DA3206C200E246700950DC1 /* LocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		4DA3206E200E2D5300950DC1 /* ItayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItayRequest.swift; sourceTree = "<group>"; };
 		4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		4DA9DEC2200DDFD6003EEFEB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DA9DEC5200DE28D003EEFEB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -161,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
-				4DA9DECB200DF0D3003EEFEB /* UserRequest.swift */,
+				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
 				4DA9DEC4200DE13C003EEFEB /* Models */,
 				4D8BDB51200DAA6F00BD1D28 /* Views */,
 				4DA9DEBA200DD291003EEFEB /* Controllers */,
@@ -262,14 +266,29 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		4DA9DEBA200DD291003EEFEB /* Controllers */ = {
+		4DA32066200E177800950DC1 /* SignupViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4DA32061200E102800950DC1 /* SignupViewController.swift */,
 				4DA32062200E102800950DC1 /* SignupViewController.xib */,
+			);
+			name = SignupViewController;
+			sourceTree = "<group>";
+		};
+		4DA32067200E178D00950DC1 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
 				4DA9DECD200E02F1003EEFEB /* LoginViewController.swift */,
 				4DA9DECE200E02F1003EEFEB /* LoginViewController.xib */,
-				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		4DA9DEBA200DD291003EEFEB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DA32066200E177800950DC1 /* SignupViewController */,
+				4DA32067200E178D00950DC1 /* LoginViewController */,
 				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
 				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC92A200CD8880004675F /* PageViewController */,
@@ -281,7 +300,10 @@
 		4DA9DEBF200DDF80003EEFEB /* ServerRequests */ = {
 			isa = PBXGroup;
 			children = (
+				4DA9DECB200DF0D3003EEFEB /* UserRequest.swift */,
+				4DA3206E200E2D5300950DC1 /* ItayRequest.swift */,
 				4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */,
+				4DA3206C200E246700950DC1 /* LocalStorageManager.swift */,
 			);
 			name = ServerRequests;
 			sourceTree = "<group>";
@@ -461,11 +483,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +552,7 @@
 				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
 				4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */,
 				4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */,
+				4DA3206D200E246700950DC1 /* LocalStorageManager.swift in Sources */,
 				4DA3205C200E053800950DC1 /* DesignableTextField.swift in Sources */,
 				4DA9DEC8200DE76D003EEFEB /* Itay.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
@@ -535,6 +560,7 @@
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
 				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
 				4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */,
+				4DA3206F200E2D5300950DC1 /* ItayRequest.swift in Sources */,
 				4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

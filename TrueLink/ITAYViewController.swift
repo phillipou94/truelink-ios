@@ -49,13 +49,17 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     //MARK: - SlideButtonDelegate
     
     func buttonStatus(status: SlideButtonStatus, sender: MMSlidingButton) {
+        let connectionId = "testConnectionId"
+        let mainQueue = DispatchQueue.main
+
         if (status == .Finished) {
-            
-            let mainQueue = DispatchQueue.main
-            let deadline = DispatchTime.now() + .seconds(2)
-            mainQueue.asyncAfter(deadline: deadline) {
-                self.itaySent()
-            }
+            ItayRequest.shared.sendItay(connectionId: connectionId, success: { (result) in
+                mainQueue.async {
+                    self.itaySent()
+                }
+            }, failure: { (error) in
+                
+            })
             
         }
     }

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KeychainAccess.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TrueLink.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8390953603D7548186804596917B41A3</key>
+		<key>6A32BCAEC2B4A490F366941B268686BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ACD7ED8745BEF1EC38D3DD6D57980BB5</key>
+		<key>8905DB6521F8FDC34752B69DEE3FDEB7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4995A3E83CEC86ECF756974D19DE187</key>
 		<dict>
 			<key>primary</key>
 			<true/>

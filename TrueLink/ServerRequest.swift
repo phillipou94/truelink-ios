@@ -20,7 +20,6 @@ class ServerRequest: NSObject {
     func getWithEndpoint(endpoint:String, parameters:[String : AnyObject]?, authenticated:Bool, success:@escaping (_ json:JSON) -> Void, failure:@escaping (_ error:JSON) -> Void) {
         let url = baseURL
         let path : String = url + endpoint;
-        let headers = getRequestHeaders(authenticated: authenticated)
         Alamofire.request(path, method: .get, encoding: JSONEncoding.default)
             .responseJSON { response in
                 let status = response.response?.statusCode
@@ -42,6 +41,7 @@ class ServerRequest: NSObject {
         let path : String = url + endpoint
         Alamofire.request(path, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
+                
                 let status = response.response?.statusCode
                     if let data = response.data {
                         let json = JSON(data)

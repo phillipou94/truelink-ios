@@ -20,12 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        let userId = LocalStorageManager.shared.getUserId()
+        
+        let authenticated = userId != nil
         //TODO: CHANGE
         var didCompleteOnBoarding = true;
         
-        var initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
+        var initialViewController = authenticated ? TabBarController() :
+                                    LoginViewController(nibName: "LoginViewController", bundle: nil)
+        
+        initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
 
-        initialViewController = SignupViewController(nibName: "SignupViewController", bundle: nil)
+        
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;
         self.window?.rootViewController =  navigationController;

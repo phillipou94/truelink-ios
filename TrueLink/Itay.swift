@@ -11,10 +11,7 @@ import SwiftyJSON
 
 class Itay: NSObject {
     var id : String!
-    var incoming: Bool = false
-    var acked: Bool = false
     var sentTime:Date?
-    var ackedTime:Date?
     
     
     
@@ -23,27 +20,12 @@ class Itay: NSObject {
             self.id = id
         }
         
-        if let incoming = json["incoming"].bool {
-            self.incoming = incoming
-        }
-        
-        if let acked = json["acked"].bool {
-            self.acked = acked
-        }
-        
         if let sentTimeString = json["sent_time"].string {
             if let date : Date = sentTimeString.convertToDate() as Date {
                 self.sentTime = date
             }
             
         }
-        
-        if let ackedTime = json["acked_time"].string {
-            if let date : Date = ackedTime.convertToDate() as Date {
-                self.ackedTime = date
-            }
-        }
-        
         
         
     }
