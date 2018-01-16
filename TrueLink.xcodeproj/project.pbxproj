@@ -28,6 +28,8 @@
 		4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */; };
 		4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC942200CFFC40004675F /* UIView+Borders.swift */; };
 		4D1DC945200D02780004675F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC944200D02780004675F /* EmptyView.swift */; };
+		4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */; };
+		4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+TLFonts.swift"; sourceTree = "<group>"; };
 		4D1DC942200CFFC40004675F /* UIView+Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 		4D1DC944200D02780004675F /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
+		4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				4D1DC93B200CE30E0004675F /* DefaultNavBar.swift */,
 				4D1DC944200D02780004675F /* EmptyView.swift */,
 				4D1DC92D200CDA510004675F /* TabBarController.swift */,
+				4D8BDB4E200D9C5800BD1D28 /* ConnectionTableViewCell */,
 				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
 				4D1DC92A200CD8880004675F /* PageViewController */,
 				4D1DC8ED200CB0AE0004675F /* ViewController.swift */,
@@ -205,6 +210,15 @@
 				4D1DC93D200CE9790004675F /* Abel-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4D8BDB4E200D9C5800BD1D28 /* ConnectionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */,
+				4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */,
+			);
+			name = ConnectionTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +335,7 @@
 				4D1DC937200CDD790004675F /* ITAYViewController.xib in Resources */,
 				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
 				4D1DC933200CDD4E0004675F /* ConnectionsViewController.xib in Resources */,
+				4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +371,7 @@
 				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
+				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
 				4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

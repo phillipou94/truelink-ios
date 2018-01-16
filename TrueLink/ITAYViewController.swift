@@ -12,6 +12,7 @@ class ITAYViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.TLOffWhite()
 
         // Do any additional setup after loading the view.
     }
