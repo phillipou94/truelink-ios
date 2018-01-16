@@ -41,6 +41,11 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    private func itaySent() {
+        self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
+        self.slider.dragPointButtonLabel.text = "Sent!"
+    }
+    
     //MARK: - SlideButtonDelegate
     
     func buttonStatus(status: SlideButtonStatus, sender: MMSlidingButton) {
@@ -49,15 +54,15 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
             let mainQueue = DispatchQueue.main
             let deadline = DispatchTime.now() + .seconds(2)
             mainQueue.asyncAfter(deadline: deadline) {
-                self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
-                self.slider.dragPointButtonLabel.text = "Sent!"
+                self.itaySent()
             }
             
         }
     }
     
+    
     func hasMoved(percentage: Double, sender: MMSlidingButton) {
-
+        //TODO: CHANGE BACK HEARTS TO GREY WHEN SLIDER IS RELASED BACK
         self.heart1.isHighlighted = percentage > 0
         self.heart2.isHighlighted = percentage > 0.2
         self.heart3.isHighlighted = percentage > 0.4

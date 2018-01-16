@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4747CC98BCE84C8E5B05336E /* Pods_TrueLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */; };
 		4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */; };
-		4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8ED200CB0AE0004675F /* ViewController.swift */; };
 		4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EF200CB0AE0004675F /* Main.storyboard */; };
 		4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F2200CB0AE0004675F /* TrueLink.xcdatamodeld */; };
 		4D1DC8F6200CB0AE0004675F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F5200CB0AE0004675F /* Assets.xcassets */; };
@@ -31,6 +31,11 @@
 		4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */; };
 		4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */; };
 		4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */; };
+		4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */; };
+		4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC2200DDFD6003EEFEB /* User.swift */; };
+		4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC5200DE28D003EEFEB /* Connection.swift */; };
+		4DA9DEC8200DE76D003EEFEB /* Itay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC7200DE76D003EEFEB /* Itay.swift */; };
+		4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +58,6 @@
 /* Begin PBXFileReference section */
 		4D1DC8E8200CB0AE0004675F /* TrueLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D1DC8ED200CB0AE0004675F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D1DC8F0200CB0AE0004675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D1DC8F3200CB0AE0004675F /* TrueLink.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrueLink.xcdatamodel; sourceTree = "<group>"; };
 		4D1DC8F5200CB0AE0004675F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 		4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionTableViewCell.xib; sourceTree = "<group>"; };
 		4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSlidingButton.swift; sourceTree = "<group>"; };
+		4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		4DA9DEC2200DDFD6003EEFEB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4DA9DEC5200DE28D003EEFEB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		4DA9DEC7200DE76D003EEFEB /* Itay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itay.swift; sourceTree = "<group>"; };
+		4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		77A36E6F6AC745E977A58FD6 /* Pods-TrueLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink.release.xcconfig"; sourceTree = "<group>"; };
+		7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06E93E37A2DF2AF87455C16 /* Pods-TrueLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4747CC98BCE84C8E5B05336E /* Pods_TrueLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +128,8 @@
 				4D1DC902200CB0AE0004675F /* TrueLinkTests */,
 				4D1DC90D200CB0AE0004675F /* TrueLinkUITests */,
 				4D1DC8E9200CB0AE0004675F /* Products */,
+				53913BD2F4B4C24EEB504B47 /* Pods */,
+				7EBD759FD9302D6E6782D055 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,13 +146,10 @@
 		4D1DC8EA200CB0AE0004675F /* TrueLink */ = {
 			isa = PBXGroup;
 			children = (
-				4D8BDB51200DAA6F00BD1D28 /* Views */,
-				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
-				4D1DC92D200CDA510004675F /* TabBarController.swift */,
-				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
-				4D1DC92A200CD8880004675F /* PageViewController */,
-				4D1DC8ED200CB0AE0004675F /* ViewController.swift */,
+				4DA9DEC4200DE13C003EEFEB /* Models */,
+				4D8BDB51200DAA6F00BD1D28 /* Views */,
+				4DA9DEBA200DD291003EEFEB /* Controllers */,
 				4D1DC8EF200CB0AE0004675F /* Main.storyboard */,
 				4D1DC8F5200CB0AE0004675F /* Assets.xcassets */,
 				4D1DC8F7200CB0AE0004675F /* LaunchScreen.storyboard */,
@@ -173,6 +185,7 @@
 				4D1DC921200CB2890004675F /* UIColor+TLColors.swift */,
 				4D1DC942200CFFC40004675F /* UIView+Borders.swift */,
 				4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */,
+				4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +245,53 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		4DA9DEBA200DD291003EEFEB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
+				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
+				4D1DC938200CDD920004675F /* ITAYViewControler */,
+				4D1DC92A200CD8880004675F /* PageViewController */,
+				4D1DC92D200CDA510004675F /* TabBarController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4DA9DEBF200DDF80003EEFEB /* ServerRequests */ = {
+			isa = PBXGroup;
+			children = (
+				4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */,
+			);
+			name = ServerRequests;
+			sourceTree = "<group>";
+		};
+		4DA9DEC4200DE13C003EEFEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DA9DEC2200DDFD6003EEFEB /* User.swift */,
+				4DA9DEC5200DE28D003EEFEB /* Connection.swift */,
+				4DA9DEC7200DE76D003EEFEB /* Itay.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		53913BD2F4B4C24EEB504B47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A06E93E37A2DF2AF87455C16 /* Pods-TrueLink.debug.xcconfig */,
+				77A36E6F6AC745E977A58FD6 /* Pods-TrueLink.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EBD759FD9302D6E6782D055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,9 +299,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D1DC913200CB0AE0004675F /* Build configuration list for PBXNativeTarget "TrueLink" */;
 			buildPhases = (
+				DA0B4D7C5A8DEF4DFC5FB38D /* [CP] Check Pods Manifest.lock */,
 				4D1DC8E4200CB0AE0004675F /* Sources */,
 				4D1DC8E5200CB0AE0004675F /* Frameworks */,
 				4D1DC8E6200CB0AE0004675F /* Resources */,
+				00367261A4ED5A0BE9AA57CE /* [CP] Embed Pods Frameworks */,
+				E93F96C86777C3712041633C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,6 +429,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00367261A4ED5A0BE9AA57CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA0B4D7C5A8DEF4DFC5FB38D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrueLink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E93F96C86777C3712041633C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D1DC8E4200CB0AE0004675F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,17 +492,21 @@
 			files = (
 				4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */,
 				4D1DC936200CDD790004675F /* ITAYViewController.swift in Sources */,
+				4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */,
 				4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */,
 				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
-				4D1DC8EE200CB0AE0004675F /* ViewController.swift in Sources */,
 				4D1DC945200D02780004675F /* EmptyView.swift in Sources */,
 				4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */,
 				4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */,
 				4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */,
 				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
+				4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */,
+				4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */,
+				4DA9DEC8200DE76D003EEFEB /* Itay.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
+				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
 				4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +657,7 @@
 		};
 		4D1DC914200CB0AE0004675F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06E93E37A2DF2AF87455C16 /* Pods-TrueLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrueLink/Info.plist;
@@ -546,6 +670,7 @@
 		};
 		4D1DC915200CB0AE0004675F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A36E6F6AC745E977A58FD6 /* Pods-TrueLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrueLink/Info.plist;
