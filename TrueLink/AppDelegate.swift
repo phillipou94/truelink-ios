@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
 
-//        initialViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        initialViewController = SignupViewController(nibName: "SignupViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;
         self.window?.rootViewController =  navigationController;

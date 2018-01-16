@@ -33,6 +33,8 @@
 		4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */; };
 		4DA3205A200E04D400950DC1 /* UITextfield+Bottomborder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA32059200E04D400950DC1 /* UITextfield+Bottomborder.swift */; };
 		4DA3205C200E053800950DC1 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3205B200E053800950DC1 /* DesignableTextField.swift */; };
+		4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA32061200E102800950DC1 /* SignupViewController.swift */; };
+		4DA32064200E102800950DC1 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA32062200E102800950DC1 /* SignupViewController.xib */; };
 		4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */; };
 		4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC2200DDFD6003EEFEB /* User.swift */; };
 		4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC5200DE28D003EEFEB /* Connection.swift */; };
@@ -92,6 +94,8 @@
 		4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSlidingButton.swift; sourceTree = "<group>"; };
 		4DA32059200E04D400950DC1 /* UITextfield+Bottomborder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextfield+Bottomborder.swift"; sourceTree = "<group>"; };
 		4DA3205B200E053800950DC1 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		4DA32061200E102800950DC1 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		4DA32062200E102800950DC1 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		4DA9DEC2200DDFD6003EEFEB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DA9DEC5200DE28D003EEFEB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 		4DA9DEBA200DD291003EEFEB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DA32061200E102800950DC1 /* SignupViewController.swift */,
+				4DA32062200E102800950DC1 /* SignupViewController.xib */,
 				4DA9DECD200E02F1003EEFEB /* LoginViewController.swift */,
 				4DA9DECE200E02F1003EEFEB /* LoginViewController.xib */,
 				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
@@ -423,6 +429,7 @@
 				4D1DC93E200CE9790004675F /* Abel-Regular.ttf in Resources */,
 				4D1DC937200CDD790004675F /* ITAYViewController.xib in Resources */,
 				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
+				4DA32064200E102800950DC1 /* SignupViewController.xib in Resources */,
 				4D1DC933200CDD4E0004675F /* ConnectionsViewController.xib in Resources */,
 				4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */,
 				4DA9DED0200E02F1003EEFEB /* LoginViewController.xib in Resources */,
@@ -527,6 +534,7 @@
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
 				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
+				4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */,
 				4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
