@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="xkJ-aX-saY">
@@ -50,16 +50,9 @@
                         <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oQ-et-r3l">
-                        <rect key="frame" x="15" y="10" width="45" height="42.5"/>
+                        <rect key="frame" x="15" y="10" width="45" height="45"/>
                         <color key="backgroundColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-cw-8T4">
-                        <rect key="frame" x="347" y="18" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="15" id="Fbz-fE-Q9W"/>
-                            <constraint firstAttribute="height" constant="15" id="JS3-m3-ph8"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzF-rM-TQV">
                         <rect key="frame" x="240" y="15" width="101" height="18"/>
                         <constraints>
@@ -76,6 +69,25 @@
                         </attributedString>
                         <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-cw-8T4">
+                        <rect key="frame" x="347" y="18" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Fbz-fE-Q9W"/>
+                            <constraint firstAttribute="height" constant="15" id="JS3-m3-ph8"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSe-YK-bSR">
+                        <rect key="frame" x="17" y="12" width="40" height="40"/>
+                        <attributedString key="attributedText">
+                            <fragment content="M">
+                                <attributes>
+                                    <font key="NSFont" size="25" name="Abel-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6oQ-et-r3l" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="45:62" id="3ep-qF-wkH"/>
@@ -83,18 +95,23 @@
                     <constraint firstItem="Mam-cw-8T4" firstAttribute="leading" secondItem="KzF-rM-TQV" secondAttribute="trailing" constant="6" id="ATk-s4-ciD"/>
                     <constraint firstItem="6oQ-et-r3l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="F02-1J-76b"/>
                     <constraint firstItem="y03-7D-MWl" firstAttribute="top" secondItem="xkJ-aX-saY" secondAttribute="bottom" constant="-6" id="IWT-LK-U6d"/>
+                    <constraint firstItem="KSe-YK-bSR" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-335" id="KMW-tY-lWR"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Mam-cw-8T4" secondAttribute="trailing" constant="5" id="KRf-wL-hCO"/>
                     <constraint firstItem="xkJ-aX-saY" firstAttribute="top" secondItem="6oQ-et-r3l" secondAttribute="top" constant="-2" id="LKv-xN-syS"/>
                     <constraint firstItem="Mam-cw-8T4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="PqD-fq-ZzG"/>
                     <constraint firstItem="y03-7D-MWl" firstAttribute="leading" secondItem="6oQ-et-r3l" secondAttribute="trailing" constant="8" id="QZ8-wi-PeV"/>
                     <constraint firstItem="KzF-rM-TQV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="Vcy-kZ-jg3"/>
-                    <constraint firstItem="6oQ-et-r3l" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jvn-Qe-n05"/>
+                    <constraint firstItem="KSe-YK-bSR" firstAttribute="centerY" secondItem="6oQ-et-r3l" secondAttribute="centerY" id="XFZ-BO-3xd"/>
+                    <constraint firstItem="KSe-YK-bSR" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" constant="-22.5" id="aMK-fl-gzz"/>
+                    <constraint firstItem="6oQ-et-r3l" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="1.25" id="jvn-Qe-n05"/>
+                    <constraint firstItem="KSe-YK-bSR" firstAttribute="centerX" secondItem="6oQ-et-r3l" secondAttribute="centerX" id="mBK-Vw-chf"/>
                     <constraint firstItem="xkJ-aX-saY" firstAttribute="leading" secondItem="6oQ-et-r3l" secondAttribute="trailing" constant="8" id="mDC-Vy-L85"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="connectionTypeImageView" destination="Mam-cw-8T4" id="xJe-39-GHl"/>
                 <outlet property="connectionTypeLabel" destination="KzF-rM-TQV" id="avg-6x-cxq"/>
+                <outlet property="logoLabel" destination="KSe-YK-bSR" id="C7e-Lq-AYY"/>
                 <outlet property="nameLabel" destination="xkJ-aX-saY" id="iHT-kX-AR3"/>
                 <outlet property="profileView" destination="6oQ-et-r3l" id="FWb-6S-li3"/>
                 <outlet property="timestampLabel" destination="y03-7D-MWl" id="raE-QS-k5c"/>

@@ -15,8 +15,16 @@ class ConnectionTableViewCell: UITableViewCell {
     @IBOutlet weak var connectionTypeImageView: UIImageView!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var logoLabel: UILabel!
+    var logoColor = UIColor.TLSpecialBlue()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.logoLabel.textColor = UIColor.white
+        self.profileView.backgroundColor = self.logoColor
+        
+        self.profileView.makeCircular()
+
         // Initialization code
     }
 

@@ -13,25 +13,25 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     var tableView = UITableView()
     let cellIdentifier = "ConnectionTableViewCell"
     let cellHeight = CGFloat(65.0)
+    let sectionHeaderHeight = CGFloat(20.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.TLOffWhite()
 
-        let topMargin = CGFloat(DefaultNavBar.height())
+        let topMargin = CGFloat(DefaultNavBar.height()+UIApplication.shared.statusBarFrame.height)
         let tableViewFrame = CGRect(x: 0, y: topMargin, width: self.view.frame.size.width, height: self.view.frame.size.height-topMargin)
-        self.tableView = UITableView.init(frame: tableViewFrame)
+        self.tableView = UITableView.init(frame: tableViewFrame, style: .grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +48,29 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: TABLEVIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return 3
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return self.sectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tableViewHeader = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: self.sectionHeaderHeight))
+        let headerLabelFrame = CGRect(x: 10, y:0, width: tableView.frame.size.width, height:sectionHeaderHeight)
+
+        let headerLabel = UILabel.init(frame: headerLabelFrame)
+        headerLabel.text = "Today"
+        headerLabel.textColor = UIColor.TLBlack()
+        headerLabel.font = UIFont.TLFontOfSize(size: 17)
+        tableViewHeader.addSubview(headerLabel)
+        tableViewHeader.backgroundColor = UIColor.TLOffWhite()
+        return tableViewHeader
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

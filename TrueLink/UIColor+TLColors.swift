@@ -58,6 +58,14 @@ extension UIColor {
     static func TLOffWhiteWithAlpha(alpha:CGFloat) -> UIColor {
         return UIColor(red: 250/255.0, green: 248/255.0, blue: 248/255.0, alpha: alpha);
     }
+    
+    static func TLSpecialBlue() -> UIColor {
+         return UIColor(red: 55/255.0, green: 71/255.0, blue: 141/255.0, alpha: 1.0)
+    }
+    
+    static func TLSpecialGreen() -> UIColor {
+        return UIColor(red: 51/255.0, green: 174/255.0, blue: 139/255.0, alpha: 1.0)
+    }
 
     
 }
