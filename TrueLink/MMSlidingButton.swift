@@ -17,7 +17,12 @@ import Foundation
 import UIKit
 
 protocol SlideButtonDelegate{
-    func buttonStatus(status:String, sender:MMSlidingButton)
+    func buttonStatus(status:SlideButtonStatus, sender:MMSlidingButton)
+    func hasMoved(percentage:Double, sender:MMSlidingButton)
+}
+
+enum SlideButtonStatus {
+    case Start, Finished
 }
 
 @IBDesignable class MMSlidingButton: UIView{
@@ -169,7 +174,9 @@ protocol SlideButtonDelegate{
     func panDetected(sender: UIPanGestureRecognizer){
         var translatedPoint = sender.translation(in: self)
         translatedPoint     = CGPoint(x: translatedPoint.x, y: self.frame.size.height / 2)
-        sender.view?.frame.origin.x = (dragPointWidth - self.frame.size.width) + translatedPoint.x
+        let dragPoint = (dragPointWidth - self.frame.size.width) + translatedPoint.x
+        sender.view?.frame.origin.x = dragPoint
+        self.delegate?.hasMoved(percentage: Double((translatedPoint.x+50)/self.frame.size.width), sender: self)
         if sender.state == .ended{
             
             let velocityX = sender.velocity(in: self).x * 0.2
@@ -208,7 +215,7 @@ protocol SlideButtonDelegate{
 //                self.imageView.isHidden               = true
                 self.dragPoint.backgroundColor      = self.buttonUnlockedColor
                 self.dragPointButtonLabel.textColor = self.buttonUnlockedTextColor
-                self.delegate?.buttonStatus(status: "Unlocked", sender: self)
+                self.delegate?.buttonStatus(status: .Finished, sender: self)
             }
         }
     }
@@ -219,15 +226,12 @@ protocol SlideButtonDelegate{
             self.dragPoint.frame = CGRect(x: self.dragPointWidth - self.frame.size.width, y: 0, width: self.dragPoint.frame.size.width, height: self.dragPoint.frame.size.height)
         }) { (Status) in
             if Status{
-                self.dragPointButtonLabel.text      = self.buttonText
+//                self.dragPointButtonLabel.text      = self.buttonText
                 self.imageView.isHidden               = false
                 self.dragPoint.backgroundColor      = self.dragPointColor
                 self.dragPointButtonLabel.textColor = self.dragPointTextColor
                 self.unlocked                       = false
-                self.delegate?.buttonStatus(status: "Locked", sender: self)
-                let panGestureRecognizer                    = UIPanGestureRecognizer(target: self, action: #selector(self.panDetected(sender:)))
-                panGestureRecognizer.minimumNumberOfTouches = 1
-                self.dragPoint.addGestureRecognizer(panGestureRecognizer)
+                self.delegate?.buttonStatus(status: .Start, sender: self)
             }
         }
     }

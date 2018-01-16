@@ -8,11 +8,30 @@
 
 import UIKit
 
-class ITAYViewController: UIViewController {
+class ITAYViewController: UIViewController, SlideButtonDelegate {
 
+    @IBOutlet weak var connectionCard: UIView!
+    @IBOutlet weak var slider: MMSlidingButton!
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var nameLogoLabel: UILabel!
+    @IBOutlet weak var homeIconImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
+    @IBOutlet weak var heart3: UIImageView!
+    @IBOutlet weak var heart4: UIImageView!
+    @IBOutlet weak var heart5: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.connectionCard.layer.cornerRadius = 10
         self.view.backgroundColor = UIColor.TLOffWhite()
+        self.profileView.makeCircular()
+        self.profileView.backgroundColor = UIColor.TLSpecialGreen()
+        self.slider.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +40,31 @@ class ITAYViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: - SlideButtonDelegate
+    
+    func buttonStatus(status: SlideButtonStatus, sender: MMSlidingButton) {
+        if (status == .Finished) {
+            
+            let mainQueue = DispatchQueue.main
+            let deadline = DispatchTime.now() + .seconds(2)
+            mainQueue.asyncAfter(deadline: deadline) {
+                self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
+                self.slider.dragPointButtonLabel.text = "Sent!"
+            }
+            
+        }
+    }
+    
+    func hasMoved(percentage: Double, sender: MMSlidingButton) {
+
+        self.heart1.isHighlighted = percentage > 0
+        self.heart2.isHighlighted = percentage > 0.2
+        self.heart3.isHighlighted = percentage > 0.4
+        self.heart4.isHighlighted = percentage > 0.6
+        self.heart5.isHighlighted = percentage > 0.8
+    }
+    
     
 
     /*
