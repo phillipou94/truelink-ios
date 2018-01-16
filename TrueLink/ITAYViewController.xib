@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Abel-Regular.ttf">
+            <string>Abel-Regular</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ITAYViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ITAYViewController" customModule="TrueLink" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -14,7 +23,105 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoN-R7-Lmy">
+                    <rect key="frame" x="16" y="61" width="343" height="606"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-aN-siw">
+                            <rect key="frame" x="67" y="50" width="264" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="264" id="lyO-Nj-pEW"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="sent 2 hours ago">
+                                    <attributes>
+                                        <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="14" name="Abel-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-2V-PqF">
+                            <rect key="frame" x="0.0" y="78" width="343" height="259"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK6-vX-nwY">
+                            <rect key="frame" x="14" y="25" width="45" height="45"/>
+                            <color key="backgroundColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="hme-kF-Csk"/>
+                                <constraint firstAttribute="width" constant="45" id="qap-4B-gQY"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-nc-PWE">
+                            <rect key="frame" x="67" y="25" width="183" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="183" id="ARp-Oe-IIk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-C6-6l0" customClass="MMSlidingButton" customModule="TrueLink" customModuleProvider="target">
+                            <rect key="frame" x="28" y="470" width="286" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="nAK-oH-UfY"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="dragPointColor">
+                                    <color key="value" red="0.94901960780000005" green="0.41960784309999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Slide to Send"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonTextColor">
+                                    <color key="value" red="0.94901960780000005" green="0.41960784309999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="buttonUnlockedText" value="Love Sent!"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonUnlockedColor">
+                                    <color key="value" red="0.94901960780000005" green="0.41960784309999999" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonUnlockedTextColor">
+                                    <color key="value" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="image" keyPath="imageName" value="HeartIcon"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="dragPointWidth">
+                                    <real key="value" value="60"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6wV-aN-siw" firstAttribute="leading" secondItem="sK6-vX-nwY" secondAttribute="trailing" constant="8" id="0rA-ht-Gfg"/>
+                        <constraint firstItem="3IV-nc-PWE" firstAttribute="top" secondItem="KoN-R7-Lmy" secondAttribute="top" constant="25" id="AK3-CX-rdw"/>
+                        <constraint firstItem="sK6-vX-nwY" firstAttribute="leading" secondItem="KoN-R7-Lmy" secondAttribute="leading" constant="14" id="FN9-Hg-UPo"/>
+                        <constraint firstItem="8rj-2V-PqF" firstAttribute="leading" secondItem="KoN-R7-Lmy" secondAttribute="leading" id="H94-K3-x3f"/>
+                        <constraint firstItem="3IV-nc-PWE" firstAttribute="leading" secondItem="sK6-vX-nwY" secondAttribute="trailing" constant="8" id="Io9-em-un5"/>
+                        <constraint firstAttribute="trailing" secondItem="8rj-2V-PqF" secondAttribute="trailing" id="Rk3-Ad-4Ng"/>
+                        <constraint firstItem="sK6-vX-nwY" firstAttribute="top" secondItem="KoN-R7-Lmy" secondAttribute="top" constant="25" id="YDg-GL-VUQ"/>
+                        <constraint firstItem="6wV-aN-siw" firstAttribute="top" secondItem="3IV-nc-PWE" secondAttribute="bottom" constant="-6" id="dMD-rr-g5P"/>
+                        <constraint firstAttribute="bottom" secondItem="gWV-C6-6l0" secondAttribute="bottom" constant="76" id="dzT-AH-aLM"/>
+                        <constraint firstAttribute="trailing" secondItem="gWV-C6-6l0" secondAttribute="trailing" constant="29" id="eta-xY-Yp4"/>
+                        <constraint firstItem="gWV-C6-6l0" firstAttribute="centerX" secondItem="KoN-R7-Lmy" secondAttribute="centerX" id="ewJ-75-VVu"/>
+                        <constraint firstItem="8rj-2V-PqF" firstAttribute="top" secondItem="6wV-aN-siw" secondAttribute="bottom" constant="10" id="wes-0S-nJo"/>
+                        <constraint firstItem="gWV-C6-6l0" firstAttribute="top" secondItem="8rj-2V-PqF" secondAttribute="bottom" constant="133" id="zpZ-Xk-2eq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KoN-R7-Lmy" secondAttribute="bottom" id="4Vt-eb-Gs0"/>
+                <constraint firstItem="KoN-R7-Lmy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="5jF-XU-HZH"/>
+                <constraint firstItem="KoN-R7-Lmy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="BTM-8f-paX"/>
+                <constraint firstAttribute="trailing" secondItem="KoN-R7-Lmy" secondAttribute="trailing" constant="16" id="Ecj-ZH-kk7"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="HeartIcon" width="27" height="22"/>
+    </resources>
 </document>
