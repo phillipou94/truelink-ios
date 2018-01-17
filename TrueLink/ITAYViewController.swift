@@ -18,6 +18,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     
+    @IBOutlet weak var phoneIconImageView: UIImageView!
     @IBOutlet weak var heart1: UIImageView!
     @IBOutlet weak var heart2: UIImageView!
     @IBOutlet weak var heart3: UIImageView!
@@ -55,7 +56,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         super.viewWillAppear(animated)
         self.hasConnections = LocalStorageManager.shared.getConnections().count > 0
         
-        self.timestampLabel.text = "Local Time:"+self.getTimeString()+" PST"
+        self.timestampLabel.text = "Local Time: "+self.getTimeString()+" PST"
         
         
         
@@ -119,6 +120,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     }
     
     func reset() {
+        self.phoneIconImageView.isHighlighted = false
+        self.homeIconImageView.isHighlighted = false
         self.slider.reset()
         self.heart1.isHighlighted = false
         self.heart2.isHighlighted = false
@@ -134,7 +137,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     }
     
     private func itaySent(){
-        self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
+        self.homeIconImageView.isHighlighted = true
+        self.phoneIconImageView.isHighlighted = true
         self.slider.dragPointButtonLabel.text = "Sent!"
         self.isSending = false
         

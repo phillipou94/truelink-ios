@@ -39,7 +39,7 @@ class ItayRequest: NSObject {
                 })
                 
                 if let itays = itayArrays {
-                    success(itays)
+                    success(itays.reversed())
                 }
                 
             }, failure: { (error) in
