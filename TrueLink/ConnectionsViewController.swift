@@ -24,17 +24,17 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.view.backgroundColor = UIColor.TLOffWhite()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let topMargin = CGFloat(DefaultNavBar.height()+UIApplication.shared.statusBarFrame.height)
-        let tableViewFrame = CGRect(x: 0, y: topMargin, width: self.view.frame.size.width, height: self.view.frame.size.height-topMargin)
+        let tableViewFrame = CGRect(x: 0, y: topMargin, width: self.view.frame.size.width, height: self.view.frame.size.height)
         self.tableView = UITableView.init(frame: tableViewFrame, style: .grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         self.nicknameMap = LocalStorageManager.shared.nicknameMap()
         ItayRequest.shared.getItays(success: { (itays) in
             self.itays = itays
