@@ -15,10 +15,14 @@ class PairPersonalDeviceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initDefaultState()
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.initDefaultState()
     }
     
     private func initDefaultState() {
