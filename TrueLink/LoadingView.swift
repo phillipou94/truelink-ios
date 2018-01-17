@@ -24,7 +24,7 @@ class LoadingView: UIView {
         
         let indicatorWidth = 150.0
         let verticalPadding = 100.0
-        let x = (Double(self.frame.size.width) - indicatorWidth) / 2
+        let x = (Double(parentView.frame.size.width) - indicatorWidth) / 2
         let activityIndicatorFrame = CGRect(x: x, y: verticalPadding, width: indicatorWidth, height: indicatorWidth)
         self.activityIndicator = NVActivityIndicatorView(frame: activityIndicatorFrame, type: .circleStrokeSpin, color: UIColor.TLOrange(), padding: 20)
         if let activityIndicator = self.activityIndicator {

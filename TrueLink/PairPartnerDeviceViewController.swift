@@ -41,7 +41,6 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     
     func showLoadingState() {
         self.emptyView?.isHidden = true
-        
         self.loadingView = LoadingView.init(parentView: self.view, loadingMessage: "Setting Up Partner Device", finishedLoadingMessage:"Device Activated!")
         if let loadingView = self.loadingView {
             loadingView.startLoadingAnimation()
@@ -134,8 +133,6 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
         let PARTNER_ARDUINO_ID = "FAKE_ARDUINO"
         LocalStorageManager.shared.updatePartnerArduinoId(partnerArduinoId: PARTNER_ARDUINO_ID)
         self.present(TabBarController(), animated: true, completion: nil)
-        
-//        self.navigationController?.pushViewController(TabBarController(), animated: true)
     }
     
     
