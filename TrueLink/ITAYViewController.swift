@@ -29,7 +29,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     var isSending : Bool = false
     var hasPartnerDevice = true
     var pairDeviceButton : UIButton?
-    var arduino : Arduino?
+    var lamp : Lamp?
     
     
     override func viewDidLoad() {
@@ -53,15 +53,15 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.arduino = LocalStorageManager.shared.getPartnerArduino()
-        self.hasPartnerDevice = self.arduino != nil
+        self.lamp = LocalStorageManager.shared.getPartnerLamp()
+        self.hasPartnerDevice = self.lamp != nil
         if (!hasPartnerDevice) {
             self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
         }
         
-        if let arduino = self.arduino {
-            self.nameLabel.text = arduino.name
-            if let name = arduino.name {
+        if let lamp = self.lamp {
+            self.nameLabel.text = lamp.nickname
+            if let name = lamp.nickname {
                 let index = name.characters.index(name.startIndex, offsetBy: 0)
                 let startChar = name[index]
                 self.nameLogoLabel.text = String(startChar)

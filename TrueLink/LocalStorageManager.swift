@@ -11,7 +11,7 @@ import KeychainAccess
 
 class LocalStorageManager: NSObject {
     let userIdCache = NSCache<NSString, NSString>()
-    let arduinoCache = NSCache<NSString, Arduino>()
+    let lampCache = NSCache<NSString, Lamp>()
     let connectionsCache = NSCache<NSString, NSArray>()
     let itaysCache = NSCache<NSString, NSArray>()
     let keychain = Keychain(accessGroup: "TrueLinkLocalStorage")
@@ -35,33 +35,38 @@ class LocalStorageManager: NSObject {
         userIdCache.removeObject(forKey: "userId")
     }
     
-    func updatePartnerArduino(partnerArduino:Arduino) {
-        arduinoCache.setObject(partnerArduino, forKey: "partnerArduino")
-    }
-    
-    func deletePartnerArduino() {
-        arduinoCache.removeObject(forKey: "partnerArduinoId")
+    func updateLamp(partnerLamp:Lamp) {
+        lampCache.setObject(partnerLamp, forKey: "partnerLamp")
     }
     
     
-    func getPartnerArduino() -> Arduino? {
-        if let partnerArduino = arduinoCache.object(forKey: "partnerArduino") {
-            return partnerArduino
+    func updatePartnerLamp(partnerLamp:Lamp) {
+        lampCache.setObject(partnerLamp, forKey: "partnerLamp")
+    }
+    
+    func deletePartnerLamp() {
+        lampCache.removeObject(forKey: "partnerLampId")
+    }
+    
+    
+    func getPartnerLamp() -> Lamp? {
+        if let partnerLamp = lampCache.object(forKey: "partnerLamp") {
+            return partnerLamp
         }
         return nil
         
     }
     
-    func getConnections() -> [Arduino] {
+    func getConnections() -> [Lamp] {
         if (connectionsCache.object(forKey: "connections") != nil) {
             let array : NSArray = connectionsCache.object(forKey: "connections")!
-            let connections: [Arduino] = array.flatMap({ $0 as? Arduino })
+            let connections: [Lamp] = array.flatMap({ $0 as? Lamp })
             return connections
         }
         return []
     }
     
-    func updateConnections(connections:[Arduino]) {
+    func updateConnections(connections:[Lamp]) {
         connectionsCache.setObject(connections as NSArray, forKey: "connections")
     }
     

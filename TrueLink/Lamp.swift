@@ -20,7 +20,7 @@ class Lamp: NSObject, NSCoding{
     var imageUrl: String?
     
     init(lampId:String, arduinoAddress:String, partnerLampId:String,
-         userId:String, nickname:String, timezone: Int, imageUrl: String) {
+         userId:String? = nil, nickname:String? = nil, timezone: Int = 0, imageUrl: String? = nil) {
         self.lampId = lampId
         self.arduinoAddress = arduinoAddress
         self.partnerLampId = partnerLampId

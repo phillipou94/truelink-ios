@@ -11,13 +11,22 @@ import SwiftyJSON
 
 class Itay: NSObject {
     var id : String!
+    var senderId : String! //lamp_id of sender
+    var recipientId : String! //lamp_id of sender
     var sentTime:Date?
-    
-    
+    var fromMe : Bool = false
     
     init(json:JSON) {
         if let id = json["id"].string {
             self.id = id
+        }
+        
+        if let senderId = json["sender_id"].string {
+            self.senderId = senderId
+        }
+        
+        if let recipientId = json["recipient_id"].string {
+            self.recipientId = recipientId
         }
         
         if let sentTimeString = json["sent_time"].string {
@@ -26,6 +35,8 @@ class Itay: NSObject {
             }
             
         }
+        
+        
         
         
     }

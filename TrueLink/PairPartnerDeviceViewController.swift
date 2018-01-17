@@ -135,10 +135,12 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveButtonPressed(sender: UIButton!) {
-        let PARTNER_ARDUINO_ID = "FAKE_ARDUINO"
+        let PARTNER_LAMP_ID = "FAKE_ARDUINO"
+        let PARTNER_LAMP_ARDUINO_ADDRESS = "FAKE_ADDRES"
+        let FAKE_LAMP_ID = "FAKE_ID"
         if let name = self.deviceNameTextField?.text {
-            let partnerArduino = Arduino(id: PARTNER_ARDUINO_ID, name: name)
-            LocalStorageManager.shared.updatePartnerArduino(partnerArduino: partnerArduino)
+            let partnerLamp = Lamp(lampId: FAKE_LAMP_ID, arduinoAddress: PARTNER_LAMP_ID, partnerLampId: PARTNER_LAMP_ID)
+            LocalStorageManager.shared.updatePartnerLamp(partnerLamp: partnerLamp)
         }
 
         self.present(TabBarController(), animated: true, completion: nil)

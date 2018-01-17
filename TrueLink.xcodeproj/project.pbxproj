@@ -10,7 +10,6 @@
 		4747CC98BCE84C8E5B05336E /* Pods_TrueLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */; };
 		4D0C4BE9200F231B0033E6D0 /* PairPartnerDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */; };
 		4D0C4BEA200F231B0033E6D0 /* PairPartnerDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */; };
-		4D0C4BED200F40090033E6D0 /* Arduino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C4BEC200F40080033E6D0 /* Arduino.swift */; };
 		4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */; };
 		4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EF200CB0AE0004675F /* Main.storyboard */; };
 		4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F2200CB0AE0004675F /* TrueLink.xcdatamodeld */; };
@@ -48,12 +47,12 @@
 		4DA3206F200E2D5300950DC1 /* ItayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3206E200E2D5300950DC1 /* ItayRequest.swift */; };
 		4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */; };
 		4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC2200DDFD6003EEFEB /* User.swift */; };
-		4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC5200DE28D003EEFEB /* Connection.swift */; };
 		4DA9DEC8200DE76D003EEFEB /* Itay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC7200DE76D003EEFEB /* Itay.swift */; };
 		4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */; };
 		4DA9DECC200DF0D3003EEFEB /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DECB200DF0D3003EEFEB /* UserRequest.swift */; };
 		4DA9DECF200E02F1003EEFEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9DECD200E02F1003EEFEB /* LoginViewController.swift */; };
 		4DA9DED0200E02F1003EEFEB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA9DECE200E02F1003EEFEB /* LoginViewController.xib */; };
+		4DF6EB54200F4D61000B4745 /* Lamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF6EB53200F4D61000B4745 /* Lamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 /* Begin PBXFileReference section */
 		4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairPartnerDeviceViewController.swift; sourceTree = "<group>"; };
 		4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PairPartnerDeviceViewController.xib; sourceTree = "<group>"; };
-		4D0C4BEC200F40080033E6D0 /* Arduino.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arduino.swift; sourceTree = "<group>"; };
 		4D1DC8E8200CB0AE0004675F /* TrueLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1DC8F0200CB0AE0004675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,12 +118,12 @@
 		4DA3206E200E2D5300950DC1 /* ItayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItayRequest.swift; sourceTree = "<group>"; };
 		4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		4DA9DEC2200DDFD6003EEFEB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4DA9DEC5200DE28D003EEFEB /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		4DA9DEC7200DE76D003EEFEB /* Itay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Itay.swift; sourceTree = "<group>"; };
 		4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		4DA9DECB200DF0D3003EEFEB /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		4DA9DECD200E02F1003EEFEB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DA9DECE200E02F1003EEFEB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4DF6EB53200F4D61000B4745 /* Lamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lamp.swift; sourceTree = "<group>"; };
 		77A36E6F6AC745E977A58FD6 /* Pods-TrueLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueLink.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink.release.xcconfig"; sourceTree = "<group>"; };
 		7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06E93E37A2DF2AF87455C16 /* Pods-TrueLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueLink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink.debug.xcconfig"; sourceTree = "<group>"; };
@@ -362,9 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				4DA9DEC2200DDFD6003EEFEB /* User.swift */,
-				4D0C4BEC200F40080033E6D0 /* Arduino.swift */,
-				4DA9DEC5200DE28D003EEFEB /* Connection.swift */,
 				4DA9DEC7200DE76D003EEFEB /* Itay.swift */,
+				4DF6EB53200F4D61000B4745 /* Lamp.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -609,9 +606,9 @@
 				4DA9DECF200E02F1003EEFEB /* LoginViewController.swift in Sources */,
 				4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */,
 				4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */,
+				4DF6EB54200F4D61000B4745 /* Lamp.swift in Sources */,
 				4D1DC932200CDD4E0004675F /* ConnectionsViewController.swift in Sources */,
 				4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */,
-				4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */,
 				4DA3206D200E246700950DC1 /* LocalStorageManager.swift in Sources */,
 				4D276E88200EF72D00D6443F /* UIButton+Highlightedcolor.swift in Sources */,
 				4D276E85200EEB4400D6443F /* PairPersonalDeviceViewController.swift in Sources */,
@@ -620,7 +617,6 @@
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
-				4D0C4BED200F40090033E6D0 /* Arduino.swift in Sources */,
 				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
 				4D276E8D200F042900D6443F /* SimpleIOBluetooth.swift in Sources */,
 				4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */,
