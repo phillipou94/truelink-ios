@@ -27,7 +27,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     var emptyView = UIView()
     
     var isSending : Bool = false
-    var hasPartnerDevice = true
+    var hasConnections = false
     var pairDeviceButton : UIButton?
     var lamp : Lamp?
     
@@ -53,13 +53,14 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hasPartnerDevice = LocalStorageManager.shared.getLamp()?.partnerLampId != nil
+        self.hasConnections = LocalStorageManager.shared.getConnections().count > 0
+        
         let connections = LocalStorageManager.shared.getConnections()
         if (connections.count > 0) {
             self.lamp = connections[0]
         }
  
-        if (!hasPartnerDevice) {
+        if (!hasConnections) {
             self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
         }
         
@@ -126,8 +127,10 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.isSending = false
         
         if let userLampId = LocalStorageManager.shared.getLamp()?.lampId {
+            
             if let partnerLampId = self.lamp?.lampId {
                 ItayRequest.shared.sendItay(userLampId: userLampId, recipientLampId: partnerLampId, success: { (itayId) in
+                    
                     let vcs = self.tabBarController?.viewControllers
                     if let targetVC = vcs?[1] {
                         if let tabBarController = self.tabBarController {

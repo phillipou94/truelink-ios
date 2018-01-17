@@ -26,13 +26,15 @@ class ItayRequest: NSObject {
     }
     
     func getItays(success:@escaping (_ itays:[Itay]) -> Void, failure:(_ errorMessage:String) -> Void) {
+        let lamp : Lamp? = LocalStorageManager.shared.getLamp()
         if let userId = LocalStorageManager.shared.getUserId() {
             let path = "itay_user/"+userId
             ServerRequest.shared.getWithEndpoint(endpoint: path, parameters: [:], authenticated: true, success: { (response) in
                let array = response.array
                 let itayArrays = array?.map({ (json:JSON) -> Itay in
                     let itay = Itay(json:json)
-                    itay.fromMe = userId == itay.senderId
+                    itay.fromMe = lamp?.lampId == itay.senderId
+                    
                     return itay
                 })
                 

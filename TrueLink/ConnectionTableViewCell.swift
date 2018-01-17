@@ -17,9 +17,11 @@ class ConnectionTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var logoLabel: UILabel!
     var logoColor = UIColor.TLSpecialBlue()
+    var itay : Itay? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.logoLabel.textColor = UIColor.white
         self.profileView.backgroundColor = self.logoColor
         

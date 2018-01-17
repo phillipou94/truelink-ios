@@ -69,7 +69,7 @@
                         </attributedString>
                         <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullHeartOrange" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-cw-8T4">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeIconBlack" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-cw-8T4">
                         <rect key="frame" x="347" y="18" width="15" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="Fbz-fE-Q9W"/>
@@ -120,6 +120,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="FullHeartOrange" width="25" height="21"/>
+        <image name="HomeIconBlack" width="50" height="44"/>
     </resources>
 </document>

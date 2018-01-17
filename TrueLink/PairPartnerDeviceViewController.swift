@@ -159,7 +159,7 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
                 
                 if let partnerId = myLamp.partnerLampId {
                     LampRequest.shared.connectPartnerLamp(partnerLampId: partnerId, nickname: nickname, success: { (lamp) in
-                        
+                        LocalStorageManager.shared.addConnection(lamp: lamp)
                         //TODO:cache lamp
                         self.present(TabBarController(), animated: true, completion: nil)
                     }, failure: { (error) in

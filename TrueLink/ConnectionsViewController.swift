@@ -35,16 +35,11 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         ItayRequest.shared.getItays(success: { (itays) in
-            
+            self.itays = itays
+            self.tableView.reloadData()
         }) { (error) in
             
         }
-        
-        //let didConnectLamp = LocalStorageManager.shared.getLamp() != nil
-
-        
-        
-//        LampRequest.shared.get
     }
 
 
@@ -62,11 +57,11 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: TABLEVIEW
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.itays.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -89,6 +84,16 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! ConnectionTableViewCell
+        let itay = self.itays[indexPath.row]
+        if itay.fromMe {
+            cell.connectionTypeLabel.text = "Sent"
+            cell.connectionTypeLabel.textColor = UIColor.TLOrange()
+            cell.connectionTypeImageView.image = UIImage(named: "FullHeartOrange")
+        } else {
+            cell.connectionTypeLabel.text = "Sent You Love"
+            cell.connectionTypeLabel.textColor = UIColor.TLBlack()
+            cell.connectionTypeImageView.image = UIImage(named: "HomeIconBlack")
+        }
 
         return cell
     }

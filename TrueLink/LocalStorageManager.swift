@@ -29,8 +29,13 @@ class LocalStorageManager: NSObject {
     }
     
     
-    func deleteUserToken() {
-        UserDefaults.standard.removeObject(forKey: "userId")
+    func deleteSession() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+        defaults.synchronize()
     }
     
     func updateLamp(lamp:Lamp) {
@@ -81,6 +86,12 @@ class LocalStorageManager: NSObject {
             
         }
         return []
+    }
+    
+    func addConnection(lamp:Lamp) {
+        var lamps = self.getConnections()
+        lamps.append(lamp)
+        updateConnections(connections: lamps)
     }
     
     func updateConnections(connections:[Lamp]) {
