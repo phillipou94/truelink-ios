@@ -7,4 +7,5 @@ target ‘TrueLink’ do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'KeychainAccess'
     pod 'NVActivityIndicatorView'
+    pod 'M13Checkbox'
 end

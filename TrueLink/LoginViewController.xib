@@ -37,13 +37,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrueLinkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ZOM-CS-dcb">
-                    <rect key="frame" x="114.5" y="115" width="49" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="49" id="9MV-t3-WrY"/>
-                        <constraint firstAttribute="height" constant="30" id="Kwe-v9-JIr"/>
-                    </constraints>
-                </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3D7-BE-rGY">
                     <rect key="frame" x="67" y="198" width="241" height="49"/>
                     <constraints>
@@ -105,7 +98,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-gJ-wBI">
-                    <rect key="frame" x="210" y="436" width="49" height="46"/>
+                    <rect key="frame" x="210" y="437" width="49" height="46"/>
                     <color key="backgroundColor" red="0.76862745099999996" green="0.74901960779999999" blue="0.74901960779999999" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="aPZ-aY-Dar"/>
@@ -118,6 +111,13 @@
                         <action selector="signUpPressed:" destination="-1" eventType="touchUpInside" id="54z-cw-OLh"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrueLinkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ZOM-CS-dcb">
+                    <rect key="frame" x="133" y="113" width="35" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="9MV-t3-WrY"/>
+                        <constraint firstAttribute="height" constant="30" id="Kwe-v9-JIr"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -130,10 +130,10 @@
                 <constraint firstAttribute="trailing" secondItem="3D7-BE-rGY" secondAttribute="trailing" constant="67" id="9a8-Bu-r9J"/>
                 <constraint firstItem="2UY-R3-70g" firstAttribute="height" secondItem="3D7-BE-rGY" secondAttribute="height" id="FlQ-5T-Rnh"/>
                 <constraint firstItem="OJV-Gm-co5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="113" id="GD5-q3-tLy"/>
-                <constraint firstItem="ZOM-CS-dcb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="115" id="NuB-oM-gKb"/>
-                <constraint firstItem="5cf-gJ-wBI" firstAttribute="top" secondItem="JRm-3D-MXf" secondAttribute="bottom" constant="34" id="ViQ-re-N0a"/>
+                <constraint firstItem="ZOM-CS-dcb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="113" id="NuB-oM-gKb"/>
+                <constraint firstItem="5cf-gJ-wBI" firstAttribute="top" secondItem="JRm-3D-MXf" secondAttribute="bottom" constant="35" id="ViQ-re-N0a"/>
                 <constraint firstItem="3r8-YZ-E8c" firstAttribute="top" secondItem="JRm-3D-MXf" secondAttribute="bottom" constant="48" id="X1I-2b-dDk"/>
-                <constraint firstItem="OJV-Gm-co5" firstAttribute="leading" secondItem="ZOM-CS-dcb" secondAttribute="trailing" constant="10" id="XqI-CU-eR6"/>
+                <constraint firstItem="OJV-Gm-co5" firstAttribute="leading" secondItem="ZOM-CS-dcb" secondAttribute="trailing" constant="5.5" id="XqI-CU-eR6"/>
                 <constraint firstItem="OJV-Gm-co5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="50" id="f6h-f4-4nr"/>
                 <constraint firstItem="3D7-BE-rGY" firstAttribute="top" secondItem="OJV-Gm-co5" secondAttribute="bottom" constant="52" id="hIT-rC-Nlj"/>
                 <constraint firstItem="5cf-gJ-wBI" firstAttribute="leading" secondItem="3r8-YZ-E8c" secondAttribute="trailing" constant="-26" id="tVu-qo-WdC"/>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4747CC98BCE84C8E5B05336E /* Pods_TrueLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */; };
+		4D0C4BE9200F231B0033E6D0 /* PairPartnerDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */; };
+		4D0C4BEA200F231B0033E6D0 /* PairPartnerDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */; };
 		4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */; };
 		4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EF200CB0AE0004675F /* Main.storyboard */; };
 		4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F2200CB0AE0004675F /* TrueLink.xcdatamodeld */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairPartnerDeviceViewController.swift; sourceTree = "<group>"; };
+		4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PairPartnerDeviceViewController.xib; sourceTree = "<group>"; };
 		4D1DC8E8200CB0AE0004675F /* TrueLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1DC8F0200CB0AE0004675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0C4BEB200F25D90033E6D0 /* PairPartnerDeviceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */,
+				4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */,
+			);
+			name = PairPartnerDeviceViewController;
+			sourceTree = "<group>";
+		};
 		4D1DC8DF200CB0AE0004675F = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +340,7 @@
 				4D1DC92A200CD8880004675F /* PageViewController */,
 				4D276E8B200F035900D6443F /* PairPersonalDeviceViewController */,
 				4D1DC92D200CDA510004675F /* TabBarController.swift */,
+				4D0C4BEB200F25D90033E6D0 /* PairPartnerDeviceViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -482,6 +496,7 @@
 				4D1DC8F9200CB0AE0004675F /* LaunchScreen.storyboard in Resources */,
 				4D1DC8F6200CB0AE0004675F /* Assets.xcassets in Resources */,
 				4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */,
+				4D0C4BEA200F231B0033E6D0 /* PairPartnerDeviceViewController.xib in Resources */,
 				4D1DC93E200CE9790004675F /* Abel-Regular.ttf in Resources */,
 				4D1DC937200CDD790004675F /* ITAYViewController.xib in Resources */,
 				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
@@ -519,6 +534,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrueLink/Pods-TrueLink-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -526,6 +542,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -584,6 +601,7 @@
 				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
 				4DA3205A200E04D400950DC1 /* UITextfield+Bottomborder.swift in Sources */,
 				4D1DC945200D02780004675F /* EmptyView.swift in Sources */,
+				4D0C4BE9200F231B0033E6D0 /* PairPartnerDeviceViewController.swift in Sources */,
 				4D1DC92E200CDA510004675F /* TabBarController.swift in Sources */,
 				4DA9DECF200E02F1003EEFEB /* LoginViewController.swift in Sources */,
 				4D1DC93C200CE30E0004675F /* DefaultNavBar.swift in Sources */,

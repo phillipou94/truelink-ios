@@ -17,6 +17,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTextFields()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,10 +83,25 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     //IB actions
     
-    @IBAction func signInPressed(_ sender: Any) {
+    @IBAction func registerPressed(_ sender: Any) {
+        let pairVC = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
+        self.navigationController?.pushViewController(pairVC, animated: true)
+        
+
     }
     
-    @IBAction func registerPressed(_ sender: Any) {
+    @IBAction func signInPressed(_ sender: Any) {
+        let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        self.navigationController?.pushViewController(loginViewController, animated: true)
+        
+    }
+    
+    
+    func dismissKeyboard (_ sender: UITapGestureRecognizer)  {
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.nameTextField.resignFirstResponder()
+        self.view.endEditing(true)
     }
     
 

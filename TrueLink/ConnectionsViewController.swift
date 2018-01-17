@@ -14,6 +14,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     let cellIdentifier = "ConnectionTableViewCell"
     let cellHeight = CGFloat(65.0)
     let sectionHeaderHeight = CGFloat(20.0)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

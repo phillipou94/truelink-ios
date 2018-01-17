@@ -26,21 +26,29 @@ class EmptyView: UIView {
     var delegate : EmptyViewButtonDelegate? 
     
     enum EmptyViewType {
-        case NoITAYs, NoConnections
+        case NoITAYs, NoConnections, PartnerDevicePairing
     }
     
     var button : UIButton = UIButton()
 
     
     convenience init(view:UIView, viewType: EmptyViewType) {
-        
-        let image = viewType == .NoITAYs ? UIImage(named: "ConnectionsIconFull") : UIImage(named:"HomeDeviceIcon")
-        let title = viewType == .NoITAYs ? "Send Some Love" : "Activate Your Device"
-        let noItaysMessage = "You have not reached out to anyone yet. Let that special someone know that you're thinking about them"
-        let noConnectionsMessage = "Connect your device to your smart lamp so you can let that special someone know that you’re still thinking about them."
-        let body = viewType == .NoITAYs ? noItaysMessage : noConnectionsMessage
-        let buttonTitle = viewType == .NoITAYs ? "Send Love" : "Activate"
-        self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
+        if (viewType == EmptyViewType.PartnerDevicePairing) {
+            let image = UIImage(named: "AdditionalPersonIcon")
+            let title = "Activate Partner Device"
+            let body = "Connect your partner's device so they can receive all the love you want to send them."
+            let buttonTitle = "Activate"
+            self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
+            
+        } else {
+            let image = viewType == .NoITAYs ? UIImage(named: "ConnectionsIconFull") : UIImage(named:"HomeDeviceIcon")
+            let title = viewType == .NoITAYs ? "Send Some Love" : "Activate Your Device"
+            let noItaysMessage = "You have not reached out to anyone yet. Let that special someone know that you're thinking about them"
+            let noConnectionsMessage = "Connect your device to your smart lamp so you can let that special someone know that you’re still thinking about them."
+            let body = viewType == .NoITAYs ? noItaysMessage : noConnectionsMessage
+            let buttonTitle = viewType == .NoITAYs ? "Send Love" : "Activate"
+            self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
+        }
         
     }
     
@@ -64,6 +72,7 @@ class EmptyView: UIView {
         titleLabel.font = UIFont.TLFontOfSize(size: 25)
         titleLabel.textColor = UIColor.TLBlack()
         titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.backgroundColor = UIColor.init(white: 1.0, alpha: 0.0)
         
         let bodyTextviewFrame = CGRect(x:0, y: titleLabel.frame.maxY + 5.0, width:self.frame.width, height: 100)
         let bodyTextview = UITextView(frame:bodyTextviewFrame)

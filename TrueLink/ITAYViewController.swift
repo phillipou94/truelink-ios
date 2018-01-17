@@ -24,7 +24,12 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     @IBOutlet weak var heart4: UIImageView!
     @IBOutlet weak var heart5: UIImageView!
     
+    var emptyView = UIView()
+    
     var isSending : Bool = false
+    var hasPartnerDevice = true
+    var pairDeviceButton : UIButton?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.profileView.makeCircular()
         self.profileView.backgroundColor = UIColor.TLSpecialGreen()
         self.slider.delegate = self
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +48,45 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.reset()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hasPartnerDevice = false
+        if (!hasPartnerDevice) {
+            self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
+        }
+    }
+    
+    private func showEmptyState(viewType: EmptyView.EmptyViewType) {
+        if !(self.view.subviews.contains(self.emptyView)) {
+            self.connectionCard.isHidden = true
+            self.emptyView = EmptyView(view: self.view, viewType: viewType)
+            self.view.addSubview(self.emptyView)
+            let buttonPadding = CGFloat(70.0)
+            let buttonFrame = CGRect(x:buttonPadding, y: emptyView.frame.maxY, width:self.view.frame.width - 2*buttonPadding, height:40)
+            self.pairDeviceButton = UIButton(frame: buttonFrame)
+            if let button = self.pairDeviceButton {
+                button.titleLabel?.font =  UIFont.TLFontOfSize(size: 20)
+                button.setTitleColor(UIColor.white, for: UIControlState.normal)
+                button.backgroundColor = UIColor.TLOrange()
+                
+                button.layer.shadowRadius = 3.0;
+                button.layer.shadowColor = UIColor.black.cgColor;
+                button.layer.shadowOffset =  CGSize(width: 0.0, height: 1.0)
+                button.layer.shadowOpacity = 0.5;
+                button.layer.masksToBounds = false;
+                button.isUserInteractionEnabled = true
+                button.setTitle("Activate", for: UIControlState.normal)
+                
+                button.setBackgroundColor(UIColor.TLOrangeDarkened(), for: UIControlState.highlighted)
+                
+                self.view.addSubview(button)
+                
+                button.addTarget(self, action: #selector(pairDeviceButtonPressed), for: UIControlEvents.touchDown)
+            }
+
+        }
     }
     
     func reset() {
@@ -121,6 +167,11 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         }
 
         
+    }
+    
+    func pairDeviceButtonPressed(sender: UIButton!) {
+        let pairPartnerVC = PairPartnerDeviceViewController(nibName: "PairPartnerDeviceViewController", bundle: nil)
+        self.navigationController?.pushViewController(pairPartnerVC, animated: false)
     }
 
     

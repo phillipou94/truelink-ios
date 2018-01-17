@@ -16,6 +16,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTextFields()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
     }
@@ -33,9 +35,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: text field actions
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField{
@@ -77,6 +76,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func dismissKeyboard (_ sender: UITapGestureRecognizer)  {
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
     //IB actions
     
     @IBAction func signInPressed(_ sender: Any) {
@@ -92,6 +97,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signUpPressed(_ sender: Any) {
+        let signupViewController = SignupViewController(nibName: "SignupViewController", bundle: nil)
+        self.navigationController?.pushViewController(signupViewController, animated: true)
+        
+//        self.navigationController?.present(signupViewController, animated: true, completion: { 
+//            
+//        })
     }
     
 

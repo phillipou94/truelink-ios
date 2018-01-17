@@ -10,6 +10,7 @@ import UIKit
 
 class PairPersonalDeviceViewController: UIViewController {
     var emptyView : EmptyView?
+    var loadingView : LoadingView?
     var button : UIButton?
 
     override func viewDidLoad() {
@@ -64,12 +65,23 @@ class PairPersonalDeviceViewController: UIViewController {
         self.emptyView?.isHidden = true
         self.button?.isHidden = true
         
-        let loadingView = LoadingView.init(parentView: self.view, message: "Finding plugged in devices")
-        loadingView.startLoadingAnimation()
-        
-        self.view.addSubview(loadingView)
+        self.loadingView = LoadingView.init(parentView: self.view, loadingMessage: "Finding plugged in devices", finishedLoadingMessage:"Device Activated!")
+        if let loadingView = self.loadingView {
+            loadingView.startLoadingAnimation()
+            
+            self.view.addSubview(loadingView)
+        }
+
         
     }
+    
+    func showFinishedLoadingState() {
+        if let loadingView = self.loadingView {
+            loadingView.startLoadingAnimation()
+            loadingView.finishedLoading()
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -80,6 +92,15 @@ class PairPersonalDeviceViewController: UIViewController {
     
     func activateButtonPressed(sender: UIButton!) {
         self.showLoadingState()
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.showFinishedLoadingState()
+            let delay = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: delay) {
+                self.navigationController?.present(TabBarController(), animated: false, completion: nil)
+            }
+            
+        }
     }
     
     
