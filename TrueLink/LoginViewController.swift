@@ -88,11 +88,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
                 
-                self.navigationController?.pushViewController(TabBarController(), animated: true)
-//                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-//                }) { (failure) in
-//                    
-//                }
+                
+                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
+                    
+                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+                }) { (failure) in
+                    
+                }
             }
         }
     }
@@ -100,10 +102,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpPressed(_ sender: Any) {
         let signupViewController = SignupViewController(nibName: "SignupViewController", bundle: nil)
         self.navigationController?.pushViewController(signupViewController, animated: true)
-        
-//        self.navigationController?.present(signupViewController, animated: true, completion: { 
-//            
-//        })
     }
     
 

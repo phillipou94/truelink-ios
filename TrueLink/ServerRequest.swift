@@ -57,7 +57,7 @@ class ServerRequest: NSObject {
     }
     
     
-    private func putWithEndpoint(endpoint:String, parameters:[String : AnyObject]?, authenticated:Bool, success:@escaping (_ json:JSON) -> Void, failure:@escaping (_ error:JSON) -> Void) {
+    func putWithEndpoint(endpoint:String, parameters:[String : AnyObject]?, authenticated:Bool, success:@escaping (_ json:JSON) -> Void, failure:@escaping (_ error:JSON) -> Void) {
         let url = baseURL
         let path : String = url + endpoint
         let headers = getRequestHeaders(authenticated:authenticated)
@@ -65,6 +65,8 @@ class ServerRequest: NSObject {
         Alamofire.request(path, method: .put, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 let status = response.response?.statusCode
+                
+                
                 if let data = response.data {
                     let json = JSON(data)
                     if(status == 200) {
@@ -77,7 +79,7 @@ class ServerRequest: NSObject {
         }
     }
     
-    private func deleteWithEndoint(endpoint:String, parameters:[String : AnyObject]?, authenticated:Bool, success:@escaping (_ json:JSON) -> Void, failure:@escaping (_ error:JSON) -> Void) {
+    func deleteWithEndoint(endpoint:String, parameters:[String : AnyObject]?, authenticated:Bool, success:@escaping (_ json:JSON) -> Void, failure:@escaping (_ error:JSON) -> Void) {
         let url = baseURL
         let path : String = url + endpoint
         let headers = getRequestHeaders(authenticated:authenticated)

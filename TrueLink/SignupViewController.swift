@@ -84,8 +84,25 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     //IB actions
     
     @IBAction func registerPressed(_ sender: Any) {
-        let pairVC = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
-        self.navigationController?.pushViewController(pairVC, animated: true)
+        
+        if let name = self.nameTextField.text {
+            if let email = self.emailTextField.text {
+                if let password = self.passwordTextField.text {
+                    
+                    UserRequest.shared.createUser(name: name, email: email, password: password , success: { (user) in
+                        
+                        let pairVC = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
+                        self.navigationController?.pushViewController(pairVC, animated: true)
+                       
+                    }, failure: {(errorObject) in
+                        
+                    })
+                }
+                
+            }
+            
+        }
+
         
 
     }

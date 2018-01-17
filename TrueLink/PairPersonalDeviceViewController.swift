@@ -96,15 +96,16 @@ class PairPersonalDeviceViewController: UIViewController {
     
     func activateButtonPressed(sender: UIButton!) {
         self.showLoadingState()
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.showFinishedLoadingState()
-            let delay = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: delay) {
-                self.navigationController?.present(TabBarController(), animated: false, completion: nil)
-            }
+        let fakeLampId = "fake_lamp_id"
+        
+        UserRequest.shared.connectLamp(lampId: fakeLampId, success: { (user) in
+
+            self.navigationController?.present(TabBarController(), animated: false, completion: nil)
+            
+        }) { (error) in
             
         }
+        
     }
     
     
