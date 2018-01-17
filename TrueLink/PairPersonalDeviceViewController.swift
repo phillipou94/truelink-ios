@@ -105,8 +105,13 @@ class PairPersonalDeviceViewController: UIViewController {
             UserRequest.shared.connectLamp(lampId: fakeLampId, success: { (response) in
                 
                 LocalStorageManager.shared.updateLamp(lamp: lamp)
+                self.showFinishedLoadingState()
                 
-                self.navigationController?.present(TabBarController(), animated: false, completion: nil)
+                let delay = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: delay) {
+                    self.navigationController?.present(TabBarController(), animated: false, completion: nil)
+                }
+                
                 
             }) { (error) in
                 
