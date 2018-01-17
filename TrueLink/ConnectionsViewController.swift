@@ -47,6 +47,11 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.emptyView.removeFromSuperview()
+    }
 
 
     override func didReceiveMemoryWarning() {
