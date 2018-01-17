@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -29,6 +29,7 @@ class TabBarController: UITabBarController {
         connectionsViewController.tabBarItem.title = "Connections"
         
         self.viewControllers = [itayViewController, connectionsViewController]
+        self.delegate = self
         
     }
     
@@ -43,6 +44,24 @@ class TabBarController: UITabBarController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        if selectedViewController == nil || viewController == selectedViewController {
+            return false
+        }
+        
+        let fromView = selectedViewController!.view
+        let toView = viewController.view
+        
+        UIView.transition(from: fromView!, to: toView!, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+        if let selectedIndex = self.viewControllers?.index(of: viewController) {
+            self.selectedIndex = selectedIndex
+        }
+        
+        return true
     }
     
 

@@ -6,4 +6,5 @@ target ‘TrueLink’ do
     pod 'Alamofire', '~> 4.5'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'KeychainAccess'
+    pod 'NVActivityIndicatorView'
 end

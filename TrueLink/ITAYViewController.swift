@@ -24,6 +24,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     @IBOutlet weak var heart4: UIImageView!
     @IBOutlet weak var heart5: UIImageView!
     
+    var isSending : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,15 +37,43 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.reset()
+    }
+    
+    func reset() {
+        self.slider.reset()
+        self.heart1.isHighlighted = false
+        self.heart2.isHighlighted = false
+        self.heart3.isHighlighted = false
+        self.heart4.isHighlighted = false
+        self.heart5.isHighlighted = false
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    private func itaySent() {
+    private func itaySent(){
         self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
         self.slider.dragPointButtonLabel.text = "Sent!"
+        self.isSending = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let vcs = self.tabBarController?.viewControllers
+            if let targetVC = vcs?[1] {
+                if let tabBarController = self.tabBarController {
+                    tabBarController.delegate?.tabBarController!(tabBarController, shouldSelect: targetVC)
+                }
+                
+            }
+        }
+        
+
+        
     }
     
     //MARK: - SlideButtonDelegate
@@ -51,7 +81,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     func buttonStatus(status: SlideButtonStatus, sender: MMSlidingButton) {
         let connectionId = "testConnectionId"
         let mainQueue = DispatchQueue.main
-
+        self.isSending = true
+        self.animateLoadingLabel()
         if (status == .Finished) {
             ItayRequest.shared.sendItay(connectionId: connectionId, success: { (result) in
                 mainQueue.async {
@@ -73,6 +104,25 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.heart4.isHighlighted = percentage > 0.6
         self.heart5.isHighlighted = percentage > 0.8
     }
+    
+    func animateLoadingLabel() {
+        if self.isSending {
+            if self.slider.dragPointButtonLabel.text == "Sending..." {
+                self.slider.dragPointButtonLabel.text = "Sending"
+            } else if (self.slider.dragPointButtonLabel.text == "Sending") {
+                self.slider.dragPointButtonLabel.text = "Sending."
+            } else if (self.slider.dragPointButtonLabel.text == "Sending.") {
+                self.slider.dragPointButtonLabel.text = "Sending.."
+            } else if (self.slider.dragPointButtonLabel.text == "Sending..") {
+                self.slider.dragPointButtonLabel.text = "Sending..."
+            }
+            
+            perform(#selector(animateLoadingLabel), with: nil, afterDelay: 0.5)
+        }
+
+        
+    }
+
     
     
 
