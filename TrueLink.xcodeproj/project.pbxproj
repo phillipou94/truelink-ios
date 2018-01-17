@@ -32,6 +32,8 @@
 		4D276E86200EEB4400D6443F /* PairPersonalDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */; };
 		4D276E88200EF72D00D6443F /* UIButton+Highlightedcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E87200EF72D00D6443F /* UIButton+Highlightedcolor.swift */; };
 		4D276E8A200EFF0900D6443F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E89200EFF0900D6443F /* LoadingView.swift */; };
+		4D276E8D200F042900D6443F /* SimpleIOBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E8C200F042900D6443F /* SimpleIOBluetooth.swift */; };
+		4D276E8F200F045100D6443F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E8E200F045100D6443F /* Data.swift */; };
 		4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */; };
 		4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */; };
 		4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */; };
@@ -99,6 +101,8 @@
 		4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PairPersonalDeviceViewController.xib; sourceTree = "<group>"; };
 		4D276E87200EF72D00D6443F /* UIButton+Highlightedcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Highlightedcolor.swift"; sourceTree = "<group>"; };
 		4D276E89200EFF0900D6443F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4D276E8C200F042900D6443F /* SimpleIOBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleIOBluetooth.swift; sourceTree = "<group>"; };
+		4D276E8E200F045100D6443F /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionTableViewCell.xib; sourceTree = "<group>"; };
 		4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSlidingButton.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
+				4D276E92200F046700D6443F /* Bluetooth */,
 				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
 				4DA9DEC4200DE13C003EEFEB /* Models */,
 				4D8BDB51200DAA6F00BD1D28 /* Views */,
@@ -254,6 +259,24 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		4D276E8B200F035900D6443F /* PairPersonalDeviceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D276E83200EEB4400D6443F /* PairPersonalDeviceViewController.swift */,
+				4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */,
+			);
+			name = PairPersonalDeviceViewController;
+			sourceTree = "<group>";
+		};
+		4D276E92200F046700D6443F /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				4D276E8C200F042900D6443F /* SimpleIOBluetooth.swift */,
+				4D276E8E200F045100D6443F /* Data.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		4D8BDB4E200D9C5800BD1D28 /* ConnectionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,8 +325,7 @@
 				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
 				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC92A200CD8880004675F /* PageViewController */,
-				4D276E83200EEB4400D6443F /* PairPersonalDeviceViewController.swift */,
-				4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */,
+				4D276E8B200F035900D6443F /* PairPersonalDeviceViewController */,
 				4D1DC92D200CDA510004675F /* TabBarController.swift */,
 			);
 			name = Controllers;
@@ -553,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */,
+				4D276E8F200F045100D6443F /* Data.swift in Sources */,
 				4D1DC936200CDD790004675F /* ITAYViewController.swift in Sources */,
 				4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */,
 				4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */,
@@ -577,6 +600,7 @@
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
 				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
+				4D276E8D200F042900D6443F /* SimpleIOBluetooth.swift in Sources */,
 				4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */,
 				4DA3206F200E2D5300950DC1 /* ItayRequest.swift in Sources */,
 				4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */,
