@@ -53,8 +53,12 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.lamp = LocalStorageManager.shared.getPartnerLamp()
-        self.hasPartnerDevice = self.lamp != nil
+        self.hasPartnerDevice = LocalStorageManager.shared.getLamp()?.partnerLampId != nil
+        let connections = LocalStorageManager.shared.getConnections()
+        if (connections.count > 0) {
+            self.lamp = connections[0]
+        }
+ 
         if (!hasPartnerDevice) {
             self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
         }

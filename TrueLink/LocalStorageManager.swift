@@ -13,15 +13,18 @@ class LocalStorageManager: NSObject {
     static let shared = LocalStorageManager()
     
     func updateUserId(userId:String) {
+        
         UserDefaults.standard.set(userId as NSString, forKey: "userId")
+        UserDefaults.standard.synchronize()
+        
 
     }
     
     func getUserId() -> String? {
-        if UserDefaults.standard.object(forKey: "userId") == nil {
+        if UserDefaults.standard.string(forKey: "userId") == nil {
             return nil
         }
-        return UserDefaults.standard.object(forKey: "userId") as? String
+        return UserDefaults.standard.string(forKey: "userId") as! String
         
     }
     
@@ -53,6 +56,7 @@ class LocalStorageManager: NSObject {
     
     func updatePartnerLamp(partnerLamp:Lamp) {
         UserDefaults.standard.set(partnerLamp as NSObject, forKey: "partnerLamp")
+        UserDefaults.standard.synchronize()
     }
     
     func deletePartnerLamp() {
@@ -69,15 +73,20 @@ class LocalStorageManager: NSObject {
     }
     
     func getConnections() -> [Lamp] {
-        if (UserDefaults.standard.object(forKey: "connections") != nil) {
-            let connections : [Lamp] = UserDefaults.standard.object(forKey: "connections") as! [Lamp]
-            return connections
+        if let lampData = UserDefaults.standard.object(forKey: "connections") as? Data {
+            if let connections = NSKeyedUnarchiver.unarchiveObject(with: lampData as Data) as? [Lamp] {
+                return connections
+            }
+
+            
         }
         return []
     }
     
     func updateConnections(connections:[Lamp]) {
-        UserDefaults.standard.set(connections as NSArray, forKey: "connections")
+        let connectionsData = NSKeyedArchiver.archivedData(withRootObject: connections)
+        UserDefaults.standard.set(connectionsData, forKey: "connections")
+        UserDefaults.standard.synchronize()
     }
     
     func getItays() -> [Itay] {

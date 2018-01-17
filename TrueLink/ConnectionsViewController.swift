@@ -35,6 +35,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         let didConnectLamp = LocalStorageManager.shared.getLamp() != nil
+
         
         
 //        LampRequest.shared.get

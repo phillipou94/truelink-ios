@@ -26,6 +26,7 @@ class UserRequest: NSObject {
                                 return Lamp.init(json: json)
                             })
                 
+                
                 LocalStorageManager.shared.updateConnections(connections: lamps)
                 
                 success(lamps)

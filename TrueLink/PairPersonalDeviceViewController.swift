@@ -96,9 +96,9 @@ class PairPersonalDeviceViewController: UIViewController {
     //create your own lamp and connect it
     func activateButtonPressed(sender: UIButton!) {
         self.showLoadingState()
-        let fakeLampId = "fdsaffdssddsdfew"
-        let fakeArduinoAddress = "FA"
-        let fakePartnerLampId = "fake_partner_lamp"
+        let fakeLampId = "fdsaffdssddfdsdssdfew_"+LocalStorageManager.shared.getUserId()!
+        let fakeArduinoAddress = "FA_"+LocalStorageManager.shared.getUserId()!
+        let fakePartnerLampId = "fake_partner_lamp_"+LocalStorageManager.shared.getUserId()!
         
         LampRequest.shared.createLamp(lampId: fakeLampId, arduinoAddress: fakeArduinoAddress, partnerId: fakePartnerLampId, success: { (lamp) in
             
