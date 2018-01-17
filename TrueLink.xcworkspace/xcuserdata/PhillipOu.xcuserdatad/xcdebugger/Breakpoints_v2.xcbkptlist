@@ -57,44 +57,92 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrueLink/UserRequest.swift"
-            timestampString = "537875687.448665"
+            filePath = "TrueLink/LampRequest.swift"
+            timestampString = "537879425.338313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "connectLamp(lampId:success:failure:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "connectPartnerLamp(partnerLampId:nickname:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/PairPartnerDeviceViewController.swift"
+            timestampString = "537881475.833101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "saveButtonPressed(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/LampRequest.swift"
+            timestampString = "537880757.313375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "createLamp(lampId:arduinoAddress:partnerId:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/PairPartnerDeviceViewController.swift"
+            timestampString = "537881475.833101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TrueLink.UserRequest.(connectLamp (lampId : Swift.String, success : (TrueLink.User) -&gt; (), failure : (Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "TrueLink.PairPartnerDeviceViewController.viewWillAppear (Swift.Bool) -&gt; ()"
                   moduleName = "TrueLink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/UserRequest.swift"
-                  timestampString = "537876456.8044291"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/PairPartnerDeviceViewController.swift"
+                  timestampString = "537884655.259984"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "92">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "719">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TrueLink.UserRequest.(connectLamp (lampId : Swift.String, success : (TrueLink.User) -&gt; (), failure : (Swift.String) -&gt; ()) -&gt; ()).(closure #2)"
+                  symbolName = "TrueLink.PairPartnerDeviceViewController.(viewWillAppear (Swift.Bool) -&gt; ()).(closure #1)"
                   moduleName = "TrueLink"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/UserRequest.swift"
-                  timestampString = "537876456.806684"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/PairPartnerDeviceViewController.swift"
+                  timestampString = "537884655.261601"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "92">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -105,13 +153,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrueLink/PairPersonalDeviceViewController.swift"
-            timestampString = "537875852.518846"
+            filePath = "TrueLink/PairPartnerDeviceViewController.swift"
+            timestampString = "537881475.833101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "activateButtonPressed(sender:)"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "saveButtonPressed(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrueLink.PairPartnerDeviceViewController.saveButtonPressed (sender : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;) -&gt; ()"
+                  moduleName = "TrueLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/PairPartnerDeviceViewController.swift"
+                  timestampString = "537884655.2667511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrueLink.PairPartnerDeviceViewController.saveButtonPressed (sender : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;) -&gt; ()"
+                  moduleName = "TrueLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/PairPartnerDeviceViewController.swift"
+                  timestampString = "537884655.270135"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "800">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/LocalStorageManager.swift"
+            timestampString = "537884143.569723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getLamp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +217,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrueLink/LoginViewController.swift"
-            timestampString = "537875995.379382"
+            filePath = "TrueLink/LocalStorageManager.swift"
+            timestampString = "537884126.310445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "signInPressed(_:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "updateLamp(lamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/UserRequest.swift"
+            timestampString = "537884602.412353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "connectLamp(lampId:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrueLink/PairPersonalDeviceViewController.swift"
+            timestampString = "537884614.0625319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "activateButtonPressed(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

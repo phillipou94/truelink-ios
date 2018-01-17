@@ -25,14 +25,33 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let myLamp = LocalStorageManager.shared.getLamp() {
+            
+            if let lampId = myLamp.lampId {
+                
+                if let partnerId = myLamp.partnerLampId {
+                    let arduinoAddress = "FAKE_ADDRESS!!"
+                    
+                    //creating other person's lamp (lampId = partner's lamp id, partnerId = your lamp id)
+                    LampRequest.shared.createLamp(lampId: partnerId, arduinoAddress: arduinoAddress, partnerId: lampId, success: { (success) in
+                        self.showFinishedLoadingState()
+                        self.saveDeviceFlow()
+                    }, failure: { (error) in
+                                
+                    })
+                }
+            }
+        }
+        
+
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.showLoadingState()
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.showFinishedLoadingState()
-            self.saveDeviceFlow()
-        }
     }
     
     private func showEmptyState(viewType: EmptyView.EmptyViewType) {
@@ -135,16 +154,25 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveButtonPressed(sender: UIButton!) {
-        let PARTNER_LAMP_ID = "FAKE_ARDUINO"
-        let PARTNER_LAMP_ARDUINO_ADDRESS = "FAKE_ADDRES"
-        let FAKE_LAMP_ID = "FAKE_ID"
-        if let name = self.deviceNameTextField?.text {
-            let partnerLamp = Lamp(lampId: FAKE_LAMP_ID, arduinoAddress: PARTNER_LAMP_ID, partnerLampId: PARTNER_LAMP_ID)
-            LocalStorageManager.shared.updatePartnerLamp(partnerLamp: partnerLamp)
+        if let nickname = self.deviceNameTextField?.text {
+            if let myLamp = LocalStorageManager.shared.getLamp() {
+                
+                if let partnerId = myLamp.partnerLampId {
+                    LampRequest.shared.connectPartnerLamp(partnerLampId: partnerId, nickname: nickname, success: { (lamp) in
+                        
+                        //TODO:cache lamp
+                        self.present(TabBarController(), animated: true, completion: nil)
+                    }, failure: { (error) in
+                        
+                    })
+                }
+            }
         }
+        
 
-        self.present(TabBarController(), animated: true, completion: nil)
     }
+
+
     
     
     override func didReceiveMemoryWarning() {

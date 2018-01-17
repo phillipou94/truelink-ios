@@ -15,6 +15,8 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     let cellHeight = CGFloat(65.0)
     let sectionHeaderHeight = CGFloat(20.0)
     
+    var lamps : [Lamp] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,13 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let didConnectLamp = LocalStorageManager.shared.getLamp() != nil
+        
+        
+//        LampRequest.shared.get
     }
 
 

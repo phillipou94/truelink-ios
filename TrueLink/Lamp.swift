@@ -20,7 +20,7 @@ class Lamp: NSObject, NSCoding{
     var imageUrl: String?
     
     init(lampId:String, arduinoAddress:String, partnerLampId:String,
-         userId:String? = nil, nickname:String? = nil, timezone: Int = 0, imageUrl: String? = nil) {
+         userId:String? = nil, nickname:String? = nil, timezone: Int? = 0, imageUrl: String? = nil) {
         self.lampId = lampId
         self.arduinoAddress = arduinoAddress
         self.partnerLampId = partnerLampId
@@ -65,36 +65,25 @@ class Lamp: NSObject, NSCoding{
     
     // MARK: NSCoding
     
-    required convenience init?(coder decoder: NSCoder) {
-        guard let lampId = decoder.decodeObject(forKey: "lamp_id") as? String,
-            let arduinoAddress = decoder.decodeObject(forKey: "arduino_address") as? String,
-            let partnerLampId = decoder.decodeObject(forKey: "partner_lamp_id") as? String,
-            let userId = decoder.decodeObject(forKey: "user_id") as? String,
-            let nickname = decoder.decodeObject(forKey: "nickname") as? String,
-            let timezone = decoder.decodeObject(forKey: "timezone") as? Int,
-            let imageUrl = decoder.decodeObject(forKey: "image_url") as? String
-            else { return nil }
-        
-        
-        self.init(
-            lampId: lampId,
-            arduinoAddress: arduinoAddress,
-            partnerLampId: partnerLampId,
-            userId: userId,
-            nickname: nickname,
-            timezone: timezone,
-            imageUrl: imageUrl
-        )
+    required convenience init(coder decoder: NSCoder) {
+        let lampId = decoder.decodeObject(forKey: "lamp_id") as! String
+        let arduinoAddress = decoder.decodeObject(forKey: "arduino_address") as! String
+        let partnerLampId = decoder.decodeObject(forKey: "partner_lamp_id") as! String
+        let userId = decoder.decodeObject(forKey: "user_id") as? String
+        let nickname = decoder.decodeObject(forKey: "nickname") as? String
+        let timezone = decoder.decodeObject(forKey: "timezone") as? Int
+        let imageUrl = decoder.decodeObject(forKey: "image_url") as? String
+        self.init(lampId: lampId, arduinoAddress: arduinoAddress, partnerLampId: partnerLampId, userId: userId, nickname: nickname, timezone: timezone, imageUrl: imageUrl)
     }
     
-    func encode(with coder: NSCoder) {
-        coder.encode(self.lampId, forKey: "lamp_id")
-        coder.encode(self.arduinoAddress, forKey: "arduino_address")
-        coder.encode(self.partnerLampId, forKey: "partner_lamp_id")
-        coder.encode(self.userId, forKey: "user_id")
-        coder.encode(self.nickname, forKey: "nickname")
-        coder.encode(self.imageUrl, forKey: "image_url")
-        coder.encode(self.timezone, forKey: "timezone")
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.lampId, forKey: "lamp_id")
+        aCoder.encode(self.arduinoAddress, forKey: "arduino_address")
+        aCoder.encode(self.partnerLampId, forKey: "partner_lamp_id")
+        aCoder.encode(self.userId, forKey: "user_id")
+        aCoder.encode(self.nickname, forKey: "nickname")
+        aCoder.encode(self.imageUrl, forKey: "image_url")
+        aCoder.encode(self.timezone, forKey: "timezone")
     }
     
     

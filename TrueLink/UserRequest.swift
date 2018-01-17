@@ -59,12 +59,18 @@ class UserRequest: NSObject {
         }
     }
     
-    func connectLamp(lampId : String, success:@escaping (_ user:User) -> Void, failure:(_ errorMessage:String) -> Void) {
+    func connectLamp(lampId : String, success:@escaping (_ lamp:Lamp) -> Void, failure:(_ errorMessage:String) -> Void) {
         if let userId = LocalStorageManager.shared.getUserId() {
             let endpoint = "user/" + userId
             let parameters = ["lamp_id":lampId]
             ServerRequest.shared.putWithEndpoint(endpoint: endpoint, parameters: parameters as [String : AnyObject], authenticated: true, success: { (responseObject) in
                 
+                
+                let lamp = Lamp(json: responseObject["lamp"])
+                
+                // cache lamp
+                LocalStorageManager.shared.updateLamp(lamp: lamp)
+                success(lamp)
             }, failure: { (errorobject) in
                 
             })

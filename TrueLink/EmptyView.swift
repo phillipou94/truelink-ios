@@ -77,7 +77,7 @@ class EmptyView: UIView {
         let bodyTextviewFrame = CGRect(x:0, y: titleLabel.frame.maxY + 5.0, width:self.frame.width, height: 100)
         let bodyTextview = UITextView(frame:bodyTextviewFrame)
         bodyTextview.text = body
-        bodyTextview.font = UIFont.TLFontOfSize(size: 20)
+        bodyTextview.font = UIFont.TLFontOfSize(size: 18)
         bodyTextview.textColor = UIColor.TLDarkGrey()
         bodyTextview.textAlignment = NSTextAlignment.center
         bodyTextview.isEditable = false
