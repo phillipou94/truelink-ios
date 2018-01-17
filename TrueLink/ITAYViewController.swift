@@ -52,7 +52,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hasPartnerDevice = false
+        self.hasPartnerDevice = LocalStorageManager.shared.getPartnerArduinoId() != nil
         if (!hasPartnerDevice) {
             self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
         }
@@ -171,7 +171,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     func pairDeviceButtonPressed(sender: UIButton!) {
         let pairPartnerVC = PairPartnerDeviceViewController(nibName: "PairPartnerDeviceViewController", bundle: nil)
-        self.navigationController?.pushViewController(pairPartnerVC, animated: false)
+        self.present(pairPartnerVC, animated: false, completion: nil)
     }
 
     

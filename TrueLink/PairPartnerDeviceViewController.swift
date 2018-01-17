@@ -13,6 +13,9 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     var emptyView : EmptyView?
     var loadingView : LoadingView?
     var deviceNameTextField : UITextField?
+    var saveButton : UIButton?
+    
+    let keyboardDisplacement = CGFloat(100)
     
     
     override func viewDidLoad() {
@@ -56,14 +59,16 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveDeviceFlow() {
-        let buttonPadding = CGFloat(70.0)
+        let buttonPadding = CGFloat(30.0)
         if let loadingView = self.loadingView {
             let textFieldFrame = CGRect(x:buttonPadding, y: self.loadingView!.frame.maxY, width:self.view.frame.width - 2*buttonPadding, height:40)
             self.deviceNameTextField = UITextField(frame: textFieldFrame)
+            self.deviceNameTextField?.placeholder = "Set Device Name"
+            self.deviceNameTextField?.font = UIFont.TLFontOfSize(size: 20)
             self.deviceNameTextField?.setBottomBorder(color: UIColor.TLLightGrey())
             self.deviceNameTextField?.delegate = self
             
-            let buttonFrame = CGRect(x:buttonPadding, y: textFieldFrame.maxY + 40, width:self.view.frame.width - 2*buttonPadding, height:40)
+            let buttonFrame = CGRect(x:buttonPadding, y: textFieldFrame.maxY + 20, width:self.view.frame.width - 2*buttonPadding, height:40)
             let button = UIButton(frame: buttonFrame)
             
             button.titleLabel?.font =  UIFont.TLFontOfSize(size: 20)
@@ -79,12 +84,15 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
             button.setTitle("Save Device Name", for: UIControlState.normal)
             
             button.setBackgroundColor(UIColor.TLOrangeDarkened(), for: UIControlState.highlighted)
+            self.saveButton = button
             
             if let textField = self.deviceNameTextField {
                 self.view.addSubview(textField)
             }
             
-            self.view.addSubview(button)
+            if let saveButton = self.saveButton {
+                self.view.addSubview(saveButton)
+            }
             
             button.addTarget(self, action: #selector(saveButtonPressed), for: UIControlEvents.touchDown)
         }
@@ -93,6 +101,27 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.setBottomBorder(color: UIColor.TLOrange())
+        if let lv = self.loadingView {
+            UIView.animate(withDuration: 0.2) {
+                let newLVFrame = CGRect(x: 0, y: lv.frame.origin.y - self.keyboardDisplacement, width: lv.frame.size.width, height: lv.frame.size.height)
+                let newTextFieldFrame = CGRect(x: textField.frame.origin.x,
+                                                y: textField.frame.origin.y - self.keyboardDisplacement,
+                                                width: textField.frame.size.width, height: textField.frame.size.height)
+                lv.frame = newLVFrame
+                
+                textField.frame = newTextFieldFrame
+                if let saveButton = self.saveButton {
+                    let newButtonFrame = CGRect(x:saveButton.frame.origin.x,
+                                                y: saveButton.frame.origin.y - self.keyboardDisplacement,
+                                                width:saveButton.frame.size.width,
+                                                height: saveButton.frame.size.height)
+                    saveButton.frame = newButtonFrame
+                }
+
+            }
+        }
+
+        
         return true
     }
     
@@ -102,7 +131,11 @@ class PairPartnerDeviceViewController: UIViewController, UITextFieldDelegate {
     }
     
     func saveButtonPressed(sender: UIButton!) {
+        let PARTNER_ARDUINO_ID = "FAKE_ARDUINO"
+        LocalStorageManager.shared.updatePartnerArduinoId(partnerArduinoId: PARTNER_ARDUINO_ID)
+        self.present(TabBarController(), animated: true, completion: nil)
         
+//        self.navigationController?.pushViewController(TabBarController(), animated: true)
     }
     
     

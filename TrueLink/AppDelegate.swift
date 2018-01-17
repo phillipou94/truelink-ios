@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ///TODO- DELETE THIS LATER!!!!
+        LocalStorageManager.shared.deletePartnerArduino()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -32,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
         
 //        initialViewController = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
-//        initialViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        initialViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;

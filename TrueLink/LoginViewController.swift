@@ -88,10 +88,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
                 
-                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-                }) { (failure) in
-                    
-                }
+                self.navigationController?.pushViewController(TabBarController(), animated: true)
+//                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
+//                }) { (failure) in
+//                    
+//                }
             }
         }
     }

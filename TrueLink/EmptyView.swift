@@ -72,7 +72,7 @@ class EmptyView: UIView {
         titleLabel.font = UIFont.TLFontOfSize(size: 25)
         titleLabel.textColor = UIColor.TLBlack()
         titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.backgroundColor = UIColor.init(white: 1.0, alpha: 0.0)
+        titleLabel.backgroundColor = UIColor.clear
         
         let bodyTextviewFrame = CGRect(x:0, y: titleLabel.frame.maxY + 5.0, width:self.frame.width, height: 100)
         let bodyTextview = UITextView(frame:bodyTextviewFrame)
@@ -81,6 +81,7 @@ class EmptyView: UIView {
         bodyTextview.textColor = UIColor.TLDarkGrey()
         bodyTextview.textAlignment = NSTextAlignment.center
         bodyTextview.isEditable = false
+        bodyTextview.backgroundColor = UIColor.clear
         
         //TODO: Change Button Color when highlighted
 //        let buttonPadding = CGFloat(70.0)

@@ -32,6 +32,7 @@ class LocalStorageManager: NSObject {
         
     }
     
+    
     func deleteUserToken() {
         do {
             try keychain.remove("userId")
@@ -39,5 +40,53 @@ class LocalStorageManager: NSObject {
             print("error: \(error)")
         }
     }
+    
+    func updateArduinoId(partnerArduinoId:String) {
+        do {
+            try keychain.set(partnerArduinoId, key: "arduinoId")
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func getArduinoId() -> String? {
+        do {
+            let arduinoId = try keychain.get("arduinoId")
+            return arduinoId
+            
+        } catch let error {
+            return nil
+        }
+        
+    }
+
+    func updatePartnerArduinoId(partnerArduinoId:String) {
+        do {
+            try keychain.set(partnerArduinoId, key: "partnerArduinoId")
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func deletePartnerArduino() {
+        do {
+            try keychain.remove("partnerArduinoId")
+        } catch let error {
+            print("error: \(error)")
+        }
+    }
+    
+    
+    func getPartnerArduinoId() -> String? {
+        do {
+            let partnerArduinoId = try keychain.get("partnerArduinoId")
+            return partnerArduinoId
+            
+        } catch let error {
+            return nil
+        }
+        
+    }
+
     
 }
