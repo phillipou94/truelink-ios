@@ -94,6 +94,7 @@ enum SlideButtonStatus {
     var imageView            = UIImageView()
     var unlocked             = false
     var layoutSet            = false
+    var pangestureReconizer : UIPanGestureRecognizer? = nil
     
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -166,35 +167,38 @@ enum SlideButtonStatus {
         self.layer.masksToBounds = true
         
         // start detecting pan gesture
-        let panGestureRecognizer                    = UIPanGestureRecognizer(target: self, action: #selector(self.panDetected(sender:)))
-        panGestureRecognizer.minimumNumberOfTouches = 1
-        self.dragPoint.addGestureRecognizer(panGestureRecognizer)
+        self.pangestureReconizer = UIPanGestureRecognizer(target: self, action: #selector(panDetected))
+        self.pangestureReconizer?.minimumNumberOfTouches = 1
+        self.dragPoint.addGestureRecognizer(self.pangestureReconizer!)
     }
     
-    func panDetected(sender: UIPanGestureRecognizer){
-        var translatedPoint = sender.translation(in: self)
-        translatedPoint     = CGPoint(x: translatedPoint.x, y: self.frame.size.height / 2)
-        let dragPoint = (dragPointWidth - self.frame.size.width) + translatedPoint.x
-        sender.view?.frame.origin.x = dragPoint
-        self.delegate?.hasMoved(percentage: Double((translatedPoint.x+50)/self.frame.size.width), sender: self)
-        if sender.state == .ended{
-            
-            let velocityX = sender.velocity(in: self).x * 0.2
-            var finalX    = translatedPoint.x + velocityX
-            if finalX < 0{
-                finalX = 0
-            }else if finalX + self.dragPointWidth  >  (self.frame.size.width - 60){
-                unlocked = true
-                self.unlock(sender:sender)
-            }
-            
-            let animationDuration:Double = abs(Double(velocityX) * 0.0002) + 0.2
-            UIView.transition(with: self, duration: animationDuration, options: UIViewAnimationOptions.curveEaseOut, animations: {
-            }, completion: { (Status) in
-                if Status{
-                    self.animationFinished()
+    func panDetected(){
+        if let sender = self.pangestureReconizer {
+            var translatedPoint = sender.translation(in: self)
+            translatedPoint     = CGPoint(x: translatedPoint.x, y: self.frame.size.height / 2)
+            let dragPoint = (dragPointWidth - self.frame.size.width) + translatedPoint.x
+            sender.view?.frame.origin.x = dragPoint
+            self.delegate?.hasMoved(percentage: Double((translatedPoint.x+50)/self.frame.size.width), sender: self)
+            if sender.state == .ended{
+                
+                let velocityX = sender.velocity(in: self).x * 0.2
+                var finalX    = translatedPoint.x + velocityX
+                if finalX < 0{
+                    finalX = 0
+                }else if finalX + self.dragPointWidth  >  (self.frame.size.width - 60){
+                    unlocked = true
+                    self.unlock()
                 }
-            })
+                
+                let animationDuration:Double = abs(Double(velocityX) * 0.0002) + 0.2
+                UIView.transition(with: self, duration: animationDuration, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                }, completion: { (Status) in
+                    if Status{
+                        self.animationFinished()
+                    }
+                })
+            }
+
         }
     }
     
@@ -205,23 +209,30 @@ enum SlideButtonStatus {
     }
     
     //lock button animation (SUCCESS)
-    func unlock(sender: UIPanGestureRecognizer){
-        UIView.transition(with: self, duration: 0.2, options: .curveEaseOut, animations: {
-            self.dragPoint.frame = CGRect(x: self.frame.size.width - self.dragPoint.frame.size.width, y: 0, width: self.dragPoint.frame.size.width, height: self.dragPoint.frame.size.height)
-        }) { (Status) in
-            if Status{
-                self.dragPointButtonLabel.text      = self.buttonUnlockedText
-                self.dragPoint.removeGestureRecognizer(sender)
-//                self.imageView.isHidden               = true
-                self.dragPoint.backgroundColor      = self.buttonUnlockedColor
-                self.dragPointButtonLabel.textColor = self.buttonUnlockedTextColor
-                self.delegate?.buttonStatus(status: .Finished, sender: self)
+    func unlock(){
+        if let sender = self.pangestureReconizer {
+            UIView.transition(with: self, duration: 0.2, options: .curveEaseOut, animations: {
+                self.dragPoint.frame = CGRect(x: self.frame.size.width - self.dragPoint.frame.size.width, y: 0, width: self.dragPoint.frame.size.width, height: self.dragPoint.frame.size.height)
+            }) { (Status) in
+                if Status{
+                    self.dragPointButtonLabel.text      = self.buttonUnlockedText
+                    self.dragPoint.removeGestureRecognizer(sender)
+                    //                self.imageView.isHidden               = true
+                    self.dragPoint.backgroundColor      = self.buttonUnlockedColor
+                    self.dragPointButtonLabel.textColor = self.buttonUnlockedTextColor
+                    self.delegate?.buttonStatus(status: .Finished, sender: self)
+                }
             }
         }
+
     }
     
     //reset button animation (RESET)
     func reset(){
+        if let sender = self.pangestureReconizer {
+            self.dragPoint.addGestureRecognizer(sender)
+        }
+
         UIView.transition(with: self, duration: 0.2, options: .curveEaseOut, animations: {
             self.dragPoint.frame = CGRect(x: self.dragPointWidth - self.frame.size.width, y: 0, width: self.dragPoint.frame.size.width, height: self.dragPoint.frame.size.height)
         }) { (Status) in
@@ -232,6 +243,8 @@ enum SlideButtonStatus {
                 self.dragPointButtonLabel.textColor = self.dragPointTextColor
                 self.unlocked                       = false
                 self.delegate?.buttonStatus(status: .Start, sender: self)
+                
+                
             }
         }
     }
