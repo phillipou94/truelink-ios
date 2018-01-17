@@ -38,6 +38,10 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.nicknameMap = LocalStorageManager.shared.nicknameMap()
         ItayRequest.shared.getItays(success: { (itays) in
             self.itays = itays
+            if (self.itays.count < 1) {
+                self.showEmptyState(viewType: EmptyView.EmptyViewType.NoITAYs)
+            }
+            self.tableView.isHidden = self.itays.count < 1
             self.tableView.reloadData()
         }) { (error) in
             
