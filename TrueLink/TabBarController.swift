@@ -8,13 +8,14 @@
 
 import UIKit
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, SettingsButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad();
         self.initTabBarAttributes()
         
         let navBar = DefaultNavBar.init(width: self.view.frame.size.width)
+        navBar.settingsButtonDelegate = self
         self.view.addSubview(navBar)
         
         
@@ -62,6 +63,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         
         return true
+    }
+    
+    func settingsButtonPressed() {
+        let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+
+        self.present(vc, animated: false) { 
+           LocalStorageManager.shared.deleteSession()
+        }
     }
     
 

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingsButtonDelegate {
+    func settingsButtonPressed()
+}
+
 class DefaultNavBar: UIView {
 
     /*
@@ -18,8 +22,10 @@ class DefaultNavBar: UIView {
     }
     */
     
+    var settingsButtonDelegate : SettingsButtonDelegate?
+    
     static func height() -> CGFloat {
-        return 40.0;
+        return 45.0;
     }
     
     init(width: CGFloat) {
@@ -60,6 +66,7 @@ class DefaultNavBar: UIView {
     
     func didPressSettingsButton(sender:UIButton) {
         //TODO: Navigate to Settings Page
+        self.settingsButtonDelegate?.settingsButtonPressed()
     }
     
     required init?(coder aDecoder: NSCoder) {

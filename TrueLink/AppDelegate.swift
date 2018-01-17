@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-//        LocalStorageManager.shared.deleteSession()
+//       
         let userId = LocalStorageManager.shared.getUserId()
         
         let authenticated = userId != nil

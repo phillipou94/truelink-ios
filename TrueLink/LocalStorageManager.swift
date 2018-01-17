@@ -111,6 +111,17 @@ class LocalStorageManager: NSObject {
     func updateItays(connections:[Itay]) {
         UserDefaults.standard.set(connections as NSArray, forKey: "itays")
     }
+    
+    
+    func nicknameMap() -> [String:String] {
+        let connections = self.getConnections()
+        var nicknameMap : [String:String] = [:]
+        for connection in connections {
+            nicknameMap[connection.lampId] = connection.nickname
+        }
+        
+        return nicknameMap
+    }
 
 
     

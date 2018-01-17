@@ -16,6 +16,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     let sectionHeaderHeight = CGFloat(20.0)
     
     var itays : [Itay] = []
+    var nicknameMap : [String:String] = [:]
     
 
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.nicknameMap = LocalStorageManager.shared.nicknameMap()
         ItayRequest.shared.getItays(success: { (itays) in
             self.itays = itays
             self.tableView.reloadData()
@@ -85,14 +87,24 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! ConnectionTableViewCell
         let itay = self.itays[indexPath.row]
+        cell.itay = itay
+        
         if itay.fromMe {
             cell.connectionTypeLabel.text = "Sent"
             cell.connectionTypeLabel.textColor = UIColor.TLOrange()
             cell.connectionTypeImageView.image = UIImage(named: "FullHeartOrange")
+            let name = self.nicknameMap[itay.recipientId]
+            cell.nameLabel.text = name
         } else {
             cell.connectionTypeLabel.text = "Sent You Love"
             cell.connectionTypeLabel.textColor = UIColor.TLBlack()
             cell.connectionTypeImageView.image = UIImage(named: "HomeIconBlack")
+            let name = self.nicknameMap[itay.senderId]
+            cell.nameLabel.text = name
+        }
+        
+        if let name = cell.nameLabel.text {
+            cell.logoLabel.text = name[0]
         }
 
         return cell
