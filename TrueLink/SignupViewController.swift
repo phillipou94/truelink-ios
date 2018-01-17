@@ -14,6 +14,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    
+    var signingUp = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTextFields()
@@ -88,8 +90,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         if let name = self.nameTextField.text {
             if let email = self.emailTextField.text {
                 if let password = self.passwordTextField.text {
-                    
+                    self.signingUp = true
+                    self.animateSigningUp()
                     UserRequest.shared.createUser(name: name, email: email, password: password , success: { (user) in
+                        self.signingUp = false
                         
                         let pairVC = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
                         self.navigationController?.pushViewController(pairVC, animated: true)
@@ -103,9 +107,29 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             
         }
 
-        
-
     }
+    
+    func animateSigningUp() {
+        
+        if self.signingUp {
+            if self.registerButton.titleLabel?.text == "Register" {
+                self.registerButton.setTitle("Registering", for: .normal)
+            }else if self.registerButton.titleLabel?.text == "Registering..." {
+                self.registerButton.setTitle("Registering", for: .normal)
+            } else if (self.registerButton.titleLabel?.text == "Registering") {
+                self.registerButton.setTitle("Registering.", for: .normal)
+            } else if (self.registerButton.titleLabel?.text == "Registering.") {
+                self.registerButton.setTitle("Registering..", for: .normal)
+            } else if (self.registerButton.titleLabel?.text == "Signing In..") {
+                self.registerButton.setTitle("Registering...", for: .normal)
+            }
+            
+            perform(#selector(animateSigningUp), with: nil, afterDelay: 0.5)
+        }
+        
+        
+    }
+
     
     @IBAction func signInPressed(_ sender: Any) {
         let loginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)

@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    var isLoggingIn = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTextFields()
@@ -85,12 +86,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //IB actions
     
     @IBAction func signInPressed(_ sender: Any) {
+        self.isLoggingIn = true
+        self.animateSigningIn()
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
-                
-                
                 UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-                    
+                    self.isLoggingIn = false
                     self.navigationController?.pushViewController(TabBarController(), animated: true)
                 }) { (failure) in
                     
@@ -98,6 +99,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func animateSigningIn() {
+        
+        if self.isLoggingIn {
+            if self.signInButton.titleLabel?.text == "Sign In" {
+                self.signInButton.setTitle("Signing In", for: .normal)
+            }else if self.signInButton.titleLabel?.text == "Signing In..." {
+                self.signInButton.setTitle("Signing In", for: .normal)
+            } else if (self.signInButton.titleLabel?.text == "Signing In") {
+            self.signInButton.setTitle("Signing In.", for: .normal)
+            } else if (self.signInButton.titleLabel?.text == "Signing In.") {
+                self.signInButton.setTitle("Signing In..", for: .normal)
+            } else if (self.signInButton.titleLabel?.text == "Signing In..") {
+                self.signInButton.setTitle("Signing In...", for: .normal)
+            }
+            
+            perform(#selector(animateSigningIn), with: nil, afterDelay: 0.5)
+        }
+        
+        
+    }
+
 
     @IBAction func signUpPressed(_ sender: Any) {
         let signupViewController = SignupViewController(nibName: "SignupViewController", bundle: nil)

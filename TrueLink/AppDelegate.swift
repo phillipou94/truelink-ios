@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authenticated = userId != nil
         //TODO: CHANGE
         
-        var initialViewController = authenticated ? TabBarController() :
+        let initialViewController = authenticated ? TabBarController() :
                                     LoginViewController(nibName: "LoginViewController", bundle: nil)
         
         
@@ -49,6 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        let userId = LocalStorageManager.shared.getUserId()
+        
+        let authenticated = userId != nil
+        //TODO: CHANGE
+        
+        let initialViewController = authenticated ? TabBarController() :
+            LoginViewController(nibName: "LoginViewController", bundle: nil)
+        
+        
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        navigationController.isNavigationBarHidden = true;
+        self.window?.rootViewController =  navigationController;
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
