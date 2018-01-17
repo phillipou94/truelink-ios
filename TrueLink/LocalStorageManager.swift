@@ -10,81 +10,56 @@ import Foundation
 import KeychainAccess
 
 class LocalStorageManager: NSObject {
+    let userIdCache = NSCache<NSString, NSString>()
+    let arduinoCache = NSCache<NSString, AnyObject>()
     let keychain = Keychain(accessGroup: "TrueLinkLocalStorage")
     static let shared = LocalStorageManager()
     
     func updateUserId(userId:String) {
-        do {
-            try keychain.set(userId, key: "userId")
-        } catch let error {
-            print(error)
-        }
+        userIdCache.setObject(userId as NSString, forKey: "userId")
+
     }
     
     func getUserId() -> String? {
-        do {
-            let userId = try keychain.get("userId")
-            return userId
-            
-        } catch let error {
+        if userIdCache.object(forKey: "userId") == nil {
             return nil
         }
+        return userIdCache.object(forKey: "userId") as! String
         
     }
     
     
     func deleteUserToken() {
-        do {
-            try keychain.remove("userId")
-        } catch let error {
-            print("error: \(error)")
-        }
+        userIdCache.removeObject(forKey: "userId")
     }
     
     func updateArduinoId(partnerArduinoId:String) {
-        do {
-            try keychain.set(partnerArduinoId, key: "arduinoId")
-        } catch let error {
-            print(error)
-        }
+        userIdCache.setObject(partnerArduinoId as NSString, forKey: "arduinoId")
     }
     
     func getArduinoId() -> String? {
-        do {
-            let arduinoId = try keychain.get("arduinoId")
-            return arduinoId
-            
-        } catch let error {
+        if userIdCache.object(forKey: "arduinoId") == nil {
             return nil
         }
+        return userIdCache.object(forKey: "arduinoId") as! String
+        
         
     }
 
     func updatePartnerArduinoId(partnerArduinoId:String) {
-        do {
-            try keychain.set(partnerArduinoId, key: "partnerArduinoId")
-        } catch let error {
-            print(error)
-        }
+        userIdCache.setObject(partnerArduinoId as NSString, forKey: "partnerArduinoId")
     }
     
     func deletePartnerArduino() {
-        do {
-            try keychain.remove("partnerArduinoId")
-        } catch let error {
-            print("error: \(error)")
-        }
+        userIdCache.removeObject(forKey: "partnerArduinoId")
     }
     
     
     func getPartnerArduinoId() -> String? {
-        do {
-            let partnerArduinoId = try keychain.get("partnerArduinoId")
-            return partnerArduinoId
-            
-        } catch let error {
+        if userIdCache.object(forKey: "partnerArduinoId") == nil {
             return nil
         }
+        return userIdCache.object(forKey: "partnerArduinoId") as! String
         
     }
 
