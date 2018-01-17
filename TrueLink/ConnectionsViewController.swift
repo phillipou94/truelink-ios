@@ -15,7 +15,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     let cellHeight = CGFloat(65.0)
     let sectionHeaderHeight = CGFloat(20.0)
     
-    var lamps : [Lamp] = []
+    var itays : [Itay] = []
     
 
     override func viewDidLoad() {
@@ -34,7 +34,13 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let didConnectLamp = LocalStorageManager.shared.getLamp() != nil
+        ItayRequest.shared.getItays(success: { (itays) in
+            
+        }) { (error) in
+            
+        }
+        
+        //let didConnectLamp = LocalStorageManager.shared.getLamp() != nil
 
         
         

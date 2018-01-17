@@ -15,6 +15,7 @@ class Itay: NSObject {
     var recipientId : String! //lamp_id of sender
     var sentTime:Date?
     var fromMe : Bool = false
+    var fromName : String = ""
     
     init(json:JSON) {
         if let id = json["id"].string {

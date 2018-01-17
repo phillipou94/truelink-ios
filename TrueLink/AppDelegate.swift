@@ -24,15 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let authenticated = userId != nil
         //TODO: CHANGE
-        var didCompleteOnBoarding = true;
         
         var initialViewController = authenticated ? TabBarController() :
                                     LoginViewController(nibName: "LoginViewController", bundle: nil)
         
-//        initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
-        
-//        initialViewController = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
-        initialViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;

@@ -125,16 +125,24 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.slider.dragPointButtonLabel.text = "Sent!"
         self.isSending = false
         
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let vcs = self.tabBarController?.viewControllers
-            if let targetVC = vcs?[1] {
-                if let tabBarController = self.tabBarController {
-                    tabBarController.delegate?.tabBarController!(tabBarController, shouldSelect: targetVC)
+        if let userLampId = LocalStorageManager.shared.getLamp()?.lampId {
+            if let partnerLampId = self.lamp?.lampId {
+                ItayRequest.shared.sendItay(userLampId: userLampId, recipientLampId: partnerLampId, success: { (itayId) in
+                    let vcs = self.tabBarController?.viewControllers
+                    if let targetVC = vcs?[1] {
+                        if let tabBarController = self.tabBarController {
+                            tabBarController.delegate?.tabBarController!(tabBarController, shouldSelect: targetVC)
+                        }
+                        
+                    }
+                }) { (error) in
+                    
                 }
-                
+
             }
         }
+        
+        
         
 
         
