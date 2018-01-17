@@ -19,7 +19,7 @@ class DefaultNavBar: UIView {
     */
     
     static func height() -> CGFloat {
-        return 44.0;
+        return 40.0;
     }
     
     init(width: CGFloat) {

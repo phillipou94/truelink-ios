@@ -29,6 +29,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     var isSending : Bool = false
     var hasPartnerDevice = true
     var pairDeviceButton : UIButton?
+    var arduino : Arduino?
     
     
     override func viewDidLoad() {
@@ -52,9 +53,20 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hasPartnerDevice = LocalStorageManager.shared.getPartnerArduinoId() != nil
+        self.arduino = LocalStorageManager.shared.getPartnerArduino()
+        self.hasPartnerDevice = self.arduino != nil
         if (!hasPartnerDevice) {
             self.showEmptyState(viewType: EmptyView.EmptyViewType.PartnerDevicePairing)
+        }
+        
+        if let arduino = self.arduino {
+            self.nameLabel.text = arduino.name
+            if let name = arduino.name {
+                let index = name.characters.index(name.startIndex, offsetBy: 0)
+                let startChar = name[index]
+                self.nameLogoLabel.text = String(startChar)
+            }
+
         }
     }
     
@@ -108,6 +120,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.homeIconImageView.image = UIImage.init(named: "HomeIconBlack")
         self.slider.dragPointButtonLabel.text = "Sent!"
         self.isSending = false
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let vcs = self.tabBarController?.viewControllers
             if let targetVC = vcs?[1] {
@@ -130,13 +144,18 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.isSending = true
         self.animateLoadingLabel()
         if (status == .Finished) {
-            ItayRequest.shared.sendItay(connectionId: connectionId, success: { (result) in
-                mainQueue.async {
-                    self.itaySent()
-                }
-            }, failure: { (error) in
-                
-            })
+//            ItayRequest.shared.sendItay(connectionId: connectionId, success: { (result) in
+//                mainQueue.async {
+//                    self.itaySent()
+//                }
+//            }, failure: { (error) in
+//                
+//            })
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.itaySent()
+            }
+            
             
         }
     }

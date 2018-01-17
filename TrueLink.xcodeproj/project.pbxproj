@@ -10,6 +10,7 @@
 		4747CC98BCE84C8E5B05336E /* Pods_TrueLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7909133C9C74E9D0C5C3E715 /* Pods_TrueLink.framework */; };
 		4D0C4BE9200F231B0033E6D0 /* PairPartnerDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */; };
 		4D0C4BEA200F231B0033E6D0 /* PairPartnerDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */; };
+		4D0C4BED200F40090033E6D0 /* Arduino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C4BEC200F40080033E6D0 /* Arduino.swift */; };
 		4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */; };
 		4D1DC8F1200CB0AE0004675F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DC8EF200CB0AE0004675F /* Main.storyboard */; };
 		4D1DC8F4200CB0AE0004675F /* TrueLink.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC8F2200CB0AE0004675F /* TrueLink.xcdatamodeld */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		4D0C4BE7200F231B0033E6D0 /* PairPartnerDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairPartnerDeviceViewController.swift; sourceTree = "<group>"; };
 		4D0C4BE8200F231B0033E6D0 /* PairPartnerDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PairPartnerDeviceViewController.xib; sourceTree = "<group>"; };
+		4D0C4BEC200F40080033E6D0 /* Arduino.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arduino.swift; sourceTree = "<group>"; };
 		4D1DC8E8200CB0AE0004675F /* TrueLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1DC8F0200CB0AE0004675F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1DC8EB200CB0AE0004675F /* AppDelegate.swift */,
+				4DA3206C200E246700950DC1 /* LocalStorageManager.swift */,
 				4D276E92200F046700D6443F /* Bluetooth */,
 				4DA9DEBF200DDF80003EEFEB /* ServerRequests */,
 				4DA9DEC4200DE13C003EEFEB /* Models */,
@@ -351,7 +354,6 @@
 				4DA9DECB200DF0D3003EEFEB /* UserRequest.swift */,
 				4DA3206E200E2D5300950DC1 /* ItayRequest.swift */,
 				4DA9DEBD200DD399003EEFEB /* ServerRequest.swift */,
-				4DA3206C200E246700950DC1 /* LocalStorageManager.swift */,
 			);
 			name = ServerRequests;
 			sourceTree = "<group>";
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA9DEC2200DDFD6003EEFEB /* User.swift */,
+				4D0C4BEC200F40080033E6D0 /* Arduino.swift */,
 				4DA9DEC5200DE28D003EEFEB /* Connection.swift */,
 				4DA9DEC7200DE76D003EEFEB /* Itay.swift */,
 			);
@@ -617,6 +620,7 @@
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,
 				4D1DC922200CB2890004675F /* UIColor+TLColors.swift in Sources */,
 				4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */,
+				4D0C4BED200F40090033E6D0 /* Arduino.swift in Sources */,
 				4DA9DECA200DE8FD003EEFEB /* String+Date.swift in Sources */,
 				4D276E8D200F042900D6443F /* SimpleIOBluetooth.swift in Sources */,
 				4DA32063200E102800950DC1 /* SignupViewController.swift in Sources */,
