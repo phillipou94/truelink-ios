@@ -84,7 +84,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let password = passwordTextField.text {
                 
                 UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-                    
                 }) { (failure) in
                     
                 }
