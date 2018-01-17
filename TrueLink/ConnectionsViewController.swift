@@ -13,7 +13,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     var tableView = UITableView()
     let cellIdentifier = "ConnectionTableViewCell"
     let cellHeight = CGFloat(65.0)
-    let sectionHeaderHeight = CGFloat(20.0)
+    let sectionHeaderHeight = CGFloat(40.0)
     
     var itays : [Itay] = []
     var nicknameMap : [String:String] = [:]
@@ -82,7 +82,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let tableViewHeader = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: self.sectionHeaderHeight))
-        let headerLabelFrame = CGRect(x: 10, y:0, width: tableView.frame.size.width, height:sectionHeaderHeight)
+        let headerLabelFrame = CGRect(x: 10, y:10, width: tableView.frame.size.width, height:sectionHeaderHeight)
 
         let headerLabel = UILabel.init(frame: headerLabelFrame)
         headerLabel.text = "Today"
