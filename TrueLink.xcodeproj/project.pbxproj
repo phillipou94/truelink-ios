@@ -28,6 +28,10 @@
 		4D1DC941200CEA280004675F /* UIFont+TLFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */; };
 		4D1DC943200CFFC40004675F /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC942200CFFC40004675F /* UIView+Borders.swift */; };
 		4D1DC945200D02780004675F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DC944200D02780004675F /* EmptyView.swift */; };
+		4D276E85200EEB4400D6443F /* PairPersonalDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E83200EEB4400D6443F /* PairPersonalDeviceViewController.swift */; };
+		4D276E86200EEB4400D6443F /* PairPersonalDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */; };
+		4D276E88200EF72D00D6443F /* UIButton+Highlightedcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E87200EF72D00D6443F /* UIButton+Highlightedcolor.swift */; };
+		4D276E8A200EFF0900D6443F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D276E89200EFF0900D6443F /* LoadingView.swift */; };
 		4D8BDB4B200D980D00BD1D28 /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */; };
 		4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */; };
 		4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */; };
@@ -91,6 +95,10 @@
 		4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+TLFonts.swift"; sourceTree = "<group>"; };
 		4D1DC942200CFFC40004675F /* UIView+Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 		4D1DC944200D02780004675F /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		4D276E83200EEB4400D6443F /* PairPersonalDeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairPersonalDeviceViewController.swift; sourceTree = "<group>"; };
+		4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PairPersonalDeviceViewController.xib; sourceTree = "<group>"; };
+		4D276E87200EF72D00D6443F /* UIButton+Highlightedcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Highlightedcolor.swift"; sourceTree = "<group>"; };
+		4D276E89200EFF0900D6443F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4D8BDB49200D980D00BD1D28 /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		4D8BDB4A200D980D00BD1D28 /* ConnectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionTableViewCell.xib; sourceTree = "<group>"; };
 		4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSlidingButton.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 				4D1DC921200CB2890004675F /* UIColor+TLColors.swift */,
 				4DA32059200E04D400950DC1 /* UITextfield+Bottomborder.swift */,
 				4D1DC942200CFFC40004675F /* UIView+Borders.swift */,
+				4D276E87200EF72D00D6443F /* UIButton+Highlightedcolor.swift */,
 				4D1DC940200CEA280004675F /* UIFont+TLFonts.swift */,
 				4DA9DEC9200DE8FD003EEFEB /* String+Date.swift */,
 			);
@@ -262,6 +271,7 @@
 				4DA3205B200E053800950DC1 /* DesignableTextField.swift */,
 				4D8BDB4F200DAA5500BD1D28 /* MMSlidingButton.swift */,
 				4D1DC944200D02780004675F /* EmptyView.swift */,
+				4D276E89200EFF0900D6443F /* LoadingView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -292,6 +302,8 @@
 				4D1DC92F200CDD1F0004675F /* ConnectionsViewController */,
 				4D1DC938200CDD920004675F /* ITAYViewControler */,
 				4D1DC92A200CD8880004675F /* PageViewController */,
+				4D276E83200EEB4400D6443F /* PairPersonalDeviceViewController.swift */,
+				4D276E84200EEB4400D6443F /* PairPersonalDeviceViewController.xib */,
 				4D1DC92D200CDA510004675F /* TabBarController.swift */,
 			);
 			name = Controllers;
@@ -453,6 +465,7 @@
 				4D1DC928200CD54E0004675F /* PageViewController.xib in Resources */,
 				4DA32064200E102800950DC1 /* SignupViewController.xib in Resources */,
 				4D1DC933200CDD4E0004675F /* ConnectionsViewController.xib in Resources */,
+				4D276E86200EEB4400D6443F /* PairPersonalDeviceViewController.xib in Resources */,
 				4D8BDB4C200D980D00BD1D28 /* ConnectionTableViewCell.xib in Resources */,
 				4DA9DED0200E02F1003EEFEB /* LoginViewController.xib in Resources */,
 			);
@@ -544,6 +557,7 @@
 				4DA9DEBE200DD399003EEFEB /* ServerRequest.swift in Sources */,
 				4D8BDB50200DAA5500BD1D28 /* MMSlidingButton.swift in Sources */,
 				4DA9DECC200DF0D3003EEFEB /* UserRequest.swift in Sources */,
+				4D276E8A200EFF0900D6443F /* LoadingView.swift in Sources */,
 				4D1DC924200CD50E0004675F /* PageViewController.swift in Sources */,
 				4DA3205A200E04D400950DC1 /* UITextfield+Bottomborder.swift in Sources */,
 				4D1DC945200D02780004675F /* EmptyView.swift in Sources */,
@@ -555,6 +569,8 @@
 				4DA9DEC3200DDFD6003EEFEB /* User.swift in Sources */,
 				4DA9DEC6200DE28D003EEFEB /* Connection.swift in Sources */,
 				4DA3206D200E246700950DC1 /* LocalStorageManager.swift in Sources */,
+				4D276E88200EF72D00D6443F /* UIButton+Highlightedcolor.swift in Sources */,
+				4D276E85200EEB4400D6443F /* PairPersonalDeviceViewController.swift in Sources */,
 				4DA3205C200E053800950DC1 /* DesignableTextField.swift in Sources */,
 				4DA9DEC8200DE76D003EEFEB /* Itay.swift in Sources */,
 				4D1DC8EC200CB0AE0004675F /* AppDelegate.swift in Sources */,

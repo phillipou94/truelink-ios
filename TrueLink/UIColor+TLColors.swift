@@ -27,6 +27,11 @@ extension UIColor {
         return TLOrangeWithAlpha(alpha: 1.0)
     }
     
+    
+    static func TLOrangeDarkened() -> UIColor {
+        return UIColor(red: 193/255.0, green: 85/255.0, blue: 73/255.0, alpha: 1.0);
+    }
+    
     static func TLDarkGrey() -> UIColor {
         return TLDarkGreyWithAlpha(alpha: 1.0)
     }

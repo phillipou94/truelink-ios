@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+protocol EmptyViewButtonDelegate{
+    func emptyViewButtonPressed(sender:EmptyView)
+}
+
 class EmptyView: UIView {
 
     /*
@@ -18,18 +23,25 @@ class EmptyView: UIView {
     }
     */
     
+    var delegate : EmptyViewButtonDelegate? 
+    
     enum EmptyViewType {
         case NoITAYs, NoConnections
     }
     
+    var button : UIButton = UIButton()
+
+    
     convenience init(view:UIView, viewType: EmptyViewType) {
-        let image = viewType == .NoITAYs ? UIImage(named: "ConnectionsIconFull") : UIImage(named:"DeviceIconFull")
+        
+        let image = viewType == .NoITAYs ? UIImage(named: "ConnectionsIconFull") : UIImage(named:"HomeDeviceIcon")
         let title = viewType == .NoITAYs ? "Send Some Love" : "Activate Your Device"
         let noItaysMessage = "You have not reached out to anyone yet. Let that special someone know that you're thinking about them"
         let noConnectionsMessage = "Connect your device to your smart lamp so you can let that special someone know that you’re still thinking about them."
         let body = viewType == .NoITAYs ? noItaysMessage : noConnectionsMessage
         let buttonTitle = viewType == .NoITAYs ? "Send Love" : "Activate"
         self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
+        
     }
     
     init(view: UIView, image: UIImage?, title: String, body : String, buttonTitle: String) {
@@ -62,26 +74,36 @@ class EmptyView: UIView {
         bodyTextview.isEditable = false
         
         //TODO: Change Button Color when highlighted
-        let buttonPadding = CGFloat(70.0)
-        let buttonFrame = CGRect(x:buttonPadding, y: bodyTextview.frame.maxY, width:self.frame.width - 2*buttonPadding, height:40)
-        let button = UIButton(frame: buttonFrame)
-        button.titleLabel?.font =  UIFont.TLFontOfSize(size: 20)
-        button.setTitleColor(UIColor.white, for: UIControlState.normal)
-        button.backgroundColor = UIColor.TLOrange()
-
-        button.layer.shadowRadius = 3.0;
-        button.layer.shadowColor = UIColor.black.cgColor;
-        button.layer.shadowOffset =  CGSize(width: 0.0, height: 1.0)
-        button.layer.shadowOpacity = 0.5;
-        button.layer.masksToBounds = false;
-        button.setTitle(buttonTitle, for: UIControlState.normal)
+//        let buttonPadding = CGFloat(70.0)
+//        let buttonFrame = CGRect(x:buttonPadding, y: bodyTextview.frame.maxY, width:self.frame.width - 2*buttonPadding, height:40)
+//        let button = UIButton(frame: buttonFrame)
+//        button.titleLabel?.font =  UIFont.TLFontOfSize(size: 20)
+//        button.setTitleColor(UIColor.white, for: UIControlState.normal)
+//        button.backgroundColor = UIColor.TLOrange()
+//
+//        button.layer.shadowRadius = 3.0;
+//        button.layer.shadowColor = UIColor.black.cgColor;
+//        button.layer.shadowOffset =  CGSize(width: 0.0, height: 1.0)
+//        button.layer.shadowOpacity = 0.5;
+//        button.layer.masksToBounds = false;
+//        button.isUserInteractionEnabled = true
+//        button.setTitle(buttonTitle, for: UIControlState.normal)
+//        
+//        self.isUserInteractionEnabled = false
+//        button.addTarget(self, action: #selector(buttonPressed), for: UIControlEvents.touchDown)
         
         
         self.addSubview(logoImageView)
         self.addSubview(titleLabel)
         self.addSubview(bodyTextview)
-        self.addSubview(button)
+//        self.addSubview(button)
+        self.bringSubview(toFront: button)
         
+    }
+    
+    func buttonPressed(sender:UIButton!) {
+        
+        self.delegate?.emptyViewButtonPressed(sender: self)
     }
     
     required init?(coder aDecoder: NSCoder) {

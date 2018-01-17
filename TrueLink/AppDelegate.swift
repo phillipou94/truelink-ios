@@ -30,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     LoginViewController(nibName: "LoginViewController", bundle: nil)
         
         initialViewController = didCompleteOnBoarding ? TabBarController() : PageViewController(nibName:"PageViewController", bundle: nil);
-
+        
+        initialViewController = PairPersonalDeviceViewController(nibName: "PairPersonalDeviceViewController", bundle: nil)
         
         let navigationController = UINavigationController(rootViewController: initialViewController)
         navigationController.isNavigationBarHidden = true;
