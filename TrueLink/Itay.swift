@@ -16,6 +16,7 @@ class Itay: NSObject {
     var sentTime:Date?
     var fromMe : Bool = false
     var fromName : String = ""
+    var dateString : String = "Just Now"
     
     init(json:JSON) {
         if let id = json["id"].string {
@@ -33,9 +34,16 @@ class Itay: NSObject {
         if let sentTimeString = json["sent_time"].string {
             if let date : Date = sentTimeString.convertToDate() as Date {
                 self.sentTime = date
+                
+                let nsDate = date as NSDate
+                self.dateString = String.timeAgoSinceDate(date: nsDate, numericDates: true)
+                
+                
             }
             
         }
+        
+        
         
         
         

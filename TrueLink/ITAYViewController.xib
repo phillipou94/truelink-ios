@@ -41,7 +41,7 @@
                     <rect key="frame" x="16" y="75" width="343" height="592"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-aN-siw">
-                            <rect key="frame" x="67" y="50" width="264" height="18"/>
+                            <rect key="frame" x="67" y="47" width="264" height="16.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="264" id="lyO-Nj-pEW"/>
                             </constraints>
@@ -56,7 +56,7 @@
                             <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="nostalgia-photo" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-2V-PqF">
-                            <rect key="frame" x="0.0" y="78" width="343" height="245"/>
+                            <rect key="frame" x="0.0" y="73.5" width="343" height="249.5"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK6-vX-nwY">
                             <rect key="frame" x="14" y="25" width="45" height="45"/>
@@ -79,7 +79,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-nc-PWE">
-                            <rect key="frame" x="67" y="25" width="183" height="31"/>
+                            <rect key="frame" x="67" y="25" width="183" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="183" id="ARp-Oe-IIk"/>
                             </constraints>

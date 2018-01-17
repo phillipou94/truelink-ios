@@ -115,6 +115,8 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         if let name = cell.nameLabel.text {
             cell.logoLabel.text = name[0]
         }
+        
+        cell.timestampLabel.text = "Sent "+itay.dateString
 
         return cell
     }

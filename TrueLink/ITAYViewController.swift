@@ -55,6 +55,10 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         super.viewWillAppear(animated)
         self.hasConnections = LocalStorageManager.shared.getConnections().count > 0
         
+        self.timestampLabel.text = "Local Time:"+self.getTimeString()+" PST"
+        
+        
+        
         let connections = LocalStorageManager.shared.getConnections()
         if (connections.count > 0) {
             self.lamp = connections[0]
@@ -73,6 +77,14 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
             }
 
         }
+    }
+    
+    private func getTimeString() -> String {
+        let calendar = Calendar.current
+        let date = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter.string(from: date as Date)
     }
     
     private func showEmptyState(viewType: EmptyView.EmptyViewType) {
