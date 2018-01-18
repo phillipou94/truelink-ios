@@ -12,6 +12,10 @@ protocol SettingsButtonDelegate {
     func settingsButtonPressed()
 }
 
+protocol LogoDelegate {
+    func logoPressed()
+}
+
 class DefaultNavBar: UIView {
 
     /*
@@ -23,6 +27,8 @@ class DefaultNavBar: UIView {
     */
     
     var settingsButtonDelegate : SettingsButtonDelegate?
+    var logoDelegate : LogoDelegate?
+    
     
     static func height() -> CGFloat {
         return 45.0;
@@ -39,12 +45,13 @@ class DefaultNavBar: UIView {
         // initialize logo
         let logoImageViewFrame = CGRect(x: 20, y: topPadding, width: 28, height: 25)
         
-        let logoImageView = UIImageView.init(frame: logoImageViewFrame)
-        logoImageView.image = UIImage(named: "TrueLinkIcon")
+        let logoImageButton = UIButton.init(frame: logoImageViewFrame)
+        logoImageButton.setImage(UIImage(named: "TrueLinkIcon"), for: .normal)
+        logoImageButton.addTarget(self, action: #selector(didTapIcon), for: UIControlEvents.touchUpInside)
         
         
         // initialize title
-        let titleLabelFrame = CGRect(x: logoImageViewFrame.origin.x + logoImageView.frame.size.width + 10,
+        let titleLabelFrame = CGRect(x: logoImageViewFrame.origin.x + logoImageButton.frame.size.width + 10,
                                       y: CGFloat(topPadding),
                                       width: 100,
                                       height: logoImageViewFrame.size.height)
@@ -52,14 +59,13 @@ class DefaultNavBar: UIView {
         navbarTitleLabel.text = "truelink"
         navbarTitleLabel.font = UIFont.TLFontOfSize(size: 30)
         navbarTitleLabel.textColor = UIColor.TLBlack()
-        
         // initialize settings button
         let settingsButton = UIButton.init(frame: CGRect(x:width - 30, y:CGFloat(topPadding), width: 25, height: 25))
         settingsButton.setImage(UIImage.init(named: "SettingsIcon"), for: UIControlState.normal)
         settingsButton.addTarget(self, action: #selector(didPressSettingsButton(sender:)), for: UIControlEvents.touchUpInside)
 
        
-        self.addSubview(logoImageView)
+        self.addSubview(logoImageButton)
         self.addSubview(navbarTitleLabel)
         self.addSubview(settingsButton)
     }
@@ -67,6 +73,10 @@ class DefaultNavBar: UIView {
     func didPressSettingsButton(sender:UIButton) {
         //TODO: Navigate to Settings Page
         self.settingsButtonDelegate?.settingsButtonPressed()
+    }
+    
+    func didTapIcon() {
+        self.logoDelegate?.logoPressed()
     }
     
     required init?(coder aDecoder: NSCoder) {

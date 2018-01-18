@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController, UITabBarControllerDelegate, SettingsButtonDelegate {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, SettingsButtonDelegate, LogoDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -16,6 +16,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
         
         let navBar = DefaultNavBar.init(width: self.view.frame.size.width)
         navBar.settingsButtonDelegate = self
+        navBar.logoDelegate = self
         self.view.addSubview(navBar)
         
         
@@ -70,6 +71,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
         self.present(vc, animated: false, completion: { 
             LocalStorageManager.shared.deleteSession()
         })
+        
+    }
+    
+    func logoPressed() {
         
     }
     
