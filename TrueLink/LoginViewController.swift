@@ -63,23 +63,49 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard let characteristics = service.characteristics else {return}
         
-        for characteristic in characteristics {
-            print(characteristic)
-//            peripheral.writeValue("hi".data(using: .utf8)!, for: characteristic, type: .withResponse)
-            peripheral.readValue(for: characteristic)
+        let arduinoCharacteristic = characteristics[0]
+        print(arduinoCharacteristic)
+        
+        if arduinoCharacteristic.properties.contains(.read) {
+            print("properties contains .read")
         }
+        if arduinoCharacteristic.properties.contains(.notify) {
+            print("properties contains .notify")
+        }
+        
+        peripheral.setNotifyValue(true, for: arduinoCharacteristic)
+        print("writeValue a")
+        peripheral.writeValue("a".data(using: .utf8)!, for: arduinoCharacteristic, type: .withResponse)
+        print("writeValue b")
+        peripheral.writeValue("b".data(using: .utf8)!, for: arduinoCharacteristic, type: .withResponse)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("success - written")
-        
+        if error != nil {
+            print("error writing value")
+        } else {
+//            print("readValue")
+//            peripheral.readValue(for: characteristic)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        print("didUpdateNotificationStateFor")
+        if error != nil {
+            print("uh oh", error)
+        }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("read value")
-        print(characteristic.value)
+        print("didUpdateValueFor")
+        let newValue = String(data: characteristic.value!, encoding: String.Encoding.ascii)
+        print(newValue)
+//        if newValue == "c" {
+//            print("send love to beacon 1")
+//        } else if newValue == "d" {
+//            print("send love to beacon 2")
+//        }
     }
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
