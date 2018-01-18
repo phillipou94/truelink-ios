@@ -35,7 +35,11 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
-        self.tableView.addSubview(self.refreshControl)
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = self.refreshControl
+        } else {
+            tableView.addSubview(self.refreshControl)
+        }
         self.getItaysFromServer {
             self.tableView.isHidden = self.itays.count < 1
 //            self.tableView.reloadData()
