@@ -457,6 +457,7 @@
 				TargetAttributes = {
 					4D1DC8E7200CB0AE0004675F = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MC5HB54E56;
 						ProvisioningStyle = Automatic;
 					};
 					4D1DC8FE200CB0AE0004675F = {
@@ -778,6 +779,7 @@
 			baseConfigurationReference = A06E93E37A2DF2AF87455C16 /* Pods-TrueLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC5HB54E56;
 				INFOPLIST_FILE = TrueLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PhillipOu.TrueLink;
@@ -791,6 +793,7 @@
 			baseConfigurationReference = 77A36E6F6AC745E977A58FD6 /* Pods-TrueLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MC5HB54E56;
 				INFOPLIST_FILE = TrueLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PhillipOu.TrueLink;
