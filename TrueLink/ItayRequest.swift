@@ -15,6 +15,7 @@ class ItayRequest: NSObject {
     func sendItay(userLampId : String, recipientLampId:String, success:@escaping (_ itayId:String) -> Void, failure:(_ errorMessage:String) -> Void) {
         let parameters = ["sender_id":userLampId, "recipient_id":recipientLampId] as [String:AnyObject]
             let endpoint = "itay"
+        
         ServerRequest.shared.postWithEndpoint(endpoint: endpoint, parameters: parameters, authenticated: true, success: { (response) in
             
             if let itayId = response["itay_id"].string {

@@ -136,8 +136,16 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
                     if let recipientId = LocalStorageManager.shared.getLamp()?.lampId {
                         let fakeItay = Itay(id: id, senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe: false, fromName: fromName, dateString: "Just Now")
                         self.animateNewItay(itay: fakeItay)
-                        LocalStorageManager.shared.updateItays(itays: self.itays)
                         refreshControl.endRefreshing()
+                        LocalStorageManager.shared.updateItays(itays: self.itays)
+                        
+//                        ItayRequest.shared.sendItay(userLampId: senderId, recipientLampId: userId, success: { (fake) in
+//                            LocalStorageManager.shared.updateItays(itays: self.itays)
+//                            
+//                        }, failure: { (error) in
+//                            
+//                        })
+                        
                         
                     }
                 }
