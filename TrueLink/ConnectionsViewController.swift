@@ -17,6 +17,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     var itays : [Itay] = []
     var nicknameMap : [String:String] = [:]
+    var shouldAnimateFirstRow = false
     
 
     override func viewDidLoad() {
@@ -26,7 +27,6 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.itays = LocalStorageManager.shared.getItays()
         let topMargin = CGFloat(DefaultNavBar.height()+UIApplication.shared.statusBarFrame.height)
         let tableViewFrame = CGRect(x: 0, y: topMargin, width: self.view.frame.size.width, height: self.view.frame.size.height)
         self.tableView = UITableView.init(frame: tableViewFrame, style: .grouped)
@@ -38,15 +38,19 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.addSubview(self.refreshControl)
         self.getItaysFromServer {
             self.tableView.isHidden = self.itays.count < 1
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
         }
     }
     
     func getItaysFromServer(completed:@escaping () -> Void) {
         self.nicknameMap = LocalStorageManager.shared.nicknameMap()
-        ItayRequest.shared.getItays(success: { (itays) in
-            self.itays = itays
-            LocalStorageManager.shared.updateItays(itays: itays)
+        self.itays = LocalStorageManager.shared.getItays()
+        ItayRequest.shared.getItays(success: { (serverItays) in
+            if self.itays.count < serverItays.count {
+                self.animateNewItay(itay: serverItays[0])
+                LocalStorageManager.shared.updateItays(itays: serverItays)
+                self.itays = serverItays
+            }
             
             if (self.itays.count < 1) {
                 self.showEmptyState(viewType: EmptyView.EmptyViewType.NoITAYs)
@@ -58,6 +62,26 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         
+    }
+    
+    func animateNewItay(itay:Itay) {
+        let animationDuration = 0.9
+        let easeOutCirc = CAMediaTimingFunction(controlPoints: 0.075, 0.82, 0.0, 1)
+        
+        UIView.beginAnimations("addRow", context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        CATransaction.begin()
+        CATransaction.setAnimationTimingFunction(easeOutCirc)
+        
+        self.tableView.beginUpdates()
+        self.itays.insert(itay, at: 0)
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.insertRows(at: [indexPath], with: .none)
+        shouldAnimateFirstRow = true
+        tableView.endUpdates()
+        
+        CATransaction.commit()
+        UIView.commitAnimations()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -123,6 +147,25 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         tableViewHeader.addSubview(headerLabel)
         tableViewHeader.backgroundColor = UIColor.TLOffWhite()
         return tableViewHeader
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 && shouldAnimateFirstRow {
+            animateIn(cell: cell, withDelay: 0.7)
+            shouldAnimateFirstRow = false
+        }
+    }
+    
+    fileprivate func animateIn(cell: UITableViewCell, withDelay delay: TimeInterval) {
+        let initialScale: CGFloat = 1.2
+        let duration: TimeInterval = 0.5
+        
+        cell.alpha = 0.0
+        cell.layer.transform = CATransform3DMakeScale(initialScale, initialScale, 1)
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
+        }, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
