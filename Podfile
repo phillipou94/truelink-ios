@@ -8,5 +8,5 @@ target ‘TrueLink’ do
     pod 'KeychainAccess'
     pod 'NVActivityIndicatorView'
     pod 'M13Checkbox'
-    pod 'BlueCapKit', '~> 0.6'
+    pod 'Bluejay', '0.1'
 end

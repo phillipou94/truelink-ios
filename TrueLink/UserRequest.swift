@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 class UserRequest: NSObject {
-    static let shared = UserRequest();
+    static let shared = UserRequest()
     
     func loginWithEmail(email:String, password:String, success:@escaping (_ lamps:[Lamp]) -> Void, failure:(_ errorMessage:String) -> Void) {
         let endpoint = "login"

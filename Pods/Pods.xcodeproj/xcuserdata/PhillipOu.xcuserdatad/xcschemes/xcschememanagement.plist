@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>BlueCapKit.xcscheme</key>
+		<key>Bluejay.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,17 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54E1C5C7BCCE20F0E3D9E7681C4EB949</key>
+		<key>2C64C604FC781F4EB035162C0D222060</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>592658B71D11444A073D2235D0E7DA3B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>65A06356B54F668A3778EE5BB62782D1</key>
+		<key>32461D314B4FBE983C2ECCFAE236E106</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>8CD9FC035D83AD9BA719108E6A9A694F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A34FB7BA51C963B8371C31EA0D47F233</key>
 		<dict>
 			<key>primary</key>
 			<true/>

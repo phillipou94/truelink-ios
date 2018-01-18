@@ -88,16 +88,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInPressed(_ sender: Any) {
         self.isLoggingIn = true
         self.animateSigningIn()
-        if let email = emailTextField.text {
-            if let password = passwordTextField.text {
-                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-                    self.isLoggingIn = false
-                    self.navigationController?.pushViewController(TabBarController(), animated: true)
-                }) { (failure) in
-                    
-                }
-            }
-        }
+//        if let email = emailTextField.text {
+//            if let password = passwordTextField.text {
+//                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
+//                    self.isLoggingIn = false
+//                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+//                }) { (failure) in
+//                    
+//                }
+//            }
+//        }
+        BluetoothManager.shared.scanForPeripherals()
     }
     
     func animateSigningIn() {
