@@ -21,12 +21,12 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.TLOffWhite()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        self.itays = LocalStorageManager.shared.getItays()
         let topMargin = CGFloat(DefaultNavBar.height()+UIApplication.shared.statusBarFrame.height)
         let tableViewFrame = CGRect(x: 0, y: topMargin, width: self.view.frame.size.width, height: self.view.frame.size.height)
         self.tableView = UITableView.init(frame: tableViewFrame, style: .grouped)
@@ -36,16 +36,18 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
         self.tableView.addSubview(self.refreshControl)
-        self.getItays {
+        self.getItaysFromServer {
             self.tableView.isHidden = self.itays.count < 1
             self.tableView.reloadData()
         }
     }
     
-    func getItays(completed:@escaping () -> Void) {
+    func getItaysFromServer(completed:@escaping () -> Void) {
         self.nicknameMap = LocalStorageManager.shared.nicknameMap()
         ItayRequest.shared.getItays(success: { (itays) in
             self.itays = itays
+            LocalStorageManager.shared.updateItays(itays: itays)
+            
             if (self.itays.count < 1) {
                 self.showEmptyState(viewType: EmptyView.EmptyViewType.NoITAYs)
             }
@@ -82,7 +84,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         
-        self.getItays {
+        self.getItaysFromServer {
             self.tableView.isHidden = self.itays.count < 1
             self.tableView.reloadData()
             refreshControl.endRefreshing()
@@ -107,7 +109,6 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
         return self.sectionHeaderHeight
     }
     
@@ -129,7 +130,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         let itay = self.itays[indexPath.row]
         cell.itay = itay
         
-        if itay.fromMe {
+        if itay.fromMe! {
             cell.connectionTypeLabel.text = "Sent"
             cell.connectionTypeLabel.textColor = UIColor.TLOrange()
             cell.connectionTypeImageView.image = UIImage(named: "FullHeartOrange")
@@ -147,17 +148,15 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             cell.logoLabel.text = name[0]
         }
         
-        cell.timestampLabel.text = "Sent "+itay.dateString
+        if let dateString = itay.dateString == nil ? "Just Now" : itay.dateString {
+            cell.timestampLabel.text = "Sent "+dateString
+        }
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
 
     

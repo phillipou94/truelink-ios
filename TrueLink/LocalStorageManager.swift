@@ -16,7 +16,6 @@ class LocalStorageManager: NSObject {
         
         UserDefaults.standard.set(userId as NSString, forKey: "userId")
         UserDefaults.standard.synchronize()
-        
 
     }
     
@@ -101,15 +100,19 @@ class LocalStorageManager: NSObject {
     }
     
     func getItays() -> [Itay] {
-        if (UserDefaults.standard.object(forKey: "connections") != nil) {
-            let itays: [Itay] = UserDefaults.standard.object(forKey: "itays") as! [Itay]
-            return itays
+        if let itaysData = UserDefaults.standard.object(forKey: "itays") as? Data {
+            if let itays = NSKeyedUnarchiver.unarchiveObject(with: itaysData as Data) as? [Itay] {
+                return itays
+            }  
         }
         return []
     }
     
-    func updateItays(connections:[Itay]) {
-        UserDefaults.standard.set(connections as NSArray, forKey: "itays")
+    func updateItays(itays:[Itay]) {
+        
+        let itaysData = NSKeyedArchiver.archivedData(withRootObject: itays)
+        UserDefaults.standard.set(itaysData, forKey: "itays")
+        UserDefaults.standard.synchronize()
     }
     
     
