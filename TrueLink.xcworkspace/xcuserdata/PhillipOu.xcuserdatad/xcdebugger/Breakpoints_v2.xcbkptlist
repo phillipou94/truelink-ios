@@ -33,6 +33,38 @@
             endingLineNumber = "32"
             landmarkName = "scanForPeripherals()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrueLink.BluetoothManager.scanForPeripherals () -&gt; ()"
+                  moduleName = "TrueLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/BluetoothManager.swift"
+                  timestampString = "537970249.3830661"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrueLink.BluetoothManager.(scanForPeripherals () -&gt; ()).(closure #1)"
+                  moduleName = "TrueLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PhillipOu/Projects/TrueLink/TrueLink/BluetoothManager.swift"
+                  timestampString = "537970249.385572"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

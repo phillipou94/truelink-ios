@@ -199,8 +199,10 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             cell.logoLabel.text = name[0]
         }
         
-        if let dateString = itay.dateString == nil ? "Just Now" : itay.dateString {
+        if let date = itay.sentTime{
+             let dateString = String.timeAgoSinceDate(date: date as! NSDate, numericDates: true)
             cell.timestampLabel.text = "Sent "+dateString
+
         }
 
         return cell

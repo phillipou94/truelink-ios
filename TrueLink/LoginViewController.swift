@@ -92,7 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
         self.view.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+//        centralManager = CBCentralManager(delegate: self, queue: nil)
         
     }
 
@@ -161,54 +161,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
     @IBAction func signInPressed(_ sender: Any) {
         self.isLoggingIn = true
         self.animateSigningIn()
-//        if let email = emailTextField.text {
-//            if let password = passwordTextField.text {
-//                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
-//                    self.isLoggingIn = false
-//                    self.navigationController?.pushViewController(TabBarController(), animated: true)
-//                }) { (failure) in
-//                    
-//                }
-//            }
-//        }
+        if let email = emailTextField.text {
+            if let password = passwordTextField.text {
+                UserRequest.shared.loginWithEmail(email: email, password: password, success: { (response) in
+                    self.isLoggingIn = false
+                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+                }) { (failure) in
+                    
+                }
+            }
+        }
         
-        
-        
-        
-//        BluetoothManager.shared.scanForPeripherals()
-        
-//        let bluejay = Bluejay()
-//
-//        bluejay.start()
-//
-//        bluejay.start(connectionObserver: self)
-//
-//        let serviceId = "19B10000-E8F2-537E-4F6C-D104768A1214"
-//        let characteristicId = "19B10001-E8F2-537E-4F6C-D104768A1214"
-//
-//        let serviceIdentifier = ServiceIdentifier(uuid: serviceId)
-//        let characteristicIdentifier = CharacteristicIdentifier(uuid: characteristicId, service: serviceIdentifier)
-//
-//
-//
-//        bluejay.scan(
-//            serviceIdentifiers: [serviceIdentifier],
-//            discovery: { [weak self] (discovery, discoveries) -> ScanAction in
-//
-//                guard let weakSelf = self else {
-//                    return .stop
-//                }
-//
-//                return .continue
-//            },
-//            stopped: { (discoveries, error) in
-//                if let error = error {
-//                    debugPrint("Scan stopped with error: \(error.localizedDescription)")
-//                }
-//                else {
-//                    debugPrint("Scan stopped without error.")
-//                }
-//        })
         
     }
     

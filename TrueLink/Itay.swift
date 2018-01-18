@@ -25,7 +25,6 @@ class Itay: NSObject, NSCoding {
         self.sentTime = sentTime
         self.fromMe = fromMe
         self.fromName = fromName
-        self.dateString = dateString
     }
     
     init(json:JSON) {
@@ -44,13 +43,7 @@ class Itay: NSObject, NSCoding {
         if let sentTimeString = json["sent_time"].string {
             if let date : Date = sentTimeString.convertToDate() as Date {
                 self.sentTime = date
-                
-                let nsDate = date as NSDate
-                self.dateString = String.timeAgoSinceDate(date: nsDate, numericDates: true)
-                
-                
             }
-            
         }
         
         
@@ -67,8 +60,7 @@ class Itay: NSObject, NSCoding {
         let sentTime = decoder.decodeObject(forKey: "sent_time") as? Date
         let fromMe = decoder.decodeObject(forKey: "from_me") as? Bool
         let fromName = decoder.decodeObject(forKey: "from_name") as? String
-        let dateString = decoder.decodeObject(forKey: "date_string") as? String
-        self.init(id: "fdssd", senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe:fromMe, fromName: fromName, dateString: dateString)
+        self.init(id: "fdssd", senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe:fromMe, fromName: fromName)
 
     }
     
@@ -80,7 +72,6 @@ class Itay: NSObject, NSCoding {
         aCoder.encode(self.sentTime, forKey: "sent_time")
         aCoder.encode(self.fromMe, forKey: "from_me")
         aCoder.encode(self.fromName, forKey: "from_name")
-        aCoder.encode(self.dateString, forKey: "date_string")
     }
 
     

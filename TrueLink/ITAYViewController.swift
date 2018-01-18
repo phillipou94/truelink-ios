@@ -58,7 +58,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         self.imageView.layer.cornerRadius = 10
         self.imageView.layer.masksToBounds = true
         
-        self.view.backgroundColor = UIColor.TLDarkGrey()
+        
         self.slider.delegate = self
         
         
@@ -76,6 +76,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hasConnections = LocalStorageManager.shared.getConnections().count > 0
+        
+        self.view.backgroundColor = self.hasConnections ? UIColor.TLDarkGrey() : UIColor.TLOffWhite()
         
         self.timestampLabel.text = "Local Time: "+self.getTimeString()+" HKT"
         
