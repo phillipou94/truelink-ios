@@ -16,9 +16,10 @@ class BluetoothManager: NSObject, ConnectionObserver {
     func scanForPeripherals() {
         
         let bluejay = Bluejay()
+        
         bluejay.start()
         
-        bluejay.start(connectionObserver: self)
+//        bluejay.start(connectionObserver: self)
         
         let serviceId = "19B10000-E8F2-537E-4F6C-D104768A1214"
         let characteristicId = "19B10001-E8F2-537E-4F6C-D104768A1214"
@@ -60,6 +61,7 @@ class BluetoothManager: NSObject, ConnectionObserver {
     func connected(to peripheral: Peripheral) {
         
     }
+    
     func disconnected(from peripheral: Peripheral) {
         
     }
