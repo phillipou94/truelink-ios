@@ -106,7 +106,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
-            #selector(self.handleRefresh(_:)),
+            #selector(self.handleFakeRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
         refreshControl.tintColor = UIColor.TLLightGrey()
         
@@ -119,6 +119,31 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             self.tableView.isHidden = self.itays.count < 1
             self.tableView.reloadData()
             refreshControl.endRefreshing()
+        }
+        
+    }
+    
+    func handleFakeRefresh(_ refreshControl: UIRefreshControl) {
+        let connections = LocalStorageManager.shared.getConnections()
+        if (connections.count > 0) {
+            let lamp = connections[0]
+            let fromName = lamp.nickname
+            
+            let sentTime = Date()
+            if let senderId = lamp.lampId {
+                if let userId = LocalStorageManager.shared.getUserId() {
+                    let id = "fake_itay_"+userId
+                    if let recipientId = LocalStorageManager.shared.getLamp()?.lampId {
+                        let fakeItay = Itay(id: id, senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe: false, fromName: fromName, dateString: "Just Now")
+                        self.animateNewItay(itay: fakeItay)
+                        LocalStorageManager.shared.updateItays(itays: self.itays)
+                        refreshControl.endRefreshing()
+                        
+                    }
+                }
+
+            }
+            
         }
         
     }
