@@ -105,6 +105,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate, CBCentralManage
             //            print("readValue")
             //            peripheral.readValue(for: characteristic)
         }
+        centralManager.cancelPeripheralConnection(peripheral)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {

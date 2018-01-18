@@ -159,6 +159,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
             //            print("readValue")
             //            peripheral.readValue(for: characteristic)
         }
+        centralManager.cancelPeripheralConnection(peripheral)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
