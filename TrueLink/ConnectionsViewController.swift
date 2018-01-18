@@ -38,6 +38,10 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         if #available(iOS 10.0, *) {
             tableView.refreshControl = self.refreshControl
         } else {
+            if (self.refreshControl.isDescendant(of: self.tableView)) {
+                self.removeFromParentViewController()
+            }
+            
             tableView.addSubview(self.refreshControl)
         }
         self.getItaysFromServer {

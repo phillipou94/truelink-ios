@@ -16,8 +16,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
     
     
     //light up YOUR machine (TAP ICON THEN PULL-TO-REFRESH YOU BIG DUMMY)
-    let serviceId = "19B10000-E8F2-537E-4F6C-D104768A1214"
-    let characteristicId = "19B10001-E8F2-537E-4F6C-D104768A1214"
+    let serviceId = "03B80E5A-EDE8-4B33-A751-6CE34EC4C7004"
+    let characteristicId = "7772E5DB-3868-4112-A1A9-F2669D106BF3"
 
     override func viewDidLoad() {
         super.viewDidLoad();
