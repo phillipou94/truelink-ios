@@ -34,13 +34,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="KoN-R7-Lmy">
-                    <rect key="frame" x="20" y="80" width="335" height="527"/>
+                    <rect key="frame" x="20" y="85" width="335" height="522"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWQ-yt-9Qn">
-                            <rect key="frame" x="0.0" y="75" width="335" height="452"/>
+                            <rect key="frame" x="0.0" y="250" width="335" height="272"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-C6-6l0" customClass="MMSlidingButton" customModule="TrueLink" customModuleProvider="target">
-                                    <rect key="frame" x="29" y="372" width="277" height="54"/>
+                                    <rect key="frame" x="29" y="192" width="277" height="54"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="dragPointColor">
@@ -67,7 +67,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-aN-siw">
-                                    <rect key="frame" x="29" y="333" width="89.5" height="18"/>
+                                    <rect key="frame" x="29" y="153" width="89.5" height="18"/>
                                     <attributedString key="attributedText">
                                         <fragment content="sent 2 hours ago">
                                             <attributes>
@@ -79,7 +79,7 @@
                                     <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-nc-PWE">
-                                    <rect key="frame" x="29" y="306" width="183" height="31"/>
+                                    <rect key="frame" x="29" y="126" width="183" height="31"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="D76-k2-wDW"/>
                                         <constraint firstAttribute="width" constant="183" id="yem-9V-ARI"/>
@@ -89,7 +89,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeIconSimpleGrey" highlightedImage="HomeIconSimpleOrange" translatesAutoresizingMaskIntoConstraints="NO" id="aVV-Y3-B7G">
-                                    <rect key="frame" x="268" y="313" width="37" height="36"/>
+                                    <rect key="frame" x="268" y="133" width="37" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="37" id="xAL-aS-ls6"/>
                                         <constraint firstAttribute="height" constant="36" id="zoA-oJ-SrE"/>
@@ -109,13 +109,13 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-Ae-IJS">
-                            <rect key="frame" x="7" y="0.0" width="320" height="366"/>
+                            <rect key="frame" x="7" y="0.0" width="320" height="361"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nostalgia-photo" translatesAutoresizingMaskIntoConstraints="NO" id="C3a-Bz-ljp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
+                                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HK" translatesAutoresizingMaskIntoConstraints="NO" id="C3a-Bz-ljp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="361"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hong Kong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="cP9-bv-NIH">
-                                    <rect key="frame" x="18" y="292" width="183" height="39"/>
+                                    <rect key="frame" x="18" y="287" width="183" height="39"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="39" id="6a7-kG-0Lf"/>
                                         <constraint firstAttribute="width" constant="183" id="Eqe-96-js3"/>
@@ -125,7 +125,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-K2-zYY">
-                                    <rect key="frame" x="18" y="332" width="183" height="18"/>
+                                    <rect key="frame" x="18" y="327" width="183" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="183" id="Bx5-G4-8tM"/>
                                     </constraints>
@@ -158,7 +158,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="UWQ-yt-9Qn" firstAttribute="top" secondItem="KoN-R7-Lmy" secondAttribute="top" constant="75" id="19G-G2-s0d"/>
+                        <constraint firstItem="UWQ-yt-9Qn" firstAttribute="top" secondItem="KoN-R7-Lmy" secondAttribute="top" constant="250" id="19G-G2-s0d"/>
                         <constraint firstAttribute="trailing" secondItem="UWQ-yt-9Qn" secondAttribute="trailing" id="1oL-zV-bzl"/>
                         <constraint firstItem="UWQ-yt-9Qn" firstAttribute="width" secondItem="KoN-R7-Lmy" secondAttribute="width" id="4W7-Tm-K8e"/>
                         <constraint firstItem="UWQ-yt-9Qn" firstAttribute="leading" secondItem="KoN-R7-Lmy" secondAttribute="leading" id="6wY-sy-ruc"/>
@@ -177,16 +177,16 @@
             <constraints>
                 <constraint firstItem="KoN-R7-Lmy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LKH-sJ-dLd"/>
                 <constraint firstAttribute="bottom" secondItem="KoN-R7-Lmy" secondAttribute="bottom" constant="60" id="bLC-5D-mRY"/>
-                <constraint firstItem="KoN-R7-Lmy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="i4t-kb-Scy"/>
+                <constraint firstItem="KoN-R7-Lmy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="i4t-kb-Scy"/>
                 <constraint firstItem="KoN-R7-Lmy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="pMu-eD-McG"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>
+        <image name="HK" width="3386" height="4232"/>
         <image name="HeartIcon" width="25" height="25"/>
         <image name="HomeIconSimpleGrey" width="54" height="63"/>
         <image name="HomeIconSimpleOrange" width="54" height="63"/>
-        <image name="nostalgia-photo" width="5184" height="3162"/>
     </resources>
 </document>
