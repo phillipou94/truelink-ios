@@ -13,6 +13,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
     
     var centralManager: CBCentralManager!
     var arduinoPeripheral: CBPeripheral!
+    
+    
+    //light up YOUR machine (TAP ICON THEN PULL-TO-REFRESH YOU BIG DUMMY)
+    let serviceId = "19B10000-E8F2-537E-4F6C-D104768A1214"
+    let characteristicId = "19B10001-E8F2-537E-4F6C-D104768A1214"
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -102,8 +107,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
             
         case .poweredOn:
             print("central.state is .poweredOn")
-            let serviceIdentifier = "19B10000-E8F2-537E-4F6C-D104768A1214"
-            centralManager.scanForPeripherals(withServices: [CBUUID(string: serviceIdentifier)])
+
+            centralManager.scanForPeripherals(withServices: [CBUUID(string: serviceId)])
         }
     }
     
@@ -117,16 +122,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("Connected to peripheral: ", peripheral)
-        let serviceIdentifier = "19B10000-E8F2-537E-4F6C-D104768A1214"
-        arduinoPeripheral.discoverServices([CBUUID(string: serviceIdentifier)])
+        arduinoPeripheral.discoverServices([CBUUID(string: serviceId)])
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         guard let services = peripheral.services else {return}
         
         let arduinoService = services[0]
-        let characteristicIdentifier = "19B10001-E8F2-537E-4F6C-D104768A1214"
-        peripheral.discoverCharacteristics([CBUUID(string: characteristicIdentifier)], for: arduinoService)
+        peripheral.discoverCharacteristics([CBUUID(string: characteristicId)], for: arduinoService)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
