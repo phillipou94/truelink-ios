@@ -68,6 +68,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, Settings
     
     func settingsButtonPressed() {
         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        LocalStorageManager.shared.deleteSession()
         self.navigationController?.pushViewController(vc, animated: false)
 //        self.present(vc, animated: false, completion: { 
 //            LocalStorageManager.shared.deleteSession()

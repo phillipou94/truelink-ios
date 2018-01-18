@@ -130,27 +130,23 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
             let fromName = lamp.nickname
             
             let sentTime = Date()
-            if let senderId = lamp.lampId {
-                if let userId = LocalStorageManager.shared.getUserId() {
-                    let id = "fake_itay_"+userId
-                    if let recipientId = LocalStorageManager.shared.getLamp()?.lampId {
-                        let fakeItay = Itay(id: id, senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe: false, fromName: fromName, dateString: "Just Now")
-                        self.animateNewItay(itay: fakeItay)
-                        refreshControl.endRefreshing()
-                        LocalStorageManager.shared.updateItays(itays: self.itays)
-                        
-//                        ItayRequest.shared.sendItay(userLampId: senderId, recipientLampId: userId, success: { (fake) in
-//                            LocalStorageManager.shared.updateItays(itays: self.itays)
-//                            
-//                        }, failure: { (error) in
-//                            
-//                        })
-                        
-                        
-                    }
-                }
+            if let userId = LocalStorageManager.shared.getUserId() {
+                let id = "fake_itay_"+String(Date().hashValue)
+                let senderId = "partner_lamp_"+userId
+                let recipientId = userId
+                let fakeItay = Itay(id: id, senderId: senderId, recipientId: recipientId, sentTime: sentTime, fromMe: false, fromName: fromName, dateString: "Just Now")
+                self.animateNewItay(itay: fakeItay)
+                refreshControl.endRefreshing()
+                ItayRequest.shared.sendItay(userLampId: senderId, recipientLampId: userId, success: { (fake) in
+                    LocalStorageManager.shared.updateItays(itays: self.itays)
+
+                }, failure: { (error) in
+                    
+                })
 
             }
+            
+
             
         }
         
