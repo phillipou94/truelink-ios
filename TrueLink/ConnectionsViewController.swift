@@ -50,6 +50,9 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
                 self.animateNewItay(itay: serverItays[0])
                 LocalStorageManager.shared.updateItays(itays: serverItays)
                 self.itays = serverItays
+            } else {
+                self.itays = serverItays
+                self.tableView.reloadData()
             }
             
             if (self.itays.count < 1) {
