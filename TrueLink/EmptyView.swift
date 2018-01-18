@@ -35,18 +35,18 @@ class EmptyView: UIView {
     convenience init(view:UIView, viewType: EmptyViewType) {
         if (viewType == EmptyViewType.PartnerDevicePairing) {
             let image = UIImage(named: "AdditionalPersonIcon")
-            let title = "Activate Partner Device"
-            let body = "Connect your partner's device so they can receive all the love you want to send them."
-            let buttonTitle = "Activate"
+            let title = "Connect Partner Beacon"
+            let body = "Connect your partner's Beacon so they can receive all the love you want to send them."
+            let buttonTitle = "Connect"
             self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
             
         } else {
             let image = viewType == .NoITAYs ? UIImage(named: "ConnectionsIconFull") : UIImage(named:"HomeDeviceIcon")
-            let title = viewType == .NoITAYs ? "Send Some Love" : "Activate Your Device"
+            let title = viewType == .NoITAYs ? "Send Some Love" : "Activate Your Beacon"
             let noItaysMessage = "You have not reached out to anyone yet. Let that special someone know that you're thinking about them"
-            let noConnectionsMessage = "Connect your device to your smart lamp so you can let that special someone know that you’re still thinking about them."
+            let noConnectionsMessage = "Connect your app to your Beacon so that you can let that special someone know that you’re still thinking about them."
             let body = viewType == .NoITAYs ? noItaysMessage : noConnectionsMessage
-            let buttonTitle = viewType == .NoITAYs ? "Send Love" : "Activate"
+            let buttonTitle = viewType == .NoITAYs ? "Send Love" : "Connect"
             self.init(view: view, image: image, title: title, body: body, buttonTitle: buttonTitle)
         }
         

@@ -40,7 +40,7 @@
                             <rect key="frame" x="0.0" y="250" width="335" height="272"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWV-C6-6l0" customClass="MMSlidingButton" customModule="TrueLink" customModuleProvider="target">
-                                    <rect key="frame" x="29" y="192" width="277" height="54"/>
+                                    <rect key="frame" x="15" y="192" width="306" height="60"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="dragPointColor">
@@ -67,19 +67,20 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-aN-siw">
-                                    <rect key="frame" x="29" y="153" width="89.5" height="18"/>
+                                    <rect key="frame" x="15" y="153" width="105" height="18"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="sent 2 hours ago">
+                                        <fragment content="connected just now">
                                             <attributes>
                                                 <color key="NSColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="14" name="Abel-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                     <color key="highlightedColor" red="0.51764705879999995" green="0.49019607840000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-nc-PWE">
-                                    <rect key="frame" x="29" y="126" width="183" height="31"/>
+                                    <rect key="frame" x="15" y="126" width="183" height="31"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="D76-k2-wDW"/>
                                         <constraint firstAttribute="width" constant="183" id="yem-9V-ARI"/>
@@ -89,7 +90,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeIconSimpleGrey" highlightedImage="HomeIconSimpleOrange" translatesAutoresizingMaskIntoConstraints="NO" id="aVV-Y3-B7G">
-                                    <rect key="frame" x="268" y="133" width="37" height="36"/>
+                                    <rect key="frame" x="284" y="133" width="37" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="37" id="xAL-aS-ls6"/>
                                         <constraint firstAttribute="height" constant="36" id="zoA-oJ-SrE"/>
@@ -100,22 +101,22 @@
                             <constraints>
                                 <constraint firstItem="gWV-C6-6l0" firstAttribute="centerX" secondItem="UWQ-yt-9Qn" secondAttribute="centerX" id="3cd-io-mdZ"/>
                                 <constraint firstItem="6wV-aN-siw" firstAttribute="leading" secondItem="gWV-C6-6l0" secondAttribute="leading" id="E59-WL-wUh"/>
-                                <constraint firstAttribute="trailing" secondItem="gWV-C6-6l0" secondAttribute="trailing" constant="29" id="IkA-4q-5OC"/>
-                                <constraint firstItem="aVV-Y3-B7G" firstAttribute="trailing" secondItem="gWV-C6-6l0" secondAttribute="trailing" constant="-1" id="J7k-3O-QcE"/>
+                                <constraint firstAttribute="trailing" secondItem="gWV-C6-6l0" secondAttribute="trailing" constant="14" id="IkA-4q-5OC"/>
+                                <constraint firstItem="aVV-Y3-B7G" firstAttribute="trailing" secondItem="gWV-C6-6l0" secondAttribute="trailing" id="J7k-3O-QcE"/>
                                 <constraint firstItem="3IV-nc-PWE" firstAttribute="leading" secondItem="6wV-aN-siw" secondAttribute="leading" id="Jz1-bt-CGg"/>
-                                <constraint firstAttribute="bottom" secondItem="gWV-C6-6l0" secondAttribute="bottom" constant="26" id="rbd-Ki-CeA"/>
+                                <constraint firstAttribute="bottom" secondItem="gWV-C6-6l0" secondAttribute="bottom" constant="20" id="rbd-Ki-CeA"/>
                                 <constraint firstItem="6wV-aN-siw" firstAttribute="top" secondItem="3IV-nc-PWE" secondAttribute="bottom" constant="-4" id="sgh-K7-J3r"/>
                                 <constraint firstItem="gWV-C6-6l0" firstAttribute="top" secondItem="6wV-aN-siw" secondAttribute="bottom" constant="21" id="tb1-v5-b1Q"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-Ae-IJS">
-                            <rect key="frame" x="7" y="0.0" width="320" height="361"/>
+                            <rect key="frame" x="4" y="0.0" width="326" height="361"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HK" translatesAutoresizingMaskIntoConstraints="NO" id="C3a-Bz-ljp">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="361"/>
+                                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HKMid" translatesAutoresizingMaskIntoConstraints="NO" id="C3a-Bz-ljp">
+                                    <rect key="frame" x="0.0" y="0.0" width="326" height="361"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hong Kong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="cP9-bv-NIH">
-                                    <rect key="frame" x="18" y="287" width="183" height="39"/>
+                                    <rect key="frame" x="10" y="287" width="183" height="39"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="39" id="6a7-kG-0Lf"/>
                                         <constraint firstAttribute="width" constant="183" id="Eqe-96-js3"/>
@@ -125,7 +126,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-K2-zYY">
-                                    <rect key="frame" x="18" y="327" width="183" height="18"/>
+                                    <rect key="frame" x="10" y="327" width="183" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="183" id="Bx5-G4-8tM"/>
                                     </constraints>
@@ -147,7 +148,7 @@
                                 <constraint firstItem="lbw-K2-zYY" firstAttribute="top" secondItem="cP9-bv-NIH" secondAttribute="bottom" constant="1" id="9Tz-IW-MfZ"/>
                                 <constraint firstItem="C3a-Bz-ljp" firstAttribute="top" secondItem="iB3-Ae-IJS" secondAttribute="top" id="AvR-8H-tNO"/>
                                 <constraint firstAttribute="trailing" secondItem="C3a-Bz-ljp" secondAttribute="trailing" id="Gsv-dj-nn4"/>
-                                <constraint firstItem="C3a-Bz-ljp" firstAttribute="leading" secondItem="cP9-bv-NIH" secondAttribute="trailing" constant="-201" id="Qsz-rX-0nz"/>
+                                <constraint firstItem="C3a-Bz-ljp" firstAttribute="leading" secondItem="cP9-bv-NIH" secondAttribute="trailing" constant="-193" id="Qsz-rX-0nz"/>
                                 <constraint firstItem="C3a-Bz-ljp" firstAttribute="height" secondItem="iB3-Ae-IJS" secondAttribute="height" id="fCl-1M-tj1"/>
                                 <constraint firstItem="lbw-K2-zYY" firstAttribute="top" secondItem="C3a-Bz-ljp" secondAttribute="bottom" constant="-34" id="qpY-yg-UxW"/>
                                 <constraint firstItem="lbw-K2-zYY" firstAttribute="leading" secondItem="cP9-bv-NIH" secondAttribute="leading" id="wIE-ku-g7g"/>
@@ -162,9 +163,9 @@
                         <constraint firstAttribute="trailing" secondItem="UWQ-yt-9Qn" secondAttribute="trailing" id="1oL-zV-bzl"/>
                         <constraint firstItem="UWQ-yt-9Qn" firstAttribute="width" secondItem="KoN-R7-Lmy" secondAttribute="width" id="4W7-Tm-K8e"/>
                         <constraint firstItem="UWQ-yt-9Qn" firstAttribute="leading" secondItem="KoN-R7-Lmy" secondAttribute="leading" id="6wY-sy-ruc"/>
-                        <constraint firstItem="iB3-Ae-IJS" firstAttribute="trailing" secondItem="KoN-R7-Lmy" secondAttribute="trailingMargin" id="7zg-vg-lUw"/>
+                        <constraint firstItem="iB3-Ae-IJS" firstAttribute="trailing" secondItem="KoN-R7-Lmy" secondAttribute="trailingMargin" constant="3" id="7zg-vg-lUw"/>
                         <constraint firstAttribute="bottom" secondItem="UWQ-yt-9Qn" secondAttribute="bottom" id="B86-uR-ew7"/>
-                        <constraint firstItem="iB3-Ae-IJS" firstAttribute="leading" secondItem="UWQ-yt-9Qn" secondAttribute="trailing" constant="-328" id="Scn-Q4-WIK"/>
+                        <constraint firstItem="iB3-Ae-IJS" firstAttribute="leading" secondItem="UWQ-yt-9Qn" secondAttribute="trailing" constant="-331" id="Scn-Q4-WIK"/>
                         <constraint firstItem="3IV-nc-PWE" firstAttribute="top" secondItem="iB3-Ae-IJS" secondAttribute="bottom" constant="15" id="USL-P2-8Ud"/>
                         <constraint firstItem="iB3-Ae-IJS" firstAttribute="top" secondItem="KoN-R7-Lmy" secondAttribute="top" id="aSa-gd-Gyc"/>
                         <constraint firstItem="aVV-Y3-B7G" firstAttribute="top" secondItem="C3a-Bz-ljp" secondAttribute="bottom" constant="22" id="akD-7t-RTw"/>
@@ -184,7 +185,7 @@
         </view>
     </objects>
     <resources>
-        <image name="HK" width="3386" height="4232"/>
+        <image name="HKMid" width="3024" height="4032"/>
         <image name="HeartIcon" width="25" height="25"/>
         <image name="HomeIconSimpleGrey" width="54" height="63"/>
         <image name="HomeIconSimpleOrange" width="54" height="63"/>

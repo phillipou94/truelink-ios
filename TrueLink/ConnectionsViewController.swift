@@ -178,6 +178,7 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ConnectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! ConnectionTableViewCell
         let itay = self.itays[indexPath.row]
+        cell.selectionStyle = .none
         cell.itay = itay
         
         if itay.fromMe! {
