@@ -7,7 +7,13 @@
 //
 
 import UIKit
+import BlueCapKit
 
 class BluetoothManager: NSObject {
+    static let shared = BluetoothManager()
+    
+    func scanForPeripherals() {
+        
+    }
 
 }
