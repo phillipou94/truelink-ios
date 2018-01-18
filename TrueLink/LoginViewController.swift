@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
             print("properties contains .notify")
         }
         
-//        peripheral.setNotifyValue(true, for: arduinoCharacteristic)
+        peripheral.setNotifyValue(true, for: arduinoCharacteristic)
         print("writeValue a")
         peripheral.writeValue("a".data(using: .utf8)!, for: arduinoCharacteristic, type: .withResponse)
         print("writeValue b")
@@ -84,8 +84,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
         if error != nil {
             print("error writing value")
         } else {
-            print("readValue")
-            peripheral.readValue(for: characteristic)
+//            print("readValue")
+//            peripheral.readValue(for: characteristic)
         }
     }
     
@@ -94,18 +94,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManag
         if error != nil {
             print("uh oh", error)
         }
-        print(String(data: characteristic.value!, encoding: String.Encoding.ascii))
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         print("didUpdateValueFor")
         let newValue = String(data: characteristic.value!, encoding: String.Encoding.ascii)
         print(newValue)
-        if newValue == "c" {
-            print("send love to beacon 1")
-        } else if newValue == "d" {
-            print("send love to beacon 2")
-        }
+//        if newValue == "c" {
+//            print("send love to beacon 1")
+//        } else if newValue == "d" {
+//            print("send love to beacon 2")
+//        }
     }
     
     @IBOutlet weak var emailTextField: UITextField!
