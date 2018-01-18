@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BlueCapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KeychainAccess.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>323004AA9C3B23BAFE2C4E6CDF618D28</key>
+		<key>54E1C5C7BCCE20F0E3D9E7681C4EB949</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>592658B71D11444A073D2235D0E7DA3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65A06356B54F668A3778EE5BB62782D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +73,6 @@
 			<true/>
 		</dict>
 		<key>8CD9FC035D83AD9BA719108E6A9A694F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9E132C264C47DE82797FC7682D4B7DE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

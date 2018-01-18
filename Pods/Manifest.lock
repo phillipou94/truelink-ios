@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - BlueCapKit (0.6.0)
   - KeychainAccess (3.1.0)
   - M13Checkbox (3.2.2)
   - NVActivityIndicatorView (4.1.1):
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BlueCapKit (~> 0.6)
   - KeychainAccess
   - M13Checkbox
   - NVActivityIndicatorView
@@ -16,11 +18,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BlueCapKit: 8c8c4764a9fcd7296ae2a491533bb8ec53f8f61f
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 39319d3acc40ed6784ad66f3915800dd1fd8478a
+PODFILE CHECKSUM: 358223c04a674fbe7cde9f4e27ac4cf37d349196
 
 COCOAPODS: 1.3.1
