@@ -56,9 +56,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         super.viewWillAppear(animated)
         self.hasConnections = LocalStorageManager.shared.getConnections().count > 0
         
-        self.timestampLabel.text = "Local Time: "+self.getTimeString()+" PST"
-        
-        
+        self.timestampLabel.text = "Local Time: "+self.getTimeString()+" HKT"
         
         let connections = LocalStorageManager.shared.getConnections()
         if (connections.count > 0) {

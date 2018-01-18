@@ -35,17 +35,27 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.backgroundColor = UIColor.TLOffWhite()
         self.view.addSubview(self.tableView)
+        self.tableView.addSubview(self.refreshControl)
+        self.getItays {
+            self.tableView.isHidden = self.itays.count < 1
+            self.tableView.reloadData()
+        }
+    }
+    
+    func getItays(completed:@escaping () -> Void) {
         self.nicknameMap = LocalStorageManager.shared.nicknameMap()
         ItayRequest.shared.getItays(success: { (itays) in
             self.itays = itays
             if (self.itays.count < 1) {
                 self.showEmptyState(viewType: EmptyView.EmptyViewType.NoITAYs)
             }
-            self.tableView.isHidden = self.itays.count < 1
-            self.tableView.reloadData()
+            completed()
+
         }) { (error) in
             
         }
+
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -57,6 +67,27 @@ class ConnectionsViewController: UIViewController, UITableViewDelegate, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.TLLightGrey()
+        
+        return refreshControl
+    }()
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        self.getItays {
+            self.tableView.isHidden = self.itays.count < 1
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
+        
     }
     
     private func showEmptyState(viewType: EmptyView.EmptyViewType) {
