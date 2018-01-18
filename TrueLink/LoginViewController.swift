@@ -7,9 +7,80 @@
 //
 
 import UIKit
+import Bluejay
+import CoreBluetooth
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
 
+    var centralManager: CBCentralManager!
+    var arduinoPeripheral: CBPeripheral!
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+            
+        case .unknown:
+            print("central.state is .unknown")
+        case .resetting:
+            print("central.state is .resetting")
+        case .unsupported:
+            print("central.state is .unsupported")
+
+        case .unauthorized:
+            print("central.state is .unauthorized")
+
+        case .poweredOff:
+            print("central.state is .poweredOff")
+
+        case .poweredOn:
+            print("central.state is .poweredOn")
+            let serviceIdentifier = "19B10000-E8F2-537E-4F6C-D104768A1214"
+            centralManager.scanForPeripherals(withServices: [CBUUID(string: serviceIdentifier)])
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print("Found peripheral: ", peripheral)
+        arduinoPeripheral = peripheral
+        arduinoPeripheral.delegate = self
+        centralManager.stopScan()
+        centralManager.connect(arduinoPeripheral)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("Connected to peripheral: ", peripheral)
+        let serviceIdentifier = "19B10000-E8F2-537E-4F6C-D104768A1214"
+        arduinoPeripheral.discoverServices([CBUUID(string: serviceIdentifier)])
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        guard let services = peripheral.services else {return}
+        
+        let arduinoService = services[0]
+        let characteristicIdentifier = "19B10001-E8F2-537E-4F6C-D104768A1214"
+        peripheral.discoverCharacteristics([CBUUID(string: characteristicIdentifier)], for: arduinoService)
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        guard let characteristics = service.characteristics else {return}
+        
+        for characteristic in characteristics {
+            print(characteristic)
+//            peripheral.writeValue("hi".data(using: .utf8)!, for: characteristic, type: .withResponse)
+            peripheral.readValue(for: characteristic)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("success - written")
+        
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("read value")
+        print(characteristic.value)
+    }
+    
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -21,6 +92,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(tapGesture)
         
         // Do any additional setup after loading the view.
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,7 +171,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //                }
 //            }
 //        }
-        BluetoothManager.shared.scanForPeripherals()
+        
+        
+        
+        
+//        BluetoothManager.shared.scanForPeripherals()
+        
+//        let bluejay = Bluejay()
+//
+//        bluejay.start()
+//
+//        bluejay.start(connectionObserver: self)
+//
+//        let serviceId = "19B10000-E8F2-537E-4F6C-D104768A1214"
+//        let characteristicId = "19B10001-E8F2-537E-4F6C-D104768A1214"
+//
+//        let serviceIdentifier = ServiceIdentifier(uuid: serviceId)
+//        let characteristicIdentifier = CharacteristicIdentifier(uuid: characteristicId, service: serviceIdentifier)
+//
+//
+//
+//        bluejay.scan(
+//            serviceIdentifiers: [serviceIdentifier],
+//            discovery: { [weak self] (discovery, discoveries) -> ScanAction in
+//
+//                guard let weakSelf = self else {
+//                    return .stop
+//                }
+//
+//                return .continue
+//            },
+//            stopped: { (discoveries, error) in
+//                if let error = error {
+//                    debugPrint("Scan stopped with error: \(error.localizedDescription)")
+//                }
+//                else {
+//                    debugPrint("Scan stopped without error.")
+//                }
+//        })
+        
     }
     
     func animateSigningIn() {
