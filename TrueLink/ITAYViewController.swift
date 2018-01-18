@@ -12,18 +12,11 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
 
     @IBOutlet weak var connectionCard: UIView!
     @IBOutlet weak var slider: MMSlidingButton!
-    @IBOutlet weak var profileView: UIView!
-    @IBOutlet weak var nameLogoLabel: UILabel!
     @IBOutlet weak var homeIconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
-    
-    @IBOutlet weak var phoneIconImageView: UIImageView!
-    @IBOutlet weak var heart1: UIImageView!
-    @IBOutlet weak var heart2: UIImageView!
-    @IBOutlet weak var heart3: UIImageView!
-    @IBOutlet weak var heart4: UIImageView!
-    @IBOutlet weak var heart5: UIImageView!
+
+    @IBOutlet weak var imageView: UIImageView!
     
     var emptyView = UIView()
     
@@ -32,15 +25,43 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     var pairDeviceButton : UIButton?
     var lamp : Lamp?
     
+    @IBOutlet weak var infoContainerView: UIView!
+    @IBOutlet weak var imageContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.connectionCard.layer.cornerRadius = 10
-        self.view.backgroundColor = UIColor.TLOffWhite()
-        self.profileView.makeCircular()
-        self.profileView.backgroundColor = UIColor.TLSpecialGreen()
+        let shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: self.infoContainerView.frame.size.width, height: self.infoContainerView.frame.height + 1))
+        //Change 2.1 to amount of spread you need and for height replace the code for height
+        
+        self.infoContainerView.layer.cornerRadius = 5
+        self.infoContainerView.layer.shadowColor = UIColor.black.cgColor
+        self.infoContainerView.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)  //Here you control x and y
+        self.infoContainerView.layer.shadowOpacity = 0.5
+        self.infoContainerView.layer.shadowRadius = 5.0 //Here your control your blur
+        self.infoContainerView.layer.masksToBounds =  false
+        self.infoContainerView.layer.shadowPath = shadowPath.cgPath
+        
+        
+        self.imageContainerView.layer.cornerRadius = 10
+        let shadowPath2 = UIBezierPath(rect: CGRect(x: 0, y: 0, width: self.imageContainerView.frame.size.width, height: self.imageContainerView.frame.height + 1))
+        //Change 2.1 to amount of spread you need and for height replace the code for height
+        
+        self.imageContainerView.layer.cornerRadius = 10
+        self.imageContainerView.layer.shadowColor = UIColor.black.cgColor
+        self.imageContainerView.layer.shadowOffset = CGSize(width: 0.5, height: 0.4)  //Here you control x and y
+        self.imageContainerView.layer.shadowOpacity = 0.5
+        self.imageContainerView.layer.shadowRadius = 5.0 //Here your control your blur
+        self.imageContainerView.layer.masksToBounds =  false
+        self.imageContainerView.layer.shadowPath = shadowPath2.cgPath
+        
+        self.imageView.layer.cornerRadius = 10
+        self.imageView.layer.masksToBounds = true
+        
+        self.view.backgroundColor = UIColor.TLDarkGrey()
         self.slider.delegate = self
+        
+        
         
         
 
@@ -69,11 +90,6 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
         
         if let lamp = self.lamp {
             self.nameLabel.text = lamp.nickname
-            if let name = lamp.nickname {
-                let index = name.characters.index(name.startIndex, offsetBy: 0)
-                let startChar = name[index]
-                self.nameLogoLabel.text = String(startChar)
-            }
 
         }
     }
@@ -118,14 +134,8 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     }
     
     func reset() {
-        self.phoneIconImageView.isHighlighted = false
         self.homeIconImageView.isHighlighted = false
         self.slider.reset()
-        self.heart1.isHighlighted = false
-        self.heart2.isHighlighted = false
-        self.heart3.isHighlighted = false
-        self.heart4.isHighlighted = false
-        self.heart5.isHighlighted = false
         
     }
 
@@ -136,7 +146,6 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     private func itaySent(){
         self.homeIconImageView.isHighlighted = true
-        self.phoneIconImageView.isHighlighted = true
         self.slider.dragPointButtonLabel.text = "Sent!"
         self.isSending = false
         
@@ -192,11 +201,7 @@ class ITAYViewController: UIViewController, SlideButtonDelegate {
     
     func hasMoved(percentage: Double, sender: MMSlidingButton) {
         //TODO: CHANGE BACK HEARTS TO GREY WHEN SLIDER IS RELASED BACK
-        self.heart1.isHighlighted = percentage > 0
-        self.heart2.isHighlighted = percentage > 0.2
-        self.heart3.isHighlighted = percentage > 0.4
-        self.heart4.isHighlighted = percentage > 0.6
-        self.heart5.isHighlighted = percentage > 0.8
+
     }
     
     func animateLoadingLabel() {
